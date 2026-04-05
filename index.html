@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. David Walters — Hormone Optimization Physician</title>
+<meta name="description" content="Dr. David Walters, DO, PhD, MBA — 25 years investigating the real cause of hormonal decline in men and women. Hormone optimization. Telemedicine. South Dakota & Colorado."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0E0E0E;--bg-card:#141414;--bg-elevated:#1A1A1A;
+  --coral:#E8614A;--amber:#D4933A;--sage:#7A9E7E;
+  --off-white:#F2EDE6;--muted:#8A8A8A;--border:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--off-white);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.3}
+h1,h2,h3,.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+.mono{font-family:'DM Mono',monospace}
+.container{max-width:1280px;margin:0 auto;padding:0 2rem}
+.container-narrow{max-width:860px;margin:0 auto;padding:0 2rem}
+.label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--coral)}
+.accent-line{width:40px;height:2px;background:var(--coral);margin-bottom:1.5rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:2rem;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#3A3A3A;transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--coral);color:#fff}.btn-primary:hover{background:#d14f38;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--off-white);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--off-white);transform:translateY(-1px)}
+.chip{display:inline-block;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px;background:rgba(232,97,74,.12);color:var(--coral);border:1px solid rgba(232,97,74,.25)}
+.chip-amber{background:rgba(212,147,58,.12);color:var(--amber);border-color:rgba(212,147,58,.25)}
+.chip-sage{background:rgba(122,158,126,.12);color:var(--sage);border-color:rgba(122,158,126,.25)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,14,14,.92);backdrop-filter:blur(12px);border-bottom:1px solid #1E1E1E;height:70px;display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1280px;margin:0 auto;padding:0 2rem}
+.nav-logo{text-decoration:none}.nav-logo-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--off-white)}
+.nav-logo-creds{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-link{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--off-white)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:.5rem;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--off-white);transition:all .2s}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:#0E0E0E;border-top:1px solid var(--border);padding:1.5rem 2rem;z-index:99}
+.mobile-menu.open{display:block}
+.mobile-link{display:block;font-family:'DM Mono',monospace;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--off-white);text-decoration:none;padding:.75rem 0;border-bottom:1px solid var(--border)}
+/* SECTIONS */
+section{padding:5rem 0}
+.section-dark{background:#0A0A0A;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+/* PAGES */
+.page{display:none;padding-top:70px}
+.page.active{display:block}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:10rem 0 5rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(42,42,42,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(42,42,42,.3) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 30%,transparent 100%)}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(232,97,74,.06) 0%,transparent 70%);top:20%;left:60%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5.5vw,4.8rem);line-height:1.06;letter-spacing:-.02em;color:var(--off-white);margin-bottom:2rem}
+.hero-sub{font-size:1.125rem;color:#A8A39C;max-width:600px;line-height:1.7;margin-bottom:2.5rem}
+/* CREDENTIAL BAR */
+.cred-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 0;background:#0A0A0A}
+.cred-inner{display:flex;overflow-x:auto;max-width:1280px;margin:0 auto;padding:0 2rem}
+.cred-item{flex:1;min-width:160px;text-align:center;padding:.75rem 1rem}
+.cred-item+.cred-item{border-left:1px solid var(--border)}
+.cred-num{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--off-white)}
+.cred-label{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+/* GRIDS */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+/* AUDIENCE CARDS */
+.aud-card{background:var(--bg-card);padding:2.5rem;position:relative;overflow:hidden}
+.aud-accent{position:absolute;top:0;left:0;width:3px;height:100%}
+/* STEPS */
+.step-num{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.15em;margin-bottom:.75rem}
+.step-ghost{position:absolute;top:1.5rem;right:2rem;font-family:'DM Serif Display',serif;font-size:5rem;color:rgba(232,97,74,.04);line-height:1}
+/* TESTIMONIALS */
+.quote-mark{color:var(--coral);font-size:2rem;font-family:'DM Serif Display',serif;line-height:1;margin-bottom:1rem}
+/* LEAD MAGNET */
+.lead-section{background:#0D0A09;border-top:1px solid rgba(232,97,74,.2);border-bottom:1px solid rgba(232,97,74,.2);padding:5rem 0}
+.lead-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.lead-input{flex:1;min-width:200px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:2px;padding:.85rem 1rem;color:var(--off-white);font-family:'DM Mono',monospace;font-size:.85rem;outline:none}
+.lead-input:focus{border-color:var(--coral)}
+/* COMPARISON */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.compare-card{background:var(--bg-card);border-radius:4px;padding:2rem}
+.compare-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:.75rem}
+.compare-row{display:flex;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.compare-row:last-child{border-bottom:none}
+/* ACCORDION */
+.accordion-section{margin-bottom:3.5rem}
+.accordion-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.accordion-line{width:3px;height:24px;border-radius:2px}
+.accordion-item{border-bottom:1px solid var(--border)}
+.accordion-btn{width:100%;background:none;border:none;cursor:pointer;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;text-align:left}
+.accordion-q{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--off-white);line-height:1.4;flex:1}
+.accordion-icon{font-size:1rem;flex-shrink:0;margin-top:2px;transition:transform .2s;display:inline-block}
+.accordion-body{padding-bottom:1.25rem;padding-right:2rem;color:#C8C3BC;line-height:1.75;font-size:.925rem;display:none}
+.accordion-body.open{display:block}
+/* FILTER */
+.filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1rem;border-radius:2px;cursor:pointer;transition:all .2s}
+.filter-btn.active{background:var(--coral);border-color:var(--coral);color:#fff}
+/* LITERATURE */
+.lit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.5rem;display:grid;grid-template-columns:70px 1fr auto;gap:1.5rem;align-items:start}
+/* FOOTER */
+footer{background:#080808;border-top:1px solid var(--border);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:3rem;margin-bottom:3rem}
+.footer-copy{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy span{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.05em}
+/* PAGE HERO */
+.page-hero{padding:9rem 0 5rem;border-bottom:1px solid var(--border)}
+/* PROSE */
+.prose p{color:#C8C3BC;line-height:1.75;margin-bottom:1.25rem}
+/* BLOCKQUOTE */
+blockquote{border-left:3px solid var(--coral);padding-left:1.5rem;margin:2rem 0;font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--off-white);line-height:1.5}
+/* SYMPTOM LIST */
+.symptom-list{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:2rem}
+.symptom-row{display:flex;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.symptom-row:last-child{border-bottom:none}
+.symptom-arrow{color:var(--coral);font-family:'DM Mono',monospace;font-size:.75rem;margin-top:2px;flex-shrink:0}
+.symptom-text{color:#C8C3BC;font-size:.9rem;line-height:1.5}
+/* STORY CARD */
+.story-card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:2rem}
+.story-quote{color:#C8C3BC;line-height:1.7;font-size:.95rem;font-family:'DM Serif Display',serif;font-style:italic;margin-bottom:1.25rem}
+.story-footer{border-top:1px solid var(--border);padding-top:1rem;display:flex;justify-content:space-between;align-items:center}
+.story-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--off-white)}
+.story-tag{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.expand-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--coral);letter-spacing:.05em}
+.story-full{color:var(--muted);line-height:1.75;font-size:.875rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);display:none}
+.story-full.open{display:block}
+/* SERIES CARDS */
+.series-card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.5rem}
+/* PROCESS STEPS */
+.process-row{display:flex;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+.process-row:last-child{border-bottom:none}
+.process-num{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--coral);letter-spacing:.1em;width:24px;flex-shrink:0;margin-top:2px}
+.process-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--off-white);margin-bottom:.35rem}
+.process-desc{color:var(--muted);font-size:.9rem;line-height:1.6}
+/* PAYMENT */
+.payment-num{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--off-white)}
+.payment-label{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+/* TEAM */
+.team-avatar{width:64px;height:64px;border-radius:50%;background:var(--bg-elevated);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--coral);margin-bottom:1.25rem}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .7s ease forwards}
+.delay-1{animation-delay:.1s;opacity:0}
+.delay-2{animation-delay:.25s;opacity:0}
+.delay-3{animation-delay:.4s;opacity:0}
+.delay-4{animation-delay:.55s;opacity:0}
+/* RESPONSIVE */
+@media(max-width:1024px){.nav-links{display:none}.hamburger{display:flex}}
+@media(max-width:768px){.compare-grid{grid-template-columns:1fr}.grid-2{gap:2rem}.lit-card{grid-template-columns:1fr;gap:1rem}}
+@media(max-width:480px){.hero-h1{font-size:2rem}.lead-form{flex-direction:column}}
+a{color:inherit}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">
+      <span class="nav-logo-name">Dr. David Walters</span>
+      <span class="nav-logo-creds">DO · PhD · MBA</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#" onclick="showPage('about')">About</a>
+      <a class="nav-link" href="#" onclick="showPage('hormones')">Services</a>
+      <a class="nav-link" href="#" onclick="showPage('youngmen')">Young Men & Low T</a>
+      <a class="nav-link" href="#" onclick="showPage('physicians')">For Physicians</a>
+      <a class="nav-link" href="#" onclick="showPage('telemedicine')">Telemedicine</a>
+      <a class="nav-link" href="#" onclick="showPage('stories')">Patient Stories</a>
+      <a class="nav-link" href="#" onclick="showPage('research')">Research</a>
+      <a class="btn btn-primary" href="#" onclick="showPage('telemedicine')" style="padding:.6rem 1.2rem;font-size:.7rem">Book Appointment</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mobile-link" href="#" onclick="showPage('home');toggleMenu()">Home</a>
+  <a class="mobile-link" href="#" onclick="showPage('about');toggleMenu()">About</a>
+  <a class="mobile-link" href="#" onclick="showPage('hormones');toggleMenu()">Services</a>
+  <a class="mobile-link" href="#" onclick="showPage('youngmen');toggleMenu()">Young Men & Low T</a>
+  <a class="mobile-link" href="#" onclick="showPage('physicians');toggleMenu()">For Physicians</a>
+  <a class="mobile-link" href="#" onclick="showPage('telemedicine');toggleMenu()">Telemedicine</a>
+  <a class="mobile-link" href="#" onclick="showPage('stories');toggleMenu()">Patient Stories</a>
+  <a class="mobile-link" href="#" onclick="showPage('research');toggleMenu()">Research</a>
+  <a class="mobile-link btn btn-primary" style="margin-top:1.5rem;display:inline-flex" href="#" onclick="showPage('telemedicine');toggleMenu()">Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════ HOME ═══ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="max-width:820px">
+        <div class="label fade-up delay-1" style="margin-bottom:2rem">Hormone Optimization — South Dakota & Colorado</div>
+        <h1 class="hero-h1 fade-up delay-2">Your hormones are<br>under attack.<br><span style="color:var(--coral)">Mainstream medicine</span><br>has no idea why.</h1>
+        <p class="hero-sub fade-up delay-3">Dr. David Walters — DO, PhD in Reproductive Endocrinology, MBA — is one of the only physicians in the country who has spent 25 years investigating the real cause of hormonal decline. He doesn't just treat your symptoms. He finds the cause.</p>
+        <div class="fade-up delay-4" style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#" onclick="showPage('telemedicine')">Book an Appointment</a>
+          <a class="btn btn-secondary" href="#who">Find your path ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cred-bar">
+    <div class="cred-inner">
+      <div class="cred-item"><div class="cred-num">DO</div><div class="cred-label">Osteopathic Medicine</div></div>
+      <div class="cred-item"><div class="cred-num">PhD</div><div class="cred-label">Reproductive Endocrinology</div></div>
+      <div class="cred-item"><div class="cred-num">MBA</div><div class="cred-label">Healthcare Administration</div></div>
+      <div class="cred-item"><div class="cred-num">25+</div><div class="cred-label">Years Clinical Experience</div></div>
+      <div class="cred-item"><div class="cred-num">2×</div><div class="cred-label">CrossFit Games Competitor</div></div>
+    </div>
+  </div>
+
+  <section id="who">
+    <div class="container">
+      <div style="margin-bottom:3rem"><div class="label" style="margin-bottom:.75rem">Who are you here for?</div><h2 class="serif" style="font-size:clamp(1.8rem,3vw,2.5rem)">Find your path</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border)">
+        <div class="aud-card"><div class="aud-accent" style="background:var(--coral)"></div><span class="chip" style="margin-bottom:1.25rem;display:inline-block">Young Men</span><h3 class="serif" style="font-size:1.3rem;margin-bottom:1rem;line-height:1.3">I'm a young man and my testosterone is low</h3><p style="color:var(--muted);font-size:.925rem;line-height:1.7;margin-bottom:1.5rem">You're in your 20s or 30s, exhausted, struggling to build muscle, and your drive has disappeared — but your doctor told you everything is "normal." It isn't. Dr. Walters is one of the few physicians who can identify the cause and treat it without putting you on testosterone for life.</p><a href="#" onclick="showPage('youngmen')" style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--coral);text-decoration:none">Learn why →</a></div>
+        <div class="aud-card"><div class="aud-accent" style="background:var(--amber)"></div><span class="chip chip-amber" style="margin-bottom:1.25rem;display:inline-block">All Ages</span><h3 class="serif" style="font-size:1.3rem;margin-bottom:1rem;line-height:1.3">I want to optimize my hormones and feel like myself again</h3><p style="color:var(--muted);font-size:.925rem;line-height:1.7;margin-bottom:1.5rem">Fatigue, weight gain, brain fog, poor sleep, low libido, anxiety, depression, or menopausal symptoms — these are not inevitable. They are signals. Dr. Walters evaluates your full hormonal picture, identifies the cause, and builds a personalized restoration plan.</p><a href="#" onclick="showPage('hormones')" style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--amber);text-decoration:none">See how we can help →</a></div>
+        <div class="aud-card"><div class="aud-accent" style="background:var(--sage)"></div><span class="chip chip-sage" style="margin-bottom:1.25rem;display:inline-block">Physicians</span><h3 class="serif" style="font-size:1.3rem;margin-bottom:1rem;line-height:1.3">I'm a physician looking to refer a patient</h3><p style="color:var(--muted);font-size:.925rem;line-height:1.7;margin-bottom:1.5rem">Dr. Walters holds a PhD in reproductive endocrinology and has 25 years of clinical experience in hormonal optimization. His published research focuses on EDCs and clomiphene citrate as a mechanistically targeted intervention.</p><a href="#" onclick="showPage('physicians')" style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--sage);text-decoration:none">Referral information →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem"><div class="label" style="margin-bottom:.75rem">The Process</div><h2 class="serif" style="font-size:clamp(1.8rem,3vw,2.5rem)">How it works</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem">
+        <div style="position:relative;padding:2rem"><div class="step-num">01</div><div class="step-ghost">01</div><h3 class="serif" style="font-size:1.5rem;margin-bottom:.75rem">Schedule</h3><p style="color:var(--muted);line-height:1.7;font-size:.925rem">Book in-person at our Colorado Springs clinic (monthly) or secure video for South Dakota. SD patients can establish care entirely via telemedicine.</p></div>
+        <div style="position:relative;padding:2rem"><div class="step-num">02</div><div class="step-ghost">02</div><h3 class="serif" style="font-size:1.5rem;margin-bottom:.75rem">Investigate</h3><p style="color:var(--muted);line-height:1.7;font-size:.925rem">Dr. Walters takes a complete health and exposure history, orders a comprehensive hormone panel, and assesses your full HPG axis — not just a single testosterone number.</p></div>
+        <div style="position:relative;padding:2rem"><div class="step-num">03</div><div class="step-ghost">03</div><h3 class="serif" style="font-size:1.5rem;margin-bottom:.75rem">Restore</h3><p style="color:var(--muted);line-height:1.7;font-size:.925rem">You receive a personalized, cause-targeted treatment plan. Most patients notice meaningful improvement within 3–4 weeks.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:3rem"><a class="btn btn-primary" href="#" onclick="showPage('telemedicine')">Book your first appointment →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div style="margin-bottom:3rem"><div class="label" style="margin-bottom:.75rem">Patient Stories</div><h2 class="serif" style="font-size:clamp(1.8rem,3vw,2.5rem)">Real words from real patients</h2></div>
+      <div class="grid-3">
+        <div class="card"><div class="quote-mark">"</div><p style="color:#C8C3BC;line-height:1.7;font-size:.95rem;margin-bottom:1.5rem">Dr. Walters found all the reasons why I felt the way I did — hypogonadism, low testosterone, low vitamin D. He prescribed the right treatment and I felt better than I had felt in years.</p><div style="border-top:1px solid var(--border);padding-top:1rem"><div class="serif" style="font-size:1rem">Cole G.</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Patient</div></div></div>
+        <div class="card"><div class="quote-mark">"</div><p style="color:#C8C3BC;line-height:1.7;font-size:.95rem;margin-bottom:1.5rem">Dr. Walters has helped me with osteoporosis, extreme depression, insomnia, postmenopausal issues, and so much more. He does not treat the symptom — he treats the root cause.</p><div style="border-top:1px solid var(--border);padding-top:1rem"><div class="serif" style="font-size:1rem">Janet Z.</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Patient of 12+ Years</div></div></div>
+        <div class="card"><div class="quote-mark">"</div><p style="color:#C8C3BC;line-height:1.7;font-size:.95rem;margin-bottom:1.5rem">I have never had a doctor care as much or invest as much in me. Doc Walters is constantly researching and finding new ways to live a healthier, stronger life.</p><div style="border-top:1px solid var(--border);padding-top:1rem"><div class="serif" style="font-size:1rem">Bob R.</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Retired US Navy SEAL Officer</div></div></div>
+      </div>
+      <div style="margin-top:2rem"><a class="btn btn-secondary" href="#" onclick="showPage('stories')">Read all patient stories</a></div>
+    </div>
+  </section>
+
+  <div class="lead-section">
+    <div class="container-narrow" style="text-align:center">
+      <div class="label" style="margin-bottom:1rem">Free Download</div>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem;line-height:1.15">The 5 Chemicals Destroying<br>Men's Testosterone</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem">A 25-year physician's guide to the endocrine disruptors in your home, your food, and your water — and what you can actually do about them.</p>
+      <div class="lead-form">
+        <input class="lead-input" type="email" placeholder="your@email.com"/>
+        <button class="btn btn-primary" onclick="alert('Thank you! Check your email for the guide.')">Get Free Guide</button>
+      </div>
+      <p style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;margin-top:1rem">No spam. Research-backed information you should have been given years ago.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem">
+        <div><div class="label" style="margin-bottom:.75rem">Medical Anarchy</div><h2 class="serif" style="font-size:clamp(1.8rem,3vw,2.5rem)">Latest from Substack</h2></div>
+        <a class="btn btn-secondary" href="#" onclick="showPage('research')" style="font-size:.7rem">View all research →</a>
+      </div>
+      <div class="card" style="text-align:center;padding:3rem">
+        <p style="color:var(--muted);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.05em;margin-bottom:1.5rem">Subscribe to Medical Anarchy on Substack to follow the complete 20-part series on The Testosterone Crisis.</p>
+        <a class="btn btn-primary" href="https://drdavidwalters.substack.com" target="_blank">Read on Substack →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ ABOUT ═══ -->
+<div id="page-about" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">About</div>
+      <blockquote style="max-width:800px;margin:0 0 2rem 0;font-size:clamp(1.2rem,2.5vw,1.8rem)">One of the only physicians in the United States with a PhD in reproductive endocrinology and 25 years of clinical experience in hormonal optimization — for men and women of all ages.</blockquote>
+    </div>
+  </section>
+  <div class="section-dark" style="padding:2rem 0">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border)">
+        <div style="background:#0A0A0A;padding:1.5rem;text-align:center"><div class="serif" style="font-size:1.8rem;color:var(--coral)">DO</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Osteopathic Medicine</div></div>
+        <div style="background:#0A0A0A;padding:1.5rem;text-align:center"><div class="serif" style="font-size:1.8rem;color:var(--coral)">PhD</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Reproductive Endocrinology</div></div>
+        <div style="background:#0A0A0A;padding:1.5rem;text-align:center"><div class="serif" style="font-size:1.8rem;color:var(--coral)">MBA</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Healthcare Administration</div></div>
+        <div style="background:#0A0A0A;padding:1.5rem;text-align:center"><div class="serif" style="font-size:1.8rem;color:var(--coral)">25+</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">Years Clinical Practice</div></div>
+        <div style="background:#0A0A0A;padding:1.5rem;text-align:center"><div class="serif" style="font-size:1.8rem;color:var(--coral)">2×</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5">CrossFit Games '14 & '16</div></div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container-narrow prose">
+      <div style="margin-bottom:3.5rem"><div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.4rem,2.5vw,1.9rem);margin-bottom:1.25rem">The research that changed everything</h2><p>Dr. Walters earned his PhD in reproductive endocrinology with a focus on ovarian oxytocin. At the time, oxytocin was classified exclusively as a brain peptide produced by the hypothalamus. His research demonstrated that the ovary also produces oxytocin — a finding that contradicted established medical teaching and contributed to a fundamental reclassification of the hormone. This early experience of following evidence against institutional consensus has defined his clinical philosophy ever since.</p></div>
+      <div style="margin-bottom:3.5rem"><div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.4rem,2.5vw,1.9rem);margin-bottom:1.25rem">From research to the bedside</h2><p>A drive to help people — not just study them — led Dr. Walters to leave academic research and earn an MBA. He took over management of a small rural hospital on the brink of financial failure and restored it to profitability within four years. So moved by the direct impact a single physician could have on a rural community, he enrolled in medical school at 40 years old.</p><p>He and his wife, along with their 10 children, relocated to Des Moines, Iowa, where Dr. Walters completed his medical degree (DO) and a Family Practice residency. The family then moved to southern Colorado, where his clinical career began.</p></div>
+      <div style="margin-bottom:3.5rem"><div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.4rem,2.5vw,1.9rem);margin-bottom:1.25rem">25 years of hormonal medicine</h2><p>Over the course of his career, Dr. Walters' practice has evolved into a specialty clinic focused entirely on the restoration and optimization of hormones in male and female patients of all ages. His central focus is understanding why hormones become dysregulated in the first place — not simply replacing what has been lost.</p><p>His research and clinical experience converge on a clear answer: the population-level decline in testosterone he has observed over 25 years is being driven, in significant part, by ubiquitous exposure to endocrine-disrupting chemicals (EDCs) that suppress the hypothalamic-pituitary-gonadal (HPG) axis. This is not a fringe hypothesis. It is supported by decades of peer-reviewed research.</p></div>
+      <div style="margin-bottom:3.5rem"><div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.4rem,2.5vw,1.9rem);margin-bottom:1.25rem">Fitness as medicine</h2><p>Dr. Walters has used exercise as a clinical tool throughout his career. Fifteen years ago he discovered CrossFit and was so impressed by the results that he built his own CrossFit gym. He competed in the CrossFit Games in 2014 and 2016 in the 60+ age division. One of his patients who joined his gym in 2011 went on to win the 2015 CrossFit Games in the 60+ female division. He holds himself to the same standard he asks of his patients.</p></div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="label" style="margin-bottom:1rem">The Team</div>
+      <div class="grid-3" style="margin-top:1.5rem">
+        <div class="card"><div class="team-avatar">D</div><h3 class="serif" style="font-size:1.25rem;margin-bottom:.25rem">Dr. David Walters</h3><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem">Physician</div><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);margin-bottom:1rem">DO, PhD, MBA</div><p style="color:var(--muted);font-size:.9rem;line-height:1.65">Dr. Walters sees patients in South Dakota via telemedicine and in Colorado at monthly in-person clinic visits. He personally uses and believes in every protocol he prescribes.</p></div>
+        <div class="card"><div class="team-avatar">J</div><h3 class="serif" style="font-size:1.25rem;margin-bottom:.25rem">Jennifer Thompson</h3><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem">Office Manager</div><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);margin-bottom:1rem">Practice Administrator</div><p style="color:var(--muted);font-size:.9rem;line-height:1.65">Jennifer manages the day-to-day administration of the clinic with precision and warmth. She handles scheduling, patient inquiries, and the operational infrastructure that allows Dr. Walters to focus entirely on patient care.</p></div>
+        <div class="card"><div class="team-avatar">K</div><h3 class="serif" style="font-size:1.25rem;margin-bottom:.25rem">Karlie</h3><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem">Medical Assistant</div><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);margin-bottom:1rem">MA, Phlebotomist, IV Technician</div><p style="color:var(--muted);font-size:.9rem;line-height:1.65">Karlie serves as the clinical backbone of every in-person patient visit. Her energy, warmth, and clinical skill ensure every patient feels heard and well cared for. She has been a cornerstone of Dr. Walters' practice for over 11 years.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ YOUNG MEN ═══ -->
+<div id="page-youngmen" class="page">
+  <section class="page-hero" style="background:linear-gradient(180deg,#0D0805 0%,var(--bg) 100%)">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Young Men & Low Testosterone</div>
+      <h1 class="serif" style="font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-.02em;max-width:820px;margin-bottom:1.5rem">You're 25 years old. Your testosterone is low. And your doctor told you <span style="color:var(--coral)">you're fine.</span></h1>
+      <p style="font-size:1.1rem;color:#A8A39C;max-width:600px;line-height:1.7;margin-bottom:2.5rem">You're not fine. And you're not alone. Low testosterone in young men is not rare, not mysterious, and not untreatable. But it requires a physician who actually understands why it's happening — and most don't.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap"><a class="btn btn-primary" href="#" onclick="showPage('telemedicine')">Book a consultation</a><a class="btn btn-secondary" href="#" onclick="showPage('research')">Read the research →</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+      <div><div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">You are not imagining this</h2><p style="color:#C8C3BC;line-height:1.75;margin-bottom:1rem">If you are in your 20s or 30s and experiencing any of the symptoms listed here, your hormonal system may be significantly compromised.</p><p style="color:#C8C3BC;line-height:1.75">These symptoms are real. They are measurable. And the medical profession is failing young men by either dismissing them or responding with testosterone replacement — which is wrong for most young men.</p></div>
+      <div class="symptom-list">
+        <div class="label" style="margin-bottom:1.25rem">Symptoms</div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Fatigue that sleep doesn't fix</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Difficulty building muscle despite consistent training</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Accumulating body fat, especially around the abdomen</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Low sex drive or erectile dysfunction</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Brain fog, difficulty concentrating, or memory problems</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Mood swings, irritability, anxiety, or depression</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Poor recovery from exercise</span></div>
+        <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Feeling like a 50-year-old in a 25-year-old body</span></div>
+      </div>
+    </div>
+    <style>@media(max-width:768px){#page-youngmen .container[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}</style>
+  </section>
+  <section class="section-dark">
+    <div class="container-narrow">
+      <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">Why is this happening?</h2>
+      <p style="color:#C8C3BC;line-height:1.75;margin-bottom:1.25rem">Multiple large studies document a decline of more than 1% per year in average testosterone levels since the 1980s. Sperm counts in Western men have fallen by more than 50% over the same period.</p>
+      <div style="background:var(--bg-card);border:1px solid rgba(232,97,74,.3);border-radius:4px;padding:2rem;margin:2rem 0"><p class="serif" style="font-size:1.3rem;color:var(--off-white);line-height:1.5;margin:0">This is not aging. This is not genetics. <span style="color:var(--coral)">This is chemistry.</span></p></div>
+      <p style="color:#C8C3BC;line-height:1.75;margin-bottom:1rem">The scientific evidence points strongly to endocrine-disrupting chemicals (EDCs) — synthetic compounds found in plastics, food packaging, pesticides, tap water, and personal care products — that mimic estrogen and bind to receptors in the hypothalamus and pituitary. Your body is not broken. It is being chemically suppressed.</p>
+      <div style="padding:1rem;background:var(--bg-elevated);border-radius:4px;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.05em">Key studies: Levine et al. 2017 · Travison et al. 2007 · Swan et al. 2021 · <a href="#" onclick="showPage('research')" style="color:var(--coral);text-decoration:none">See full literature →</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="label" style="margin-bottom:1rem">Treatment</div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.4rem);margin-bottom:3rem;max-width:600px;line-height:1.2">Why testosterone replacement is the wrong answer for most young men</h2>
+      <div class="compare-grid">
+        <div class="compare-card" style="border:1px solid rgba(232,97,74,.2)">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem"><span class="compare-dot" style="background:var(--coral)"></span><span style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--coral);letter-spacing:.12em;text-transform:uppercase">Testosterone Replacement (TRT)</span></div>
+          <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Signals the pituitary to stop producing LH and FSH</span></div>
+          <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Your testes shrink from disuse</span></div>
+          <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Natural testosterone production ceases</span></div>
+          <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Sperm count drops to zero — functional infertility</span></div>
+          <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Many men become permanently dependent</span></div>
+        </div>
+        <div class="compare-card" style="border:1px solid rgba(122,158,126,.3)">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem"><span class="compare-dot" style="background:var(--sage)"></span><span style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--sage);letter-spacing:.12em;text-transform:uppercase">Clomiphene Citrate</span></div>
+          <div class="compare-row"><span style="color:var(--sage);flex-shrink:0;margin-top:2px">✓</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Targets the mechanism of suppression, not the symptom</span></div>
+          <div class="compare-row"><span style="color:var(--sage);flex-shrink:0;margin-top:2px">✓</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Your testes continue to function normally</span></div>
+          <div class="compare-row"><span style="color:var(--sage);flex-shrink:0;margin-top:2px">✓</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Your own testosterone rises to optimal levels</span></div>
+          <div class="compare-row"><span style="color:var(--sage);flex-shrink:0;margin-top:2px">✓</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">Fertility is preserved</span></div>
+          <div class="compare-row"><span style="color:var(--sage);flex-shrink:0;margin-top:2px">✓</span><span style="color:#C8C3BC;font-size:.9rem;line-height:1.5">No external hormones — no permanent dependency</span></div>
+        </div>
+      </div>
+      <div style="margin-top:3rem;text-align:center"><a class="btn btn-primary" href="#" onclick="showPage('telemedicine')">Book your consultation</a></div>
+    </div>
+  </section>
+  <section style="background:#0D0A09;border-top:1px solid rgba(232,97,74,.15);padding:4rem 0">
+    <div class="container-narrow"><div class="label" style="margin-bottom:1.5rem">Patient Story</div><blockquote>"Dr. Walters found all the reasons why I felt the way I did — hypogonadism, low testosterone, low vitamin D. He prescribed the appropriate treatment, counseled me on nutrition, and I felt better than I had in years."</blockquote><div style="margin-top:1rem;padding-left:1.5rem"><div class="serif" style="font-size:1rem">Cole G.</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Patient</div></div><div style="margin-top:2rem;padding-left:1.5rem"><a href="#" onclick="showPage('stories')" style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--coral);text-decoration:none">Read all patient stories →</a></div></div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ HORMONES ═══ -->
+<div id="page-hormones" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Natural Hormone Optimization</div>
+      <h1 class="serif" style="font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-.02em;max-width:760px;margin-bottom:1.5rem">Your hormones didn't fail you.<br><span style="color:var(--amber)">They were disrupted.</span></h1>
+      <p style="font-size:1.1rem;color:#A8A39C;max-width:580px;line-height:1.7;margin-bottom:2.5rem">The modern environment is saturated with synthetic chemicals that interfere directly with your body's hormone production. Most physicians never test for this. Dr. Walters has spent over 25 years treating it.</p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+        <a class="btn btn-secondary" style="font-size:.7rem" href="#for-men">For Men</a>
+        <a class="btn btn-secondary" style="font-size:.7rem" href="#for-women">For Women</a>
+        <a class="btn btn-primary" style="font-size:.7rem" href="#" onclick="showPage('youngmen')">Young Men Specifically →</a>
+      </div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container-narrow">
+      <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">What is causing your hormone imbalance?</h2>
+      <p style="color:#C8C3BC;line-height:1.75;margin-bottom:1.25rem">Human hormone levels are in measurable, documented decline — and have been for decades. Testosterone levels in men have fallen by more than 1% per year since the 1980s. Sperm counts in Western men have dropped by more than 50% over the same period. This is happening to young men in their 20s and women in their 30s showing hormonal profiles associated with menopause.</p>
+      <p style="color:#C8C3BC;line-height:1.75;margin-bottom:2rem">The leading scientific explanation is ubiquitous exposure to endocrine-disrupting chemicals (EDCs): synthetic compounds that interfere with the body's endocrine system at the receptor level.</p>
+      <div style="display:grid;gap:.75rem">
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--amber);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">01</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">They mimic naturally occurring hormones — particularly estrogens — triggering responses the body did not intend</span></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--amber);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">02</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">They bind to hormone receptors and block the body's own hormones from activating them</span></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--amber);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">03</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">They suppress the normal production of testosterone by disrupting the hypothalamic-pituitary-gonadal (HPG) axis</span></div>
+      </div>
+    </div>
+  </section>
+  <section id="for-men">
+    <div class="container">
+      <div class="grid-2">
+        <div><div class="accent-line"></div><div class="label" style="color:var(--amber);margin-bottom:.75rem">For Men</div><h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1.5rem">Symptoms of EDC-related hormonal disruption</h2><p style="color:#C8C3BC;line-height:1.75;margin-bottom:1.5rem">These symptoms used to appear primarily in men over 50. Today, Dr. Walters sees them routinely in men in their 20s and 30s:</p>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Persistent fatigue and low energy</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Low sex drive or erectile dysfunction</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Inability to build or maintain muscle</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Increased body fat, particularly abdominal</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Brain fog, poor concentration, memory problems</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Mood swings, irritability, or depression</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--amber)">→</span><span class="symptom-text">Poor sleep quality, low sperm count, bone density loss</span></div>
+        </div>
+        <div id="for-women"><div class="accent-line" style="background:var(--sage)"></div><div class="label" style="color:var(--sage);margin-bottom:.75rem">For Women</div><h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1.5rem">Symptoms of EDC-related hormonal disruption</h2><p style="color:#C8C3BC;line-height:1.75;margin-bottom:1.5rem">EDCs reduce testosterone in women as well as men. Symptoms that once appeared only at menopause are increasingly common in women in their 30s:</p>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Fatigue and persistent low energy</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Low libido</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Loss of muscle mass and increased body fat</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Brain fog and poor concentration</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Depression or mood instability</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Sleep disruption</span></div>
+          <div class="symptom-row"><span class="symptom-arrow" style="color:var(--sage)">→</span><span class="symptom-text">Infertility, osteopenia, or osteoporosis</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container-narrow">
+      <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">Dr. Walters' approach: treating the cause, not the number</h2>
+      <p style="color:#C8C3BC;line-height:1.75;margin-bottom:1.5rem">Most hormone clinics measure a testosterone level and prescribe testosterone. Dr. Walters considers this approach incomplete — and for young patients, potentially harmful. His evaluation includes:</p>
+      <div style="display:grid;gap:.75rem">
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--coral);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">→</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">Complete hormonal panel: testosterone (total and free), LH, FSH, estradiol, SHBG, DHEA, thyroid, cortisol, and more</span></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--coral);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">→</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">Assessment of HPG axis function — where in the system is the disruption occurring?</span></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--coral);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">→</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">Detailed history of chemical exposures, lifestyle, and environmental contributors</span></div>
+        <div class="card" style="display:flex;gap:1rem;align-items:flex-start"><span style="color:var(--coral);font-family:'DM Mono',monospace;font-size:.8rem;margin-top:2px;flex-shrink:0">→</span><span style="color:#C8C3BC;font-size:.925rem;line-height:1.6">Evaluation of nutritional status, including Vitamin D, which regulates multiple hormonal pathways</span></div>
+      </div>
+      <div style="margin-top:2.5rem;text-align:center"><a class="btn btn-primary" href="#" onclick="showPage('telemedicine')">Book your consultation →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ PHYSICIANS ═══ -->
+<div id="page-physicians" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">For Physicians</div>
+      <h1 class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;letter-spacing:-.02em;max-width:720px;margin-bottom:1.5rem">Referrals &<br>collegial consultation</h1>
+      <p style="font-size:1.05rem;color:#A8A39C;max-width:580px;line-height:1.7">Dr. David Walters welcomes referrals and collegial consultation from physicians across the country. He is available to discuss complex hormonal cases and share his clinical framework for EDC-induced HPG axis suppression.</p>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Key Literature</div>
+      <h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:2rem">Foundational evidence base</h2>
+      <div style="display:grid;gap:1rem">
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">2017</div><span class="chip" style="margin-top:.5rem;display:inline-block">Sperm Count</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Levine H, et al.</em> Temporal trends in sperm count: a systematic review and meta-regression analysis of 185 studies. <span style="color:var(--muted)">Human Reproduction Update.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">Sperm counts in Western men fell by more than 52% between 1973 and 2011, with no sign of leveling off.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/28981654/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">2007</div><span class="chip" style="margin-top:.5rem;display:inline-block">Testosterone</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Travison TG, et al.</em> A population-level decline in serum testosterone levels in American men. <span style="color:var(--muted)">JCEM.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">Average testosterone levels fell significantly between 1987 and 2004, independent of age.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/17062768/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">1992</div><span class="chip" style="margin-top:.5rem;display:inline-block">Foundational</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Carlsen E, et al.</em> Evidence for decreasing quality of semen during the past 50 years. <span style="color:var(--muted)">BMJ.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">The landmark meta-analysis that first documented sperm count decline and prompted decades of subsequent research.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/1393072/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+      </div>
+      <div style="margin-top:2rem"><a class="btn btn-secondary" href="#" onclick="showPage('research')">See full research library →</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="label" style="margin-bottom:1rem">Referral Information</div>
+      <div class="grid-2">
+        <div><h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1.5rem">Appropriate referral candidates</h2>
+          <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Young men (18–40) with low testosterone not appropriate for conventional TRT</span></div>
+          <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Men of any age with suspected EDC-related HPG axis suppression</span></div>
+          <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Women with low testosterone and hormonal imbalance symptoms at any age</span></div>
+          <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Complex hormonal presentations requiring comprehensive panel evaluation</span></div>
+          <div class="symptom-row"><span class="symptom-arrow">→</span><span class="symptom-text">Patients seeking root-cause evaluation of fatigue, metabolic dysregulation, or reproductive concerns</span></div>
+        </div>
+        <div><h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1.5rem">How to refer</h2>
+          <div class="card" style="margin-bottom:1rem"><div class="label" style="margin-bottom:.5rem">Phone</div><a href="tel:7195440199" class="serif" style="font-size:1.4rem;color:var(--off-white);text-decoration:none">(719) 544-0199</a><p style="color:var(--muted);font-size:.875rem;margin-top:.5rem">Jennifer Thompson, Office Manager, handles all referral intake and scheduling.</p></div>
+          <div class="card"><div class="label" style="margin-bottom:.5rem">Geographic Reach</div><p style="color:var(--muted);font-size:.875rem;line-height:1.6">Licensed in Colorado and South Dakota. SD patients establish care via telemedicine. CO patients require one initial in-person visit (monthly Colorado Springs clinic), then continue via telemedicine.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ TELEMEDICINE ═══ -->
+<div id="page-telemedicine" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Telemedicine</div>
+      <h1 class="serif" style="font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-.02em;max-width:700px;margin-bottom:1.5rem">You don't have to live near a good doctor<br><span style="color:var(--sage)">to have one.</span></h1>
+      <p style="font-size:1.1rem;color:#A8A39C;max-width:580px;line-height:1.7">Secure telemedicine for South Dakota and Colorado. South Dakota patients can establish care entirely online — no in-person visit required.</p>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Who Qualifies</div>
+      <div class="grid-3">
+        <div class="card" style="border:1px solid rgba(122,158,126,.3)"><div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem"><span style="width:8px;height:8px;border-radius:50%;background:var(--sage);display:inline-block"></span><span style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--sage);letter-spacing:.12em;text-transform:uppercase">South Dakota</span></div><h3 class="serif" style="font-size:1.3rem;margin-bottom:.75rem">Full telemedicine from day one</h3><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7">Dr. Walters can establish a complete physician-patient relationship via secure video. No in-person visit required. You can receive a full consultation, have labs ordered locally, and begin treatment without leaving home.</p></div>
+        <div class="card" style="border:1px solid rgba(212,147,58,.3)"><div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem"><span style="width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block"></span><span style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--amber);letter-spacing:.12em;text-transform:uppercase">Colorado</span></div><h3 class="serif" style="font-size:1.3rem;margin-bottom:.75rem">One in-person visit, then telemedicine</h3><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7">Colorado law requires one in-person visit before establishing a telemedicine relationship. Dr. Walters holds a monthly two-day clinic in Colorado Springs. After that first visit, all follow-up care is via telemedicine.</p></div>
+        <div class="card"><div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem"><span style="width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block"></span><span style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase">Other States</span></div><h3 class="serif" style="font-size:1.3rem;margin-bottom:.75rem">Call the office</h3><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7">Currently licensed in Colorado and South Dakota. If you're in another state, please call the office and we'll let you know whether we can help or provide a referral recommendation.</p><a href="tel:7195440199" style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);text-decoration:none">(719) 544-0199</a></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+      <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:2rem">How a telemedicine visit works</h2>
+      <div class="process-row"><div class="process-num">01</div><div><div class="process-title">Book</div><div class="process-desc">Schedule by calling (719) 544-0199. Jennifer Thompson, Office Manager, will help you get set up.</div></div></div>
+      <div class="process-row"><div class="process-num">02</div><div><div class="process-title">Prepare</div><div class="process-desc">Receive a secure video link before your appointment. Complete intake paperwork (approximately 15 minutes).</div></div></div>
+      <div class="process-row"><div class="process-num">03</div><div><div class="process-title">Connect</div><div class="process-desc">Join from any device — phone, tablet, or computer. Dr. Walters uses Signal for secure video appointments.</div></div></div>
+      <div class="process-row"><div class="process-num">04</div><div><div class="process-title">Investigate</div><div class="process-desc">Dr. Walters conducts a full consultation: health history, symptom review, exposure history, and goals. Lab orders are sent to a laboratory near you.</div></div></div>
+      <div class="process-row"><div class="process-num">05</div><div><div class="process-title">Review</div><div class="process-desc">You have blood drawn locally. Dr. Walters reviews results and follows up to discuss findings and your treatment plan.</div></div></div>
+      <div class="process-row"><div class="process-num">06</div><div><div class="process-title">Begin</div><div class="process-desc">Prescriptions are sent to one of our compounding pharmacies. Most patients notice improvement within 3–4 weeks.</div></div></div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="grid-3">
+        <div><div class="label" style="margin-bottom:1rem">Technology</div><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7">Any smartphone, tablet, or computer with a camera and microphone. Dr. Walters uses Signal for secure video appointments.</p></div>
+        <div><div class="label" style="margin-bottom:1rem">Payment</div><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7;margin-bottom:1rem">100% cash-pay. Does not accept insurance, Medicare, or Medicaid.</p><div style="display:flex;gap:2rem"><div><div class="payment-num">$195</div><div class="payment-label">Initial consultation</div></div><div><div class="payment-num">$125</div><div class="payment-label">Follow-up visits</div></div></div><p style="color:var(--muted);font-size:.8rem;margin-top:.75rem">Cash, check, credit/debit card, CareCredit</p></div>
+        <div><div class="label" style="margin-bottom:1rem">Labs</div><p style="color:#C8C3BC;font-size:.9rem;line-height:1.7">Labs ordered through major national laboratories. Insured patients: lab bills insurance directly. Cash-pay: discounted in-clinic blood draw sent to Access Medical Laboratory.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow" style="text-align:center">
+      <div class="label" style="margin-bottom:1rem">Book an Appointment</div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1rem">Ready to get started?</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:2.5rem">Call Jennifer Thompson, Office Manager, to schedule your first appointment.</p>
+      <a href="tel:7195440199" class="btn btn-primary" style="font-size:1rem">(719) 544-0199</a>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ STORIES ═══ -->
+<div id="page-stories" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Patient Stories</div>
+      <h1 class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;max-width:700px;margin-bottom:1.5rem">Real patients. Real results.<br><span style="color:var(--coral)">Real words.</span></h1>
+      <p style="font-size:1rem;color:#A8A39C;max-width:580px;line-height:1.7">Unedited, unsolicited accounts from patients who were dismissed, mismanaged, or under-served by mainstream medicine — and found a different outcome here.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterStories('all',this)">All Stories</button>
+        <button class="filter-btn" onclick="filterStories('young',this)">Young Men</button>
+        <button class="filter-btn" onclick="filterStories('men',this)">Men</button>
+        <button class="filter-btn" onclick="filterStories('women',this)">Women</button>
+        <button class="filter-btn" onclick="filterStories('veterans',this)">Veterans</button>
+      </div>
+      <div class="grid-3" id="storiesGrid">
+        <div class="story-card" data-filter="all young men"><div class="quote-mark">"</div><p class="story-quote">Dr. Walters found all the reasons why I felt the way I did — hypogonadism, low testosterone, low vitamin D. He prescribed the right treatment and I felt better than I had felt in years.</p><div class="story-full" id="sf-cole">When I first came to Dr. Walters, I had been dismissed by multiple physicians who told me my labs were "normal." I was exhausted, couldn't build muscle despite training consistently, and felt like a shell of myself at 27. Dr. Walters was the first physician who actually dug into why my testosterone was low. He identified hypogonadism, low testosterone, and low Vitamin D as connected pieces of the same puzzle. Within a few weeks I felt better than I had felt in years.</div><div class="story-footer"><div><div class="story-name">Cole G.</div><div class="story-tag">Patient</div></div><button class="expand-btn" onclick="toggleStory('sf-cole',this)">Read full story →</button></div></div>
+        <div class="story-card" data-filter="all men veterans"><div class="quote-mark">"</div><p class="story-quote">Doc Walters is more than my physician. He is one of my most trusted mentors. I have never had a doctor care as much or invest as much in me as he has over these last six years.</p><div class="story-full" id="sf-bob">I came to Dr. Walters after years of feeling like my body was working against me despite everything I had done in my career to stay physically elite. What I found was a physician who actually wanted to understand the root cause — not just manage symptoms. Over six years, he has transformed how I think about health, performance, and aging. Doc Walters is more than my physician. He is one of my most trusted mentors.</div><div class="story-footer"><div><div class="story-name">Bob R.</div><div class="story-tag">Retired US Navy SEAL Officer</div></div><button class="expand-btn" onclick="toggleStory('sf-bob',this)">Read full story →</button></div></div>
+        <div class="story-card" data-filter="all men veterans"><div class="quote-mark">"</div><p class="story-quote">At 45 years old, I feel like and I'm performing as if I am back in my late 20s. I could never quantify how much my quality of life has improved.</p><div class="story-full" id="sf-william">Before working with Dr. Walters, I had accepted that how I felt was just what getting older looked like. I was wrong. At 45 years old, I feel like I'm performing as if I'm back in my late 20s. The lab tests confirm it — objective markers of health have improved significantly. But numbers don't capture what this has actually meant for my daily life and my sense of self. Dr. Walters gave me that.</div><div class="story-footer"><div><div class="story-name">William L.</div><div class="story-tag">Veteran</div></div><button class="expand-btn" onclick="toggleStory('sf-william',this)">Read full story →</button></div></div>
+        <div class="story-card" data-filter="all women"><div class="quote-mark">"</div><p class="story-quote">Dr. Walters has unequivocally helped me with every condition I came to him with. He does not treat the symptom — he treats the root cause.</p><div class="story-full" id="sf-janet">I have been a patient of Dr. Walters for over twelve years. In that time, he has helped me with osteoporosis, extreme depression, insomnia, postmenopausal symptoms, and so much more. He sits with you, listens deeply, and actually figures out why your body is struggling. He gives you hope and the tools for self-empowering control over your own health.</div><div class="story-footer"><div><div class="story-name">Janet Z.</div><div class="story-tag">Patient of 12+ Years</div></div><button class="expand-btn" onclick="toggleStory('sf-janet',this)">Read full story →</button></div></div>
+        <div class="story-card" data-filter="all women"><div class="quote-mark">"</div><p class="story-quote">Dr. Walters will really take the time to sit and listen to everything you tell him. Besides being an outstanding doctor, he is one of the kindest people we've ever known.</p><div class="story-full" id="sf-tammy">Dr. Walters will really take the time to sit and listen to everything you tell him — and you can tell immediately that he actually cares. It's not a performance. He is genuinely invested in your health and wellbeing. Besides being an outstanding doctor with incredible depth of knowledge, he is one of the kindest people we've ever known.</div><div class="story-footer"><div><div class="story-name">Tammy G.</div><div class="story-tag">Patient</div></div><button class="expand-btn" onclick="toggleStory('sf-tammy',this)">Read full story →</button></div></div>
+        <div class="story-card" data-filter="all men veterans"><div class="quote-mark">"</div><p class="story-quote">Dr. Walters has basically saved my sanity. He gave me my life back. I will always go to him for anything I might need.</p><div class="story-full" id="sf-oris">I don't say this lightly: Dr. Walters has basically saved my sanity. When I came to him, I was in a dark place — physically depleted and emotionally struggling in ways I didn't fully understand. He figured out what was happening when no one else had. He gave me my life back.</div><div class="story-footer"><div><div class="story-name">Oris R.</div><div class="story-tag">Veteran</div></div><button class="expand-btn" onclick="toggleStory('sf-oris',this)">Read full story →</button></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ FAQ ═══ -->
+<div id="page-faq" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">FAQ</div>
+      <h1 class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;max-width:600px;margin-bottom:1.5rem">Frequently asked questions</h1>
+      <p style="font-size:1rem;color:#A8A39C;max-width:520px;line-height:1.7">Real pre-visit questions, answered directly.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container-narrow">
+      <div class="accordion-section"><div class="accordion-header"><div class="accordion-line" style="background:var(--coral)"></div><div class="label" style="color:var(--coral);margin-bottom:0">About Dr. Walters & the Practice</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">What makes Dr. Walters different from other hormone clinics?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Most hormone clinics measure a testosterone number and prescribe testosterone. Dr. Walters evaluates the entire HPG axis to understand why your hormones are dysregulated. He holds a PhD in reproductive endocrinology — a credential virtually no other hormone clinic physician holds — and has 25 years of clinical experience treating the root cause of hormonal decline.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Does Dr. Walters treat both men and women?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Yes. Dr. Walters treats male and female patients of all ages. His practice includes hormone optimization for menopause, andropause, low testosterone in young men, and complex hormonal presentations across the lifespan.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Where is Dr. Walters located?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Dr. Walters is based in South Dakota and holds a monthly two-day clinic in Colorado Springs, Colorado. South Dakota patients are seen via telemedicine or in person in his Hot Springs, SD clinic. Colorado patients are seen in person for their first visit, then via telemedicine.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Is Dr. Walters accepting new patients?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Yes. South Dakota patients can book a telemedicine appointment by calling (719) 544-0199. Colorado patients are seen at the monthly Colorado Springs clinic. Contact Jennifer Thompson, Office Manager, to schedule.</div></div>
+      </div>
+      <div class="accordion-section"><div class="accordion-header"><div class="accordion-line" style="background:var(--amber)"></div><div class="label" style="color:var(--amber);margin-bottom:0">For Young Men</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">I'm in my 20s and my testosterone is low. Can Dr. Walters help?</span><span class="accordion-icon" style="color:var(--amber)">+</span></button><div class="accordion-body">Yes — and this is one of Dr. Walters' primary areas of focus. Low testosterone in young men is increasingly common and is often driven by endocrine-disrupting chemical (EDC) exposure that suppresses the HPG axis. For most young men, Dr. Walters uses clomiphene citrate rather than testosterone replacement — an approach that restores natural production without suppressing fertility or creating long-term dependency.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Why won't Dr. Walters just give me testosterone?</span><span class="accordion-icon" style="color:var(--amber)">+</span></button><div class="accordion-body">Exogenous testosterone signals your body to stop producing its own. For a young man, this typically results in testicular atrophy, reduced sperm production, and potential permanent fertility consequences. Clomiphene addresses the mechanism of suppression rather than bypassing it. It is a fundamentally more appropriate treatment for most young men.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Will my insurance cover treatment?</span><span class="accordion-icon" style="color:var(--amber)">+</span></button><div class="accordion-body">Dr. Walters is a cash-pay practice and does not bill insurance. Lab work is ordered through major laboratories that bill insurance directly for insured patients.</div></div>
+      </div>
+      <div class="accordion-section"><div class="accordion-header"><div class="accordion-line" style="background:var(--sage)"></div><div class="label" style="color:var(--sage);margin-bottom:0">Telemedicine</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Can I see Dr. Walters without traveling to Colorado?</span><span class="accordion-icon" style="color:var(--sage)">+</span></button><div class="accordion-body">Yes. South Dakota patients can establish a complete physician-patient relationship via secure video telemedicine — no in-person visit required. Colorado patients require one in-person visit to the Colorado Springs clinic, after which all follow-up care can be via telemedicine.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">What technology do I need?</span><span class="accordion-icon" style="color:var(--sage)">+</span></button><div class="accordion-body">Any device with a camera and microphone — smartphone, tablet, or computer. Dr. Walters uses Signal for secure video appointments.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Can Dr. Walters order labs remotely?</span><span class="accordion-icon" style="color:var(--sage)">+</span></button><div class="accordion-body">Yes. Labs are ordered through major national laboratories. You have your blood drawn at a local lab near you and the results are sent to Dr. Walters for review.</div></div>
+      </div>
+      <div class="accordion-section"><div class="accordion-header"><div class="accordion-line" style="background:var(--off-white)"></div><div class="label" style="color:var(--off-white);margin-bottom:0">Visits & Payment</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">What happens at my first appointment?</span><span class="accordion-icon">+</span></button><div class="accordion-body">New patients complete intake paperwork (approximately 15 minutes before the appointment). The initial consultation takes 30–45 minutes: complete health and exposure history, symptom review, goal discussion, and lab orders. Initial visit: $195. Follow-up visits: $125.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Do you accept insurance?</span><span class="accordion-icon">+</span></button><div class="accordion-body">No. Dr. Walters is a 100% cash-pay practice. He does not accept insurance, Medicare, or Medicaid. Accepted payment: cash, check, credit/debit card, CareCredit.</div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">How many visits will I need?</span><span class="accordion-icon">+</span></button><div class="accordion-body">Most patients need one to five visits for initial evaluation and protocol establishment. Ongoing monitoring typically involves quarterly or semi-annual follow-ups.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ RESEARCH ═══ -->
+<div id="page-research" class="page">
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">From the Research</div>
+      <h1 class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;max-width:720px;margin-bottom:1.5rem">The science behind<br><span style="color:var(--coral)">the testosterone crisis</span></h1>
+      <p style="font-size:1rem;color:#A8A39C;max-width:600px;line-height:1.7">The hormonal crisis affecting men and women today is documented in peer-reviewed scientific literature. It is not fringe. It is not anecdotal. It has been measured, published, and largely ignored by the medical mainstream.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="label" style="margin-bottom:1rem">Key Literature</div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:.5rem">Foundational evidence base</h2>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:2.5rem;max-width:620px">The peer-reviewed studies Dr. Walters' clinical framework is built upon.</p>
+      <div style="display:grid;gap:1rem">
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">2017</div><span class="chip" style="margin-top:.5rem;display:inline-block">Sperm Count</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Levine H, et al.</em> Temporal trends in sperm count: a systematic review and meta-regression analysis of 185 studies. <span style="color:var(--muted)">Human Reproduction Update.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">Sperm counts in Western men fell by more than 52% between 1973 and 2011, with no sign of leveling off. The most comprehensive documentation of the sperm count crisis.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/28981654/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">2007</div><span class="chip" style="margin-top:.5rem;display:inline-block">Testosterone</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Travison TG, et al.</em> A population-level decline in serum testosterone levels in American men. <span style="color:var(--muted)">JCEM.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">Average testosterone levels fell significantly between 1987 and 2004, independent of age — affecting men at every stage of life.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/17062768/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">1992</div><span class="chip" style="margin-top:.5rem;display:inline-block">Foundational</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Carlsen E, et al.</em> Evidence for decreasing quality of semen during the past 50 years. <span style="color:var(--muted)">BMJ.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">The landmark meta-analysis that first documented sperm count decline and prompted decades of subsequent research into environmental causes.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/1393072/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+        <div class="lit-card"><div><div style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--off-white);font-weight:500">2015</div><span class="chip" style="margin-top:.5rem;display:inline-block">EDC Mechanism</span></div><div><div style="font-size:.925rem;color:var(--off-white);margin-bottom:.35rem;line-height:1.5"><em>Gore AC, et al.</em> EDC-2: The Endocrine Society's Second Scientific Statement on Endocrine-Disrupting Chemicals. <span style="color:var(--muted)">Endocrine Reviews.</span></div><div style="color:var(--muted);font-size:.85rem;line-height:1.6">The Endocrine Society's official consensus statement on EDCs — documenting mechanisms of action and effects on male and female reproductive health.</div></div><a href="https://pubmed.ncbi.nlm.nih.gov/26544531/" target="_blank" style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--sage);text-decoration:none;border:1px solid rgba(122,158,126,.3);padding:.3rem .6rem;border-radius:2px;white-space:nowrap;align-self:start">PubMed →</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="label" style="margin-bottom:1rem">Medical Anarchy on Substack</div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.4rem);margin-bottom:.5rem">The Testosterone Crisis</h2>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:2.5rem;max-width:680px">Dr. Walters' 20-part series — the most comprehensive publicly available explanation of the EDC-testosterone link written by a practicing physician with a research background in reproductive endocrinology.</p>
+      <div class="grid-3" style="margin-bottom:2.5rem">
+        <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act I</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 1–4</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">The Crisis Is Real</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Documenting the population-level data: sperm count decline, testosterone decline, and why the medical mainstream has failed to respond.</p></div>
+        <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act II</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 5–8</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">The Mechanism</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">How endocrine-disrupting chemicals suppress the HPG axis via ERα binding — established endocrinology, not fringe hypothesis.</p></div>
+        <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act III</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 9–12</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">The Chemical Culprits</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Deep dive into BPA, phthalates, PFAS, glyphosate, parabens, atrazine, and other specific chemical categories driving the crisis.</p></div>
+        <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act IV</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 13–16</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">The Clinical Response</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Why testosterone replacement is wrong for most young men, and why clomiphene citrate is the mechanistically correct intervention.</p></div>
+        <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act V</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 17–20</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">What You Can Do</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Practical guidance on reducing EDC exposure, navigating the healthcare system, and finding the right physician.</p></div>
+      </div>
+      <a href="https://drdavidwalters.substack.com" target="_blank" class="btn btn-primary">Read the full series on Substack →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="serif" style="font-size:1.3rem;margin-bottom:.5rem">Dr. David Walters</div><div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem">DO · PhD · MBA</div><p style="color:var(--muted);font-size:.875rem;line-height:1.6;max-width:280px">Hormone optimization physician. 25+ years of clinical experience. One of the only physicians in the country with a PhD in reproductive endocrinology.</p></div>
+      <div><div class="label" style="margin-bottom:1rem">Colorado Clinic</div><p style="color:var(--muted);font-size:.875rem;line-height:1.8">13530 Northgate Estates Dr., Ste. 110<br>Colorado Springs, CO 80921<br>Monthly two-day clinic<br><a href="tel:7195440199" style="color:var(--off-white);text-decoration:none">(719) 544-0199</a></p></div>
+      <div><div class="label" style="margin-bottom:1rem">South Dakota</div><p style="color:var(--muted);font-size:.875rem;line-height:1.8">Hot Springs, SD<br>Telemedicine & In-person<br><a href="tel:7195440199" style="color:var(--off-white);text-decoration:none">(719) 544-0199</a></p></div>
+      <div><div class="label" style="margin-bottom:1rem">Follow</div><a href="https://drdavidwalters.substack.com" target="_blank" style="display:block;color:var(--muted);font-size:.875rem;text-decoration:none;margin-bottom:.5rem">Substack — Medical Anarchy</a><a href="https://twitter.com/DrDavidWalters1" target="_blank" style="display:block;color:var(--muted);font-size:.875rem;text-decoration:none;margin-bottom:1.5rem">X — @DrDavidWalters1</a><div class="label" style="margin-bottom:.75rem">Quick Links</div>
+        <a href="#" onclick="showPage('youngmen')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">Young Men & Low T</a>
+        <a href="#" onclick="showPage('physicians')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">For Physicians</a>
+        <a href="#" onclick="showPage('telemedicine')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">Telemedicine</a>
+        <a href="#" onclick="showPage('research')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">From the Research</a>
+        <a href="#" onclick="showPage('faq')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-copy"><span>© 2026 Dr. David Walters. All rights reserved.</span><span>Medical Anarchy — Your health. Your rules.</span></div>
+  </div>
+</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleAccordion(btn){
+  const body=btn.nextElementSibling;
+  const icon=btn.querySelector('.accordion-icon');
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.accordion-body').forEach(b=>{b.classList.remove('open')});
+  document.querySelectorAll('.accordion-icon').forEach(i=>{i.style.transform='none'});
+  if(!isOpen){body.classList.add('open');icon.style.transform='rotate(45deg)'}
+}
+function toggleStory(id,btn){
+  const el=document.getElementById(id);
+  const isOpen=el.classList.contains('open');
+  el.classList.toggle('open');
+  btn.textContent=isOpen?'Read full story →':'Show less ↑';
+}
+function filterStories(filter,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#storiesGrid .story-card').forEach(card=>{
+    const filters=card.dataset.filter||'';
+    card.style.display=(filter==='all'||filters.includes(filter))?'block':'none';
+  });
+}
+</script>
+</body>
+</html>
