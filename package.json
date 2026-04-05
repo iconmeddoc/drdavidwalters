@@ -1,222 +1,24 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'From the Research',
-  description: 'The hormonal crisis affecting men and women today is documented in peer-reviewed scientific literature. Dr. Walters\' published work, key studies, and the Medical Anarchy Substack series.',
-}
-
-const keyLiterature = [
-  {
-    authors: 'Levine H, et al.',
-    title: 'Temporal trends in sperm count: a systematic review and meta-regression analysis of 185 studies.',
-    journal: 'Human Reproduction Update.',
-    year: '2017',
-    summary: 'Sperm counts in Western men fell by more than 52% between 1973 and 2011, with no sign of leveling off. This landmark meta-analysis is the most comprehensive documentation of the sperm count crisis.',
-    href: 'https://pubmed.ncbi.nlm.nih.gov/28981654/',
-    tag: 'Sperm Count Decline',
+{
+  "name": "drdavidwalters",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  {
-    authors: 'Travison TG, et al.',
-    title: 'A population-level decline in serum testosterone levels in American men.',
-    journal: 'Journal of Clinical Endocrinology & Metabolism.',
-    year: '2007',
-    summary: 'Average testosterone levels in American men fell significantly between 1987 and 2004, independent of age — meaning the decline affects men at every age, not just older men.',
-    href: 'https://pubmed.ncbi.nlm.nih.gov/17062768/',
-    tag: 'Testosterone Decline',
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
-  {
-    authors: 'Carlsen E, et al.',
-    title: 'Evidence for decreasing quality of semen during the past 50 years.',
-    journal: 'BMJ.',
-    year: '1992',
-    summary: 'The original landmark meta-analysis that first documented sperm count decline and prompted decades of subsequent research into environmental causes.',
-    href: 'https://pubmed.ncbi.nlm.nih.gov/1393072/',
-    tag: 'Foundational Study',
-  },
-  {
-    authors: 'Skakkebaek NE, et al.',
-    title: 'Male Reproductive Disorders and Fertility Trends: Influences of Environment and Genetic Susceptibility.',
-    journal: 'Physiological Reviews.',
-    year: '2016',
-    summary: 'Comprehensive review linking environmental EDC exposure to male reproductive disorders, including declining testosterone, sperm quality, and testicular function.',
-    href: 'https://pubmed.ncbi.nlm.nih.gov/26582516/',
-    tag: 'EDC Mechanism',
-  },
-  {
-    authors: 'Gore AC, et al.',
-    title: 'EDC-2: The Endocrine Society\'s Second Scientific Statement on Endocrine-Disrupting Chemicals.',
-    journal: 'Endocrine Reviews.',
-    year: '2015',
-    summary: 'The Endocrine Society\'s official consensus statement on EDCs — documenting their mechanisms of action and their effects on male and female reproductive health.',
-    href: 'https://pubmed.ncbi.nlm.nih.gov/26544531/',
-    tag: 'EDC Mechanism',
-  },
-  {
-    authors: 'Swan SH & Colino S.',
-    title: 'Count Down.',
-    journal: 'Scribner.',
-    year: '2021',
-    summary: 'Accessible synthesis of 20+ years of EDC and reproductive health research by one of the leading researchers in reproductive epidemiology. Required reading for understanding the scope of the crisis.',
-    href: null,
-    tag: 'Book',
-  },
-]
-
-const seriesActs = [
-  {
-    act: 'Act I',
-    title: 'The Crisis Is Real',
-    weeks: 'Weeks 1–4',
-    desc: 'Documenting the population-level data: sperm count decline, testosterone decline, and why the medical mainstream has failed to respond appropriately.',
-  },
-  {
-    act: 'Act II',
-    title: 'The Mechanism',
-    weeks: 'Weeks 5–8',
-    desc: 'The science of how endocrine-disrupting chemicals suppress the HPG axis via ERα binding — and why this is not fringe hypothesis but established endocrinology.',
-  },
-  {
-    act: 'Act III',
-    title: 'The Chemical Culprits',
-    weeks: 'Weeks 9–12',
-    desc: 'A deep dive into the specific chemical categories driving the crisis: BPA, phthalates, PFAS, glyphosate, parabens, atrazine, and others.',
-  },
-  {
-    act: 'Act IV',
-    title: 'The Clinical Response',
-    weeks: 'Weeks 13–16',
-    desc: 'Why testosterone replacement is the wrong answer for most young men, and why clomiphene citrate represents the mechanistically correct intervention.',
-  },
-  {
-    act: 'Act V',
-    title: 'What You Can Do',
-    weeks: 'Weeks 17–20',
-    desc: 'Practical guidance on reducing EDC exposure, navigating the healthcare system, finding the right physician, and understanding your options.',
-  },
-]
-
-export default function ResearchPage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="container-wide">
-          <div className="label animate-fade-up animate-delay-1" style={{ marginBottom: '1.5rem' }}>From the Research</div>
-          <h1 className="animate-fade-up animate-delay-2" style={{
-            fontFamily: 'var(--font-dm-serif)',
-            fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
-            lineHeight: '1.1',
-            letterSpacing: '-0.02em',
-            maxWidth: '720px',
-            marginBottom: '1.5rem',
-          }}>
-            The science behind<br/>
-            <span style={{ color: 'var(--coral)' }}>the testosterone crisis</span>
-          </h1>
-          <p className="animate-fade-up animate-delay-3" style={{ fontSize: '1rem', color: '#A8A39C', maxWidth: '600px', lineHeight: '1.7' }}>
-            The hormonal crisis affecting men and women today is documented in the peer-reviewed scientific literature. It is not fringe. It is not anecdotal. It has been measured, published, and largely ignored by the medical mainstream.
-          </p>
-        </div>
-      </section>
-
-      {/* Dr. Walters' published research */}
-      <section style={{ background: '#0A0A0A', borderBottom: '1px solid var(--border)', padding: '4rem 0' }}>
-        <div className="container-wide">
-          <div className="label" style={{ marginBottom: '1rem' }}>Dr. Walters' Published Research</div>
-          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '4px', padding: '2.5rem' }}>
-            <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-              Dr. Walters' complete publication list is being compiled for this page. His published research includes work on endocrine-disrupting chemicals, HPG axis suppression, and the clomiphene citrate framework — as well as earlier post-doctoral research establishing ovarian oxytocin production.
-            </p>
-            <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: '1.7' }}>
-              In the interim, Dr. Walters' most extensive body of public-facing scientific writing is available through the Medical Anarchy Substack series below.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Key literature */}
-      <section className="section-pad">
-        <div className="container-wide">
-          <div className="label" style={{ marginBottom: '1rem' }}>Key Literature</div>
-          <h2 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', marginBottom: '0.5rem' }}>Foundational evidence base</h2>
-          <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '2.5rem', maxWidth: '620px' }}>
-            These are the peer-reviewed studies Dr. Walters' clinical framework is built upon. Together they document the population-level hormonal decline and its most likely environmental causes.
-          </p>
-          <div style={{ display: 'grid', gap: '1rem' }}>
-            {keyLiterature.map((ref, i) => (
-              <div key={i} className="card" style={{ display: 'grid', gridTemplateColumns: '80px 1fr auto', gap: '1.5rem', alignItems: 'start' }}>
-                <div>
-                  <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '0.75rem', color: 'var(--off-white)', fontWeight: 500 }}>{ref.year}</div>
-                  <div className="chip" style={{ marginTop: '0.5rem', display: 'inline-block' }}>{ref.tag}</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.925rem', color: 'var(--off-white)', marginBottom: '0.35rem', lineHeight: '1.5' }}>
-                    <strong style={{ fontWeight: 500 }}>{ref.authors}</strong> {ref.title}{' '}
-                    <em style={{ color: 'var(--muted)' }}>{ref.journal}</em>
-                  </div>
-                  <div style={{ color: 'var(--muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>{ref.summary}</div>
-                </div>
-                {ref.href ? (
-                  <a href={ref.href} target="_blank" rel="noopener noreferrer" style={{
-                    fontFamily: 'var(--font-dm-mono)',
-                    fontSize: '0.65rem',
-                    color: 'var(--sage)',
-                    textDecoration: 'none',
-                    letterSpacing: '0.08em',
-                    flexShrink: 0,
-                    border: '1px solid rgba(122,158,126,0.3)',
-                    padding: '0.3rem 0.6rem',
-                    borderRadius: '2px',
-                    whiteSpace: 'nowrap',
-                  }}>PubMed →</a>
-                ) : <div/>}
-              </div>
-            ))}
-          </div>
-          <style>{`@media (max-width: 640px) { .lit-grid { grid-template-columns: 1fr !important; } }`}</style>
-        </div>
-      </section>
-
-      {/* The Testosterone Crisis series */}
-      <section style={{ background: '#0A0A0A', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }} className="section-pad">
-        <div className="container-wide">
-          <div className="label" style={{ marginBottom: '1rem' }}>Medical Anarchy on Substack</div>
-          <h2 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', marginBottom: '0.5rem' }}>The Testosterone Crisis</h2>
-          <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '2.5rem', maxWidth: '680px' }}>
-            Dr. Walters' 20-part series is the most comprehensive publicly available explanation of the EDC-testosterone link written for a general audience by a practicing physician with a research background in reproductive endocrinology. Read the complete series on Substack.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
-            {seriesActs.map((act, i) => (
-              <div key={i} className="card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <span className="chip">{act.act}</span>
-                  <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '0.62rem', color: 'var(--muted)', letterSpacing: '0.08em' }}>{act.weeks}</span>
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: '1.1rem', color: 'var(--off-white)', marginBottom: '0.5rem' }}>{act.title}</h3>
-                <p style={{ color: 'var(--muted)', fontSize: '0.85rem', lineHeight: '1.6' }}>{act.desc}</p>
-              </div>
-            ))}
-          </div>
-          <a href="https://drdavidwalters.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Read the full series on Substack →
-          </a>
-        </div>
-      </section>
-
-      {/* Subscribe CTA */}
-      <section className="section-pad">
-        <div className="container-narrow" style={{ textAlign: 'center' }}>
-          <div className="label" style={{ marginBottom: '1rem' }}>Stay Current</div>
-          <h2 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', marginBottom: '1rem' }}>Medical Anarchy — ongoing research &amp; commentary</h2>
-          <p style={{ color: 'var(--muted)', lineHeight: '1.7', marginBottom: '2rem', fontSize: '0.95rem' }}>
-            Dr. Walters publishes ongoing research analysis, clinical commentary, and patient-facing education through Medical Anarchy. Subscribe for new material delivered to your inbox.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://drdavidwalters.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Subscribe to Medical Anarchy</a>
-            <Link href="/telemedicine" className="btn-secondary">Book a consultation →</Link>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "tailwindcss": "^3.4"
+  }
 }
