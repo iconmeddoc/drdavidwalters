@@ -150,7 +150,23 @@ blockquote{border-left:3px solid var(--coral);padding-left:1.5rem;margin:2rem 0;
 .delay-3{animation-delay:.4s;opacity:0}
 .delay-4{animation-delay:.55s;opacity:0}
 /* RESPONSIVE */
-@media(max-width:1024px){.nav-links{display:none}.hamburger{display:flex}} @media(max-width:900px){.hero-photo-grid{grid-template-columns:1fr!important} .hero-photo-col{display:none!important}} @media(max-width:768px){.about-photo-grid{grid-template-columns:1fr!important} .about-photo-sticky{position:static!important}}
+@media(max-width:1024px){.nav-links{display:none}.hamburger{display:flex}}
+.form-label{display:block;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.form-input{width:100%;background:var(--bg-elevated);border:1px solid var(--border);border-radius:2px;padding:.65rem .85rem;color:var(--off-white);font-family:'Instrument Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;box-sizing:border-box}
+.form-input:focus{border-color:var(--coral)}
+textarea.form-input{min-height:80px;resize:vertical}
+select.form-input{appearance:none;cursor:pointer}
+.form-section{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.form-section:last-child{border-bottom:none}
+.form-section-head{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--coral);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.check-label{display:flex;align-items:flex-start;gap:.5rem;cursor:pointer;padding:.2rem 0}
+.check-label span{font-size:.875rem;color:#C8C3BC;line-height:1.4}
+.form-check{margin-top:2px;accent-color:var(--coral);flex-shrink:0}
+@media(max-width:640px){
+  #intakeForm [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+  #intakeForm [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+  #intakeForm [style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important}
+} @media(max-width:900px){.hero-photo-grid{grid-template-columns:1fr!important} .hero-photo-col{display:none!important}} @media(max-width:768px){.about-photo-grid{grid-template-columns:1fr!important} .about-photo-sticky{position:static!important}}
 @media(max-width:768px){.compare-grid{grid-template-columns:1fr}.grid-2{gap:2rem}.lit-card{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:480px){.hero-h1{font-size:2rem}.lead-form{flex-direction:column}}
 a{color:inherit}
@@ -173,6 +189,7 @@ a{color:inherit}
       <a class="nav-link" href="#" onclick="showPage('telemedicine')">Telemedicine</a>
       <a class="nav-link" href="#" onclick="showPage('stories')">Patient Stories</a>
       <a class="nav-link" href="#" onclick="showPage('research')">Research</a>
+      <a class="nav-link" href="#" onclick="showPage('forms')">New Patient Forms</a>
       <a class="btn btn-primary" href="#" onclick="showPage('telemedicine')" style="padding:.6rem 1.2rem;font-size:.7rem">Book Appointment</a>
     </div>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -189,6 +206,7 @@ a{color:inherit}
   <a class="mobile-link" href="#" onclick="showPage('telemedicine');toggleMenu()">Telemedicine</a>
   <a class="mobile-link" href="#" onclick="showPage('stories');toggleMenu()">Patient Stories</a>
   <a class="mobile-link" href="#" onclick="showPage('research');toggleMenu()">Research</a>
+  <a class="mobile-link" href="#" onclick="showPage('forms');toggleMenu()">New Patient Forms</a>
   <a class="mobile-link btn btn-primary" style="margin-top:1.5rem;display:inline-flex" href="#" onclick="showPage('telemedicine');toggleMenu()">Book Appointment</a>
 </div>
 
@@ -589,6 +607,20 @@ a{color:inherit}
       <h2 class="serif" style="font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1rem">Ready to get started?</h2>
       <p style="color:var(--muted);line-height:1.7;margin-bottom:2.5rem">Call Jennifer Thompson, Office Manager, to schedule your first appointment.</p>
       <a href="tel:7195440199" class="btn btn-primary" style="font-size:1rem">(719) 544-0199</a>
+        <a class="btn btn-secondary" href="#" onclick="showPage('forms')" style="margin-top:.75rem;display:inline-flex">Complete new patient forms →</a>
+    </div>
+  </section>
+
+  <!-- TELEMEDICINE INTAKE SECTION -->
+  <section style="background:#0D0A09;border-top:1px solid rgba(196,18,48,0.2);padding:4rem 0">
+    <div class="container-narrow" style="text-align:center">
+      <div class="label" style="margin-bottom:1rem">New Patients</div>
+      <h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1rem">Complete your intake forms before your visit</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem;font-size:.95rem">Save time at your appointment by submitting your patient information in advance. Telemedicine patients can complete everything online. In-person patients may download and print the PDF.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#" onclick="showPage('forms')">Complete forms online →</a>
+        <button class="btn btn-secondary" onclick="downloadIntake()">Download PDF form</button>
+      </div>
     </div>
   </section>
 </div>
@@ -698,6 +730,288 @@ a{color:inherit}
   </section>
 </div>
 
+
+<!-- ═══════════════════════════════════════════ FORMS ═══ -->
+<div id="page-forms" class="page">
+
+  <style>
+  /* ── Print styles: white background, dark text, ink-friendly ── */
+  @media print {
+    nav, footer, .page-hero .btn, #form-options, #form-actions,
+    #signal-instructions-box .btn, #signal-instructions-box .btn-secondary,
+    .no-print { display: none !important; }
+    body, .page, #page-forms { background: #fff !important; color: #111 !important; }
+    body::before { display: none !important; }
+    #page-forms * { color: #111 !important; background: transparent !important;
+      border-color: #ccc !important; }
+    .form-label { color: #444 !important; font-size: 8pt !important; }
+    .form-input { border: 1px solid #999 !important; background: #fff !important;
+      color: #111 !important; padding: 4pt 6pt !important; }
+    h1, h2, h3, .serif { color: #111 !important; }
+    .label { color: #C41230 !important; }
+    #signal-instructions-box { display: none !important; }
+    #form-summary-print { display: block !important; }
+    #intakeForm { display: block !important; }
+    .page-hero { padding: 1rem 0 0.5rem !important; border: none !important; }
+    .container-narrow { padding: 0 !important; }
+    section { padding: 0.5rem 0 !important; border: none !important; }
+    .accent-line { background: #C41230 !important; }
+    input[type="checkbox"] { accent-color: #C41230 !important; }
+  }
+  #form-summary-print { display: none; }
+  </style>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="label animate-fade-up animate-delay-1" style="margin-bottom:1.5rem">New Patient Forms</div>
+      <h1 class="serif animate-fade-up animate-delay-2" style="font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;max-width:700px;margin-bottom:1.5rem">
+        New patient intake<br/><span style="color:var(--coral)">complete before your visit</span>
+      </h1>
+      <p class="animate-fade-up animate-delay-3" style="font-size:1rem;color:#A8A39C;max-width:580px;line-height:1.7;margin-bottom:2rem">
+        Complete your information below before your first appointment. When finished, you'll send it to us directly via Signal — the same secure, encrypted platform Dr. Walters uses for all patient communication.
+      </p>
+      <div class="animate-fade-up animate-delay-4" style="display:flex;gap:1rem;flex-wrap:wrap" id="form-actions">
+        <a class="btn btn-primary" href="#online-form">Complete Online →</a>
+        <button class="btn btn-secondary no-print" onclick="downloadIntake()">Download PDF Form</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Options -->
+  <section class="section-dark" id="form-options">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
+        <div class="card" style="border:1px solid rgba(196,18,48,0.3)">
+          <div class="label" style="margin-bottom:.75rem">Online</div>
+          <h3 class="serif" style="font-size:1.15rem;margin-bottom:.5rem">Complete the online form</h3>
+          <p style="color:#C8C3BC;font-size:.875rem;line-height:1.6;margin-bottom:1.25rem">Fill out the form below, then copy your completed summary and send it to Dr. Walters via Signal. Fast, secure, no account needed.</p>
+          <a class="btn btn-primary" href="#online-form" style="font-size:.72rem">Go to form →</a>
+        </div>
+        <div class="card">
+          <div class="label" style="color:var(--amber);margin-bottom:.75rem">PDF / Print</div>
+          <h3 class="serif" style="font-size:1.15rem;margin-bottom:.5rem">Download & print</h3>
+          <p style="color:#C8C3BC;font-size:.875rem;line-height:1.6;margin-bottom:1.25rem">Download the 3-page form, complete it at home, and bring it to your appointment. Designed to print ink-efficiently on white background.</p>
+          <button class="btn btn-secondary no-print" onclick="downloadIntake()" style="font-size:.72rem">Download PDF</button>
+        </div>
+        <div class="card">
+          <div class="label" style="color:var(--sage);margin-bottom:.75rem">Questions?</div>
+          <h3 class="serif" style="font-size:1.15rem;margin-bottom:.5rem">Call the office</h3>
+          <p style="color:#C8C3BC;font-size:.875rem;line-height:1.6;margin-bottom:1.25rem">Jennifer Thompson, Office Manager, can help you prepare for your first visit or answer any questions about the intake process.</p>
+          <a href="tel:7195440199" class="btn btn-secondary" style="font-size:.72rem">(719) 544-0199</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online Form -->
+  <section id="online-form">
+    <div class="container-narrow">
+      <div class="accent-line"></div>
+      <h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:.5rem">New patient intake form</h2>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:2rem">Complete all sections, then use the button at the bottom to generate your summary and send it via Signal. Fields marked * are required.</p>
+
+      <form id="intakeForm" onsubmit="generateSignalSummary(event)">
+
+        <!-- PATIENT INFO -->
+        <div class="form-section">
+          <div class="form-section-head">Patient Information</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+            <div><label class="form-label">Full Legal Name *</label><input class="form-input" type="text" name="full_name" required/></div>
+            <div><label class="form-label">Date of Birth *</label><input class="form-input" type="date" name="dob" required/></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem">
+            <div><label class="form-label">Cell Phone *</label><input class="form-input" type="tel" name="phone" required/></div>
+            <div><label class="form-label">Email Address *</label><input class="form-input" type="email" name="email" required/></div>
+            <div><label class="form-label">Preferred Contact</label>
+              <select class="form-input" name="preferred_contact">
+                <option>Cell Phone</option><option>Email</option><option>Signal</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 0.4fr 0.6fr;gap:1rem;margin-bottom:1rem">
+            <div><label class="form-label">Street Address</label><input class="form-input" type="text" name="address"/></div>
+            <div><label class="form-label">City</label><input class="form-input" type="text" name="city"/></div>
+            <div><label class="form-label">State</label><input class="form-input" type="text" name="state"/></div>
+            <div><label class="form-label">ZIP</label><input class="form-input" type="text" name="zip"/></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div><label class="form-label">Occupation / Employer</label><input class="form-input" type="text" name="occupation"/></div>
+            <div><label class="form-label">Referring Physician (if any)</label><input class="form-input" type="text" name="referring_physician"/></div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY CONTACT -->
+        <div class="form-section">
+          <div class="form-section-head">Emergency Contact</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+            <div><label class="form-label">Name</label><input class="form-input" type="text" name="emergency_name"/></div>
+            <div><label class="form-label">Relationship</label><input class="form-input" type="text" name="emergency_relationship"/></div>
+            <div><label class="form-label">Phone</label><input class="form-input" type="tel" name="emergency_phone"/></div>
+          </div>
+        </div>
+
+        <!-- REASON FOR VISIT -->
+        <div class="form-section">
+          <div class="form-section-head">Reason for Visit *</div>
+          <label class="form-label" style="margin-bottom:.75rem;display:block">Primary symptoms — check all that apply</label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:.4rem;margin-bottom:1.25rem">
+            <label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Fatigue / Low Energy"/><span>Fatigue / Low Energy</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Low Libido"/><span>Low Libido</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Erectile Dysfunction"/><span>Erectile Dysfunction</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Difficulty Building Muscle"/><span>Difficulty Building Muscle</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Increased Body Fat"/><span>Increased Body Fat</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Brain Fog / Poor Concentration"/><span>Brain Fog / Poor Concentration</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Mood Swings / Irritability"/><span>Mood Swings / Irritability</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Depression or Anxiety"/><span>Depression or Anxiety</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Poor Sleep Quality"/><span>Poor Sleep Quality</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Low Testosterone (diagnosed)"/><span>Low Testosterone (diagnosed)</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Infertility / Low Sperm Count"/><span>Infertility / Low Sperm Count</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Bone Density Loss"/><span>Bone Density Loss</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Hot Flashes / Night Sweats"/><span>Hot Flashes / Night Sweats</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Menopausal Symptoms"/><span>Menopausal Symptoms</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Weight Gain"/><span>Weight Gain</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Thyroid Concerns"/><span>Thyroid Concerns</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Joint Pain"/><span>Joint Pain</span></label><label class="check-label"><input type="checkbox" class="form-check" name="symptoms" value="Other"/><span>Other</span></label>
+          </div>
+          <div style="margin-bottom:1rem"><label class="form-label">Describe your primary concern in your own words *</label><textarea class="form-input" name="primary_concern" rows="4" required style="resize:vertical"></textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+            <div><label class="form-label">How long have you had these symptoms?</label><input class="form-input" type="text" name="symptom_duration" placeholder="e.g. 2 years"/></div>
+            <div><label class="form-label">Severity (1 = mild, 10 = severe)</label>
+              <select class="form-input" name="severity"><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+            </div>
+          </div>
+          <div><label class="form-label">Have you been evaluated by another physician for these symptoms? If yes, what was their conclusion?</label><textarea class="form-input" name="prior_evaluation" rows="3" style="resize:vertical"></textarea></div>
+        </div>
+
+        <!-- MEDICATIONS -->
+        <div class="form-section">
+          <div class="form-section-head">Current Medications &amp; Supplements</div>
+          <label class="form-label" style="margin-bottom:.5rem;display:block">List all prescriptions, supplements, and vitamins (name, dose, frequency)</label>
+          <textarea class="form-input" name="medications" rows="5" style="resize:vertical" placeholder="Example: Metformin 500mg twice daily&#10;Vitamin D 5000 IU daily&#10;Fish oil 2g daily"></textarea>
+          <div style="margin-top:1rem"><label class="form-label">Allergies to medications or substances (include reaction)</label>
+          <textarea class="form-input" name="allergies" rows="2" style="resize:vertical" placeholder="Example: Penicillin — hives / Sulfa drugs — rash. Enter NKDA if none."></textarea></div>
+        </div>
+
+        <!-- HORMONE HISTORY -->
+        <div class="form-section">
+          <div class="form-section-head">Prior Hormone Therapy History</div>
+          <label class="form-label" style="margin-bottom:.75rem;display:block">Have you ever received hormone therapy? Check all that apply.</label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.4rem;margin-bottom:1.25rem">
+            <label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Testosterone Replacement (TRT)"/><span>Testosterone Replacement (TRT)</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Clomiphene Citrate (Clomid)"/><span>Clomiphene Citrate (Clomid)</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Estrogen Replacement"/><span>Estrogen Replacement</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Progesterone"/><span>Progesterone</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="DHEA"/><span>DHEA</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="HCG"/><span>HCG</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Thyroid Hormone"/><span>Thyroid Hormone</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="Hormone Pellets"/><span>Hormone Pellets</span></label><label class="check-label"><input type="checkbox" class="form-check" name="hormone_history" value="None — no prior hormone therapy"/><span>None — no prior hormone therapy</span></label>
+          </div>
+          <div><label class="form-label">Describe prior hormone therapy (type, dose, duration, reason stopped)</label>
+          <textarea class="form-input" name="hormone_details" rows="3" style="resize:vertical"></textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1rem">
+            <div><label class="form-label">Most recent testosterone level (ng/dL)</label><input class="form-input" type="text" name="testosterone_level" placeholder="e.g. 320"/></div>
+            <div><label class="form-label">Date of test</label><input class="form-input" type="text" name="testosterone_date" placeholder="e.g. Jan 2025"/></div>
+            <div><label class="form-label">Lab or provider</label><input class="form-input" type="text" name="testosterone_lab"/></div>
+          </div>
+        </div>
+
+        <!-- CHEMICAL EXPOSURE -->
+        <div class="form-section">
+          <div class="form-section-head">Chemical &amp; Environmental Exposure History</div>
+          <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1rem">Dr. Walters evaluates EDC exposure as a primary factor in hormonal decline. Please answer as accurately as possible.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+            <div><label class="form-label">Primary water source</label>
+              <select class="form-input" name="water_source">
+                <option>Unfiltered municipal tap water</option>
+                <option>Filtered tap water (pitcher or under-sink)</option>
+                <option>Reverse osmosis filtered</option>
+                <option>Well water</option>
+                <option>Primarily bottled water</option>
+              </select>
+            </div>
+            <div><label class="form-label">Cookware primarily used</label>
+              <select class="form-input" name="cookware">
+                <option>Non-stick / Teflon</option>
+                <option>Cast iron</option>
+                <option>Stainless steel</option>
+                <option>Mixed — non-stick and other</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-bottom:1rem">
+            <label class="form-label" style="margin-bottom:.5rem;display:block">Occupational or significant chemical exposures</label>
+            <label class="form-label" style="margin-bottom:.75rem;display:block;font-size:.65rem">Check all that apply</label>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.4rem;margin-bottom:.75rem">
+              <label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Pesticides / Herbicides"/><span>Pesticides / Herbicides</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Industrial chemicals / Solvents"/><span>Industrial chemicals / Solvents</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Agriculture"/><span>Agriculture</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Military service"/><span>Military service</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Firefighting"/><span>Firefighting</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Printing / Ink chemicals"/><span>Printing / Ink chemicals</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="Plastics manufacturing"/><span>Plastics manufacturing</span></label><label class="check-label"><input type="checkbox" class="form-check" name="chem_exposure" value="None significant"/><span>None significant</span></label>
+            </div>
+          </div>
+          <div><label class="form-label">Any other chemical or environmental exposures you are aware of</label>
+          <textarea class="form-input" name="other_exposure" rows="2" style="resize:vertical"></textarea></div>
+        </div>
+
+        <!-- FAMILY HISTORY -->
+        <div class="form-section">
+          <div class="form-section-head">Family History</div>
+          <label class="form-label" style="margin-bottom:.75rem;display:block">Has any blood relative been diagnosed with the following? Check all that apply.</label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.4rem;margin-bottom:1rem">
+            <label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Low Testosterone / Hypogonadism"/><span>Low Testosterone / Hypogonadism</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Infertility"/><span>Infertility</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Thyroid Disease"/><span>Thyroid Disease</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Diabetes"/><span>Diabetes</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Cardiovascular Disease"/><span>Cardiovascular Disease</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Prostate Cancer"/><span>Prostate Cancer</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Breast Cancer"/><span>Breast Cancer</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Osteoporosis"/><span>Osteoporosis</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Depression / Anxiety"/><span>Depression / Anxiety</span></label><label class="check-label"><input type="checkbox" class="form-check" name="family_history" value="Autoimmune Disease"/><span>Autoimmune Disease</span></label>
+          </div>
+          <div><label class="form-label">Additional family history notes</label>
+          <textarea class="form-input" name="family_notes" rows="2" style="resize:vertical"></textarea></div>
+        </div>
+
+        <!-- CONSENT -->
+        <div class="form-section">
+          <div class="form-section-head">HIPAA Acknowledgment &amp; Consent to Treatment *</div>
+          <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:4px;padding:1.25rem;margin-bottom:1.25rem">
+            <p style="color:#C8C3BC;font-size:.875rem;line-height:1.7;margin-bottom:.75rem">
+              <strong style="color:var(--off-white)">Signal Communication Acknowledgment:</strong> I understand that Dr. Walters' practice uses Signal Private Messenger for secure patient communication, including transmission of this intake form and subsequent medical information. I consent to receive and send medical information via Signal and understand that while Signal uses end-to-end encryption, it is my responsibility to maintain the security of my own device.
+            </p>
+            <p style="color:#C8C3BC;font-size:.875rem;line-height:1.7;margin-bottom:.75rem">
+              <strong style="color:var(--off-white)">HIPAA:</strong> My health information will be used only as necessary to provide my care and as required by law. It will not be sold. I have the right to access my records and request corrections.
+            </p>
+            <p style="color:#C8C3BC;font-size:.875rem;line-height:1.7">
+              <strong style="color:var(--off-white)">Consent to Treatment:</strong> I consent to evaluation and treatment by Dr. David Walters, DO, PhD, MBA. I understand this is a cash-pay practice and I am responsible for all fees at the time of service. I may withdraw consent at any time.
+            </p>
+          </div>
+          <label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;margin-bottom:1.5rem">
+            <input type="checkbox" name="consent" required style="margin-top:3px;accent-color:var(--coral);transform:scale(1.3)"/>
+            <span style="font-size:.9rem;color:var(--off-white);line-height:1.5">I have read and agree to the Signal Communication Acknowledgment, HIPAA Notice, and Consent to Treatment above. *</span>
+          </label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div><label class="form-label">Full Name (typed signature) *</label><input class="form-input" type="text" name="signature" required placeholder="Type your full legal name"/></div>
+            <div><label class="form-label">Today's Date *</label><input class="form-input" type="date" name="signature_date" required/></div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div style="background:#0D0A09;border:1px solid rgba(196,18,48,0.25);border-radius:4px;padding:2rem;text-align:center;margin-top:1rem">
+          <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.5rem">
+            When you click the button below, your completed form will be formatted into a message ready to copy and send to Dr. Walters via Signal.
+          </p>
+          <button type="submit" class="btn btn-primary" style="font-size:.9rem;padding:1rem 2.5rem">Generate My Signal Message →</button>
+        </div>
+
+      </form>
+
+      <!-- Signal Instructions — shown after form submission -->
+      <div id="signal-instructions-box" style="display:none;margin-top:2rem">
+        <div style="background:var(--bg-card);border:1px solid rgba(196,18,48,0.3);border-radius:4px;padding:2rem;margin-bottom:1.5rem">
+          <div class="label" style="margin-bottom:1rem">Step 1 of 2 — Copy your completed form</div>
+          <h3 class="serif" style="font-size:1.3rem;margin-bottom:.75rem;color:var(--off-white)">Your intake form is ready</h3>
+          <p style="color:#C8C3BC;font-size:.875rem;line-height:1.6;margin-bottom:1.25rem">Click the button below to copy your completed intake summary. Then open Signal and send it to Dr. Walters.</p>
+          <button class="btn btn-primary" onclick="copySummary()" style="margin-bottom:.75rem">Copy Completed Form</button>
+          <div id="copy-confirm" style="display:none;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--sage);letter-spacing:.05em;margin-top:.5rem">✓ Copied to clipboard</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:2rem;margin-bottom:1.5rem">
+          <div class="label" style="color:var(--sage);margin-bottom:1rem">Step 2 of 2 — Send via Signal</div>
+          <h3 class="serif" style="font-size:1.3rem;margin-bottom:.75rem;color:var(--off-white)">Open Signal and send your form</h3>
+          <ol style="color:#C8C3BC;font-size:.9rem;line-height:1.8;padding-left:1.25rem;margin-bottom:1.25rem">
+            <li>Open Signal on your phone or computer</li>
+            <li>Start a new message to Dr. Walters' practice</li>
+            <li>Paste your copied form (Ctrl+V or long-press → Paste)</li>
+            <li>Send the message</li>
+          </ol>
+          <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:4px;padding:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <div>
+              <div class="form-label" style="margin-bottom:.25rem">Dr. Walters' practice Signal contact</div>
+              <div style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--off-white)">(719) 248-4233</div>
+              <div style="font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:2px">Jennifer Thompson, Office Manager</div>
+            </div>
+            <a href="tel:7192484233" class="btn btn-secondary" style="font-size:.72rem">Call if you need help</a>
+          </div>
+        </div>
+        <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:4px;padding:1.25rem;margin-bottom:1.5rem">
+          <div style="font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.05em;margin-bottom:.5rem">Your completed form (for your reference)</div>
+          <pre id="summary-display" style="white-space:pre-wrap;word-break:break-word;font-family:'DM Mono',monospace;font-size:.75rem;color:#C8C3BC;line-height:1.7;max-height:400px;overflow-y:auto;margin:0"></pre>
+        </div>
+        <div style="text-align:center">
+          <button class="btn btn-secondary no-print" onclick="window.print()" style="margin-right:.75rem">Print for your records</button>
+          <button class="btn btn-secondary no-print" onclick="resetForm()">Start over</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
 <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
 <footer>
   <div class="container">
@@ -753,6 +1067,123 @@ function toggleStory(id,btn){
   const isOpen=el.classList.contains('open');
   el.classList.toggle('open');
   btn.textContent=isOpen?'Read full story →':'Show less ↑';
+}
+function downloadIntake(){
+  var b64='JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9aYXBmRGluZ2JhdHMgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTQgMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovQ29udGVudHMgMTUgMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNyAwIG9iago8PAovQ29udGVudHMgMTYgMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ29udGVudHMgMTcgMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ29udGVudHMgMTggMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCAxMyAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL0NvbnRlbnRzIDE5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNjEyIDc5MiBdIC9QYXJlbnQgMTMgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgMTMgMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iagoxMiAwIG9iago8PAovQXV0aG9yIChEci4gRGF2aWQgV2FsdGVycywgRE8sIFBoRCwgTUJBKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwNDA1MjE1ODA4KzAwJzAwJykgL0NyZWF0b3IgKFwodW5zcGVjaWZpZWRcKSkgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwNDA1MjE1ODA4KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKFwodW5zcGVjaWZpZWRcKSkgL1RpdGxlIChOZXcgUGF0aWVudCBJbnRha2UgRm9ybSBcMjA0IERyLiBEYXZpZCBXYWx0ZXJzKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjEzIDAgb2JqCjw8Ci9Db3VudCA2IC9LaWRzIFsgNSAwIFIgNiAwIFIgNyAwIFIgOCAwIFIgOSAwIFIgMTAgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxNCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAyMTM2Cj4+CnN0cmVhbQpHYiIvKmdOKSI9JjpPOlNvXDJGKyhpKzRwaFFWUWE/JVwhLVAxaE0mI1xlaDI4aSZqSitvTTw0a1E0alVgKDtBMVpgXU9wbyVeZydjQ0Y8bzkqY3NATy8wUCgmRSU6K1FRNixxTCFeJFpoVSNcUSI3PUxoUWE7RVVrYDJCKHEmPCZTR2hVdWw6NnBNOSdJTCQwKU8+KixXZUpcS2BOWDJtJkRMNUNVTStQdUIlayhLPiZzayttQk1MNyowV1lgcWBrbGAuOVtaTytkTkdyMD1LMC5bQUMtJ19vdXU6O05haDZUYGAtYiZDMTZxR0o+bl9rbHFIUmllQWgiWkwxYEFfVmFNbEVVSTFCPlEiV3JFL08zLW9wT3RJZCxdKipidVYjVW9HTC0lVjE5KDlTVjcxW2tDUWVhZ0MjKmcubjNTPUFgKixyQnJjYjpGXjpJXjs3cUpPSWVzY2VSXE9jNDVEIWQmZUdRP1ZTX0xkNSIsMEBBOXVlZVEnM084P1Q5VW5dXXVxY2QiPEEoUCtGckYyIT1hQm1Naig3YjdzL250Xk1FPFtRc3NbKVcxXiMnOzcwPiw+Iz5CKiZkXDhzK241Yj9bcjVZLkNWPjtVPEhHPzxXa01NQm11bD5lVElScC4mZ2EpRiw/ODFhOmNHOCVDTEE0MUtSdC1HJjV0NWpLI11SQic3Z08wLG8uKiZvPTg2ayNxOFhnY2stajgxbl5PSShROzpbXSpaQkRwYXNGQkVRQWIoNEhTWkI7T0ZfIWVRbTQsXVo+RytUVk85ZTdWO1ItTl9LWjYpS20pVDUpIU9laWpHcFFhP0ddQTlZbW5gQWs/TGlYO1ImKFNpJ15zUlxldFo9Zi0nW204VldhTlE5LSkiYGpGN2wuTWw3PS5pZkdwckA2ZDtELURDZCsya1pDJENBVHE2OS88Mi9QIjgrNzVhTjVJTWhcMTlAZ3QnbFpPPGFTKj1lZFJxLCwwLldtQFojcTxqbCdtI1I8KGFXcjZiOlZPMEQ2RU1bV0Y/VyY/MDNDXzNeRCIiP3JTVydWVjE2VihYVTZAM0VhN2FeSGYrYkdgJyNHP1hkRzlcRDZQV186I2lqPjBYM0RCWi46azQ6bU1qV2BVJCJLa2prYlJUMVsxIkReaFFCRmxYYkclVV5aY1dPT1dfYywvMGxzOSJVKjlJPmJyQjw2Tm8mJlU/RC0hW1EiSHMoXS5VJj07PTttPVxqIithUUUyZComcCJwWmg7SjpfNW5NTD0xcC8xTDtWPlgyZF9dYlNvJzAtQVZgN1B1SVFnTyFdYS0mREk2WEhHSGpIKj47bHBNazlRZ2EpWEtXPyJVOlNqZCQ9OzhnKUpXUFs+cEQhNTY6RjRVYkBgVGBBTGFSMmVQc2JuOT4uQVtkTThsSk4ucVhOLSYySWxXc14qPCZObmJnQ2J1ZUhHLGRzTGNrKmRXOyMuIk5HZW1wL2QqYWghYkw2dSpmK2R0KEs6MVgmQDJjREk6VHFrXFZSIkQ1MEowQUxMTyIkQUdAZWluODpBRUxkdTIqZW9tPmhfLV4iRT4sISlEcEtfcixsXyVZRW5UTFkzNm42Xi8zT2thPG1lYFlzXmdTKWZCUWZTMGwsbGJodGYxPl0pbEFsZE5TK0ghITVZJz1ZPzVJXl9sbldac0A1Vy5QRmZHKksuJm8+U2tWVzFmbytwbTA2I2E+ZUZ1VSNOTUZLNnU0YC40VVYzK2E2cEMoWjdSIUhwO0UuPy5baTo+RSwlYihEKUNjMFU8Z209KihQTilHRj4xRyEqSiNfWENgKl4pRUNcUVAsbihSYSteWiMkdDVBRk1jcD4pRkFNSSZoOklCViowQmYpW0E+SE10XzZYP09mUlQ4K2k7XlQsaEU3O1xoS3B1LzFIPDdadVVJTS1wVWlAVE1aMilRZGlITEY0WFNSKkRFXVheLjc2IUopLjAhIyhnKD1hTGoodDxIKiRjQDRGIzJmLyJiWEYxRipRSCtPKlRZbkdNJyRYIl1EOzVBXT9CP2ZpZE4uLnU3OWM0OnUhMStwKFBaTyUpN09LWXM5Vm4pKmInOUpVWiZxI0RiV29dJ2ViQWYmQ2pFUHFaMClxWkArPi4xVG1LSl1iTSRWUmcqQSdgVVAtUVEnSixANVEjbTZBcEJXYjg8WTNIV1dpOWMiTU1pPl0lVDJUSidfSTQlP1RxaFY3REtsNVAxcSpHLStZSiszUXFjWSF1MjllN1hHM3FpN01AKGM9PHEwXzpkaGJwNCQmYk4iOzcuMS85VU45cE9xaDRSPVElQkhcW1JDLlRSLSQiOTBLIyQ/MSgvUFJAK1JlX0koREI9Sy5baSstUi44T2lvXytgImAjJCZAaCMuLTJpKiVcTkFiJV1AO2YwYEtTPVVBVUk4WissM0VuJ0pXZUVgSm1tV05gaVVUMChjWmREcGMqWDVhLVA6NyVoWjowdEtsYWowQ2pTJ1o1SUwzSUZyPUhSSjNqUzxxTkE3LHBcUiQmcklaRkZXXjdHS0wpcENzTzB1ZlkjN2FJJDFZPzRRJFkyMV5dQFZNYG10VTdzNG9SbmxoOXU7VFRsX2l1aVApbF1vcVpvQyMqTFNcVTR0PDNqNmFWUiREciEtT0xqS0JoTCZyaERQZGdeUHNXWVA+aWxvQWZEVDglRyMhTVxtMEprI3BaIiZIMz47MG1uYFdsVTlBZ1JdUmRNciUpR2hiJ1lDZF4uaTJyUDQiRk8/R3NodGBcXDdNKkJuSmAjMEYrbHM2ZytZI08/IkRVdExPNVptXWBdP2IiR1JyQ1hkbyFESGVJRWo9XTAnVGpKJWhPQSU2X1YnRixINFB1fj5lbmRzdHJlYW0KZW5kb2JqCjE1IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE0ODcKPj4Kc3RyZWFtCkdiIi8oPVxuJ0smOldlRGVDLG4rTGlGTVtnRko3YWJRTiksNXBlaWRYLUlvYToob2JVLE01YmNyOzNWaSgjLlhIUjdJXWAnRzVQaFdrNDpwV2E0RWxkLidLL0RgN1trMTU9Z0YhZWVHYypYTEBXTiVhKzJJLjJCUmttIlY+JExNSWc0VUFDWS07RzEzJmdaN14zbWBPb1I4ZmlIY2plLyJORT9zLTdPXXNPVWFHUy9TRVJtTCQrLT1hZVg5UTQpazdJSjZNbFZmS2BhWnBEY1BwRVBuXWYuKiFoMTohNTFcIl84JzJ1J0RVPlA7XS1yUTBfZykiVVBIWXQ+XmVbNlw+PyYmUilCWGFbKjMpPDJbVzEmRCwxYD9wKDNTT0k1S1A+S15oaFRJcWdGbmJnODxfVjpMYmJQcz9NKCM/SXVgUFkyaVJXQCxSdGNHUzAtPTJKKVMjSVdaciY6ZzJPVlRCRSVWIS9iNm01RT9KZ2g7QltXVVI9ZCk0Q21IN3BLNkQsMSoxc2dicSJ0cURjV01ySVUmdVZePjU9cSxlSzlbIiQhLlQ7V0goa19OMSdIMlQqVyQtUTRmOyE+b20lbFhbXS0qXiVqZjBVZHEyPlxtIzRCQmRTcGtcYi5uQGE1U2R1MCQjOVwtVTY9LnJRLj4zZEpdSW1tJCJVTXBQTmM5ZkF0UmNAY1dsJTtZVCxjYj09N1I/VDgsPmtUXjdkLiRCKkROQShCSTxCKTJRLjpwMjxtbG9RS3ItV0tRQ1RBb2gpL25bcTlpWDooQCZMNiRWZG1MbTs1ZGZMbztVQjk6R2prPi4rN24pb1daRFwpUkJGb3A7I2RTdUxYRz5WTFM2Lz4qTUptOjs3Ki5hUW9JMicwVSRncSdSS0ZuaSxRcCVNYGNoM2c0XUJGM2QwZURrVz5VK3F1X1ckTW5jcFNJZV8jdVdTRFAtOTM3QWEqSjUlRjhYXWVIZHQtLklRc0FDPjBTMHMwNW8zZyZCWltqIiNCVCxOPHFAczxeVU5rST0sMVV1V0JZYGRZXC8wQ0FyUTs0L3BmbypcKzZKJWhXP0Yxa3FbdShDSSwxUi08I1BDMDldcjR0bTIlU1hfLUQhIiZVVm9mNWw3SFFBcWg+UlJGYVhrIkFSRUM/MkIvYU1IQG5ZN0FTNlk1UWkhTExXOC83KU4iJF5WW2pcNy5UTCY3bmJSR28lbUBeXT9dVUxEaWVWWy03LHM5TGg+KGZZVyhoJiMpKVE6YTspMVlXJCU8VmwqaFVgayRmO0hNQD5iMkdOXlJnRDFeQ1A4QDJuOFo8KUk4az4sMyxPNkA6XVZDcT1QK0VHTXNoczM1LHAwPT0ucVBidTBnREpYZ3RmVVA7bG8mXGNXaD1FOGdLUllRLG9CUT1ucWwzKltzM1QxKyhxLyMzOiE1JjYrNCRmLy1lQkgwVVFfJihxREpfUiQ7NjJkKkMlZ2RBUnRJL1VmWXRKclozZ1phayJYcXElJVRZLEg7OFY1KEA0QmQrQStQallxOnNfU2BpKGxqbDlVI21dJzInWllVKSVmUy1WLlNxRDUuKlkmQzpSbXVwKD4kbyVoOmZZVWU4U0UwNDs1RW4kO2kwU1pgazVxaiZQVlw6U28vRlVCcUQ1PVgkKWQicD1MOTJjX0Y2USVZIzssITNGImNAdFJJNSEmPT1aP243QGM/bjNHTzhfR2gyVUddcmRiKGtxPiVrQUYlUXJeOmckbFNITk06NFVfKnMhYWBtckExKDMpTyxPRVZdciNFSEAyaTgmMHVKcWhUSFdQSCE4J2xmaVp1bCQrRSphWUUvI3BMUUpbQS0tSUU1QDZcamotZjBiOFkrNG4paWRuXzU9Ik84azcuLyQ+P2k8PlU9MWNWU1Y+UFhrU1F0NWMkXU5gUnEkU3BAcVJhQEklK1NSZ0YiZ1pHNmFPUiomXUUtMT8rTG4vcWxvQENcST9ZYSlMTWlwJ047On4+ZW5kc3RyZWFtCmVuZG9iagoxNiAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAyMjk3Cj4+CnN0cmVhbQpHYiFsIT5CQWReJ1JuQjMzKTpSQzhWbGduSUhiOW4vRW5GMi0jVTFSX2knKk1XJTAscDJSKWkqcFcxdHU4Ql9eNCZuWDFtZk49R11tYUNva0FWLEpfQXAzUiYhQnUwVUZecCM7NXJca25XQihVSTVyMVkjcWxGUEI6PGciTm88KmdcK3JmdC8rTVdYPydGJGRvPElIT2kvMERNIkwpVTdsMjFyXU1oNGhOQjltVj1nRj5qWjhrKmBIIT9eb21GTVZiTEdSX0IjckdPMWsuaStyPUUtMlo+MGsqITpjUW85Vi1XJi5IZylKJHU3cGU1cCk8SDgsInAnI1AtTj0zOHJFIjExIzQ8R1xET21ZJjFvVnFRR1w5UUsncGgkWFBOYC8hKmFEVUFiX1M3NWtIJVZjIl0yY29GJGBZNCZVZ1NmcGkkRyNZSl4wb1U7RlgoXltqISwqLkdSSE9JUSQiMDFkRWRmTFk9TmRbJEVVQkAlNFRDVUI1aGhuUE8uaGpaQlc1LyZHTzBmP3BDdERDZEskS2poQXEuXDVuRyZGUSRJZ1xVUmBadS11J0c1Jy91ZDEqQmZYV1k1VXMiREheJjdlYkJOLCI4RS5FcGxWa2BkUUFVL1hDcmFBQnMyN1BKPzojYyomTzszS3IxIS5QWTpmQlBzdUJSQGszUzF1YnIncFcsSmRKZDJpU0R1LF8hZjpETm4iI2RQRStwTm4/PTVCUjBYQjhwX3JRXVtRTiJVXStzMFxUIjMzbVU8T0poOSdcXiRFYkI7IV5ZJTlFQ0hIKiEpcXRYX2pBNmEib1deKD5AYkZvVXFATDVkMUdCKm0yOWlAQ1BrPUlzNDc1TVg4YUJZVTtcV1RZWD1pdXRnaUhlSiNXN2xlUWY1UWJrPEotRF1SYU09KkEuUW9UaTo9IW9qMnJrNS5XQ0Y0cjpgI286UWklSjRPLUJralM1UmRJc051SjRuIiVrXGtaNUNqSExxZyNxJCdbVDI6XUA5SS10JyNYMzJWLE5wUEUsU08yJ2ZvYTBURiZqQVM6OiU/aFQxVjVwPVIxZjhFP18qKC9cV3MuY0YlIk4naUIpdFoyRFpsTlN1bzZQakI3Km1PQFZKRDAvKV45LWs3O2k0Y2pLVWs2OG9tWD0qaTxYYHM9QSI5Q2UnOGJWLGpSYEA1OFQ/Vis6UGtNbmY2IzZrM3FgNCxROT1RRSZSP2NZTyhpOjJVOWkmWHBWU1NRKkJDSlNXRlkmWjcqbmtqbWQhREA2JFBDb1JqIWZaYk09RTVGcTRVNGc1JFteLF0ibV1KRnM0OFg+LF8oI0RXby9lL0RVa2E6cFc1N18iIVVhSFpbJVdiKT4/TlxsLmhkSSJxOkxUOm1kZ1I7MVFpNmooRG45O2ciLTNvOilZNkUkLmQrIVFfczFhWS9EVUZHanBFT0RZQWQuOjk6KWVcJ0dnLCxmZDpmVmgpNjZOT2xdJzthOGg+ajVkLk0sWTBbSmNJJUIzZyhOJD9baGFXdElJaVRxWFNfYnFgc1E0WmpmTUVPZylKV1lcMzhxKDhbS1NDJnMtMF50ZSliVzhgQERDTFs0QF1xOGJOY3BsbEc0TkJbdUM5ZipqIl1EbHNmWFxiaiolPVhSPVI+LGIqTy9hX05mRFlkaV0xYi4yYVdVVVFdXmEzIzpVZ05GQjptSSNFIlRhPi8uZnRIZyRmcWtrMTM2dStyPUNqa0k1JVJZdDwoOWNGJlxbSzNMKkNWPGJLdWEnPSFqWUtbczlWWmlyclg3UjIoLkQ4TGFQJlJyPVE8Z09XalwtUz0pKmdlVGNvOXI+PDBENnIlUCVjVicvIi43UXUhckIqYl5VQzsiW1Z1KjwzYV81WnFeTUpoWFVEXXNrK2tlblxnU0lMLCxaIVRkXTgmV0UoY3BLaCFEWXVqZD0iM01HMlcpV3E+SCdYKDc0OygqOE8rTyNOOCVhV1ZERmVbZUUtQiJSSiZhKFwlOkZeIW5TN11VaDU/WCpLV1cjRShaS2xGSkE2KUZQbV1zOUw1Jzs9X0EkSV5OREFmbDAjPWVdXU05V1dXbGQuOy9KJEtoW0ZhVWFhXT5oIj11W0ZmYiNgJWM6TVRMMWA7QyYtVjJnbSk8IU8uSVpPOlInJlUuZ3NyWklVSUh1cGptVnA9UCJ0Uk5SPSRBTV1BZCFkOS1BTCwrN1pcNnRMby4hZCs2NU8oMlhUbitxaz8vaGctSU0la0plOkU3aHMpbDIrJCQrTlkra08rISYvOEsvTGkzKVJBXSpuVVpiT0QvJD8yUz1VLXU2UTsvTyltb0VNSD0lQilpcSNCRlxoWT9cUCMsWGY3O2o2NyRQaWAmRWFdTjw5SSFRS0h0NjZNO208R1NUJU84SmgjQShZOyJhOiFcRGFdXkpeQjBfXWBRPkojb21DcDFJPERWQjNEQVhDQlpbO2ZhZkxJLCU0cFRkbWdrQiUhYVssaGQsK1ppbUpoVCYpJ203ZithWTpVNTc0NSVVNFlWcyk6PGpxKmteJVxoXypJMzVlU0pQJlNbWWo+TDI0ZSxXYU5eL3BkIjc7QmpuJC9CZXRRJ0tXbmBnVEklWEFVMj1JbDguNmcsaWlLKWAycXIsOWImRTdkJmNWRkItcE1QJj1kWi8jRkRvQWllb2ksWyc+MSxvcG5qPmAvVmhAaWZuSV9eZTEwaGFUUTZJPTRbb2hvS1cvc1chSz84Z1ZKbUxudDszTnVpcSQkb29ZcUEwKVo9XkY/Ok87MWgmZzA1Zik9KCdEIi8+QiE/bTxwL2FSWkFaLT4uYWVaVzNeOnAjZmctLCsybGpbV1dvQ1Mja04hVz1KJDJySWsob20iczNWPFhrSVBMcTY+Nl9bTUFQOEU8MjNcKCZmRmEwKitoMTQtczcjU1I+Mi80UUQzLGdLdWQ8QDIxalpqWTV0WV5UXnEzWFZXQDNDPjtcRz1nUWZpLlE3USk6Ozw8Li48cWslbC1raTUrN2VKXycydSFKLCxmMlEnSmE6UklXXz1GZWIiMWtWI3M0aThCRFJZcigtbS8zKk1DTEppSHN+PmVuZHN0cmVhbQplbmRvYmoKMTcgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTYyNQo+PgpzdHJlYW0KR2IiLyg5aUwoMyZBQFpjcUE/KWNaMkMwK0NddVJGZm4oQTRbXk4mak1tMjsySy5VWUY0LjYkREQpbGJQIVk0UVBRMTg6QCFba0UtXiReP1FlTF8mb3BkPDM9QDEkczNMPTZNM2AuRHQ7YCVgNUs/YnRwcWRKIm0nRklmIjtfPHQ7dE5eV11TTEcvSGRdWVBgaUZDYi9RaSlyNVJvMV8uTF5gWXBOZmtydC5hJzhCRFZdSlQsZGRtYjI/RCNKW0hoRCgoK2lPK19wUFBeciIrNihtPU1yMWtVcEFLbUpDbFBOVGVmTEwlLVgzT24yRideVlFwalBnbWwvbjNdTV1WWlRjMFdqblNuPU1ZKlJcQzVgYklbIXFTbW5PYDMuKG9NSmUjZSwhZGopNlhOWydRRThdN3NobW9yOTV0QDsqKi5fNjJ0c19BNGkiM0cwT2tUdWNJM0srIlssWG0nXlghKl1bJmA1Y1FNNGdWZjEwcTRQQWdvUFlKYT8lJUdvbk1FMU5fTE0vcGMtIUVZNEhNZkVudEpqYyM/MSplUGwxYSkvVk9zbCVRaExbM0o6czQrZlJKO0VVZTUtVktnUTFzOi5NVGdZcms1a2RGSkMiayxcWz0vRyMjc3VqMjFDWiFHZmg2XyU0I2pZQk9uSiw3clsiPSJgKTkoP2BCIiIoQGMlUWg9MGNYNiE6SGRwa2t1XTgpaVJbW1xESV5HTFk4PjU8YCZPJkpsZVRMUmgwXltfUV1FJG1cSEteWVRHWmgnb0hRTmxZdCJgLWY/X1ZSbjhgPUtoMEQtLzonO1RYak1jLGRfaG1DZ0ZYYm1MaFRyXiNkJDNYVlBxUGNRXjNfQi4mJXAvJ3VzdXEiQiQ7aDcsdHFIYVcua0dONydTUzZpKGNAZiprUCxNTzktRFR0JElISyhFOjpKRGc4O2BQV2xjOV5HSW9Ybl8vYy9gdUAmPSJOS3RCdGhwMkxGKTFCOk8jWGImaS0/SDRGSERVP2M1UF5VJVQsYUFMTy1SX1N1VyEoPChZLmYuPj9iP0RaNE5mXiFxXkU7WmtsbXMlJj9pSygyRS4/ZjE5Z0NNTW1OL0I8RS49TDkmZXN0PzNiUC8pRU1jSzxhbVw2dFwnMUdAMlxsSCMzXFBRRnI1dCQhNltYTzNaN01VPl5VNU8wOTNZKFZZXWZhNmFtUWNGXE9WPlFtb0pHLC5faiZHTFg4S188SEctMjJcKVguUz1QKD4xZGM3bSY6UlwzTTpuU2M7L0ojTFVVOG5aUy1kNlVAKCszIWZDRGBlIiRnbF9sLS5ybkhQWjVVZyMuVGZ0YWgkbmpuLlQ6PFAraDAmaFAzXXAyZDc4bENFPXQ5Y25fLTU9WF1QSz5xZUouUTslVVptK180akNUbVFqcjpkcS9DVkM9OVtrRiRpby1tViJuVlEwWW1jbCEnKFtjaDAqIyFEPFkmbVlJQ2A5Q08vM24hJlFIRzsvWmdeXGZPX1MtXSYlZ0hZSSlyUy5sJDVfdT8pS2w6SEdeYi1wMGdETkNCSCdpSE0nTW1wRFlfZzc9PTlFcEJRIVMoQTVnYVs1TkotaTRfN1VXYys/UG1bOVAxcCNEVVBEanRnTmRyUHUtJU5JKylASUFdVl8tcD1sP0klYk9BZGlLYkErKzBCZzkxVmZiT1FbPzFmOylockU1X3JGWTxPQl9sS3RbM1A2SGtnak8jSlZkQGcpMT8mRSZdOy08QEFEZ3NsLSVlOHRwQDUqTjgmYlsiUzUrYiplbVpEZC4zTSxYPUBqXFFcQ15ZPWclaTlzbXFJc0MsPyxfVGMnJTA9QWEkXiRaN1E9IScsWVRDSlplJjhgbjkqPzldKWQvPyU2KjNCNiZVWUhjMzd0LSZITGZAXSIyJTVyR1JzX3RIZ2JrdSgob18xNjBXQiRLL2VKSyN0c2pgLyN0QCJ0JVxFJ1FQSzwoMSc7QmJvdV5aZERvLzopSFViJkEtSzgpKEYmRGJvJUZWbT87OkE7VS0hKiJpMi5GJV1iajZiVW1pXmQ5alBTUj4zdDdRc2lGR25abW86TV1cSlZhWGRaNDl1ImFxOlhdQi9uVHRGbG9wa0ZJKFYwSTZNQ3NkMkZXKT1NPDwlL1FiJktwSzlDLUxMKT8hcD4yM2hscG9GRDpxXWNJfj5lbmRzdHJlYW0KZW5kb2JqCjE4IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDIyNTkKPj4Kc3RyZWFtCkdiISNeRCxdMUsmSDl0WWZQYTksP25CKGlBaV9rMj9FVWhrLFIkdCpTYCxMMjdBQF0pO0haU1tJdCZ1YCJRSkcxO0M7JmppJ2BtPF0/ZDZYbWsscXBpWFtMO2BgJUUmK3VoVi41Vi5fL0pOL0FkZDVkXmRIZitOKmRyZSIrSyckJ25wVGU4PUxQdSdBIzhsNzFoX1RYNW4xNVpacTUsKTZAI3VNOENxJCMoaixkVSplQzA3RzZCPUQnXSE4bTdlWyZQOiZEci0mJ2teU1BwZmRdKlhaaGMuYiM2Z2xAUkR1K3I9YG5cJCFtJCdePGZoNlIzMDVkbixQcUFQNjg+aVdzPFRcR3M0SjsnMFUmNGM3cmNfWG1dTmBxXXJoJ0xLY2ZwVyxEQT9VQWw/XmhbbyMoWTJTI14vVGpKJSRzWEBRQCtZOGFmRmdZUUVMJic7QjhZUCMzInA/L0AoVDMqNWVXZUZrYEdrdWRcSSIoWiRkUGxuMytmXmZJWTNpPlooU2dmJlNrcW9bMCcxYCU2YnFcRW9qXmNWQ1s8WU5NaDErLk5jbjA3JEtGMzdzPkhPUiVWLmdvVV9XK0k+PmlMcFtTcFZyKm8kSC1UZWFEbipzaUJVK0JRR2xdPz9SYDNvQl8zSDFwcUwlLS1YXT85Zmk3TV9CVHFPMjw4KU8ibGY1OStvLzlcRG5OXm1hVV9scnI/VGpxVFw1JFk+cTNNVVZLN2o2dGRWJHJUPTlFOytlXVJKSUlTRTNwOWVGXThsLU9PT2dwanQjdTAiSkRBY2hgKnRBRi9eci9PKUJiTCQqVEdNQDVQIzhKT1ZBQ2ksV2lDPixqN1RWbkw4Zzo9c2M2PEV1KEpfKzRgaTteSUFOP2suXVA/SyYmOm9iSmdtWCNlWFxrRGZFYkJeNygoOEUxPW5yLjVBPGIkcSVscWsjdS5NRkY8USpLajY8W2NHWkI5cShWZlQybE1vLyFRLSNYN3RaOytEYkRpODddLkhHbiZcKzd0LSpmW0ROPWdLazo6RFduZiM1V1Jkc0QyZlg/Kyo4QE4udVlKVEg3SlFhOV8rUV9PSiJsWzNSP2t0I3IuXShrW2pjTHAlaGVNSD9QJm1cNm9XYFM2RkAiZEIiUzZBKzdlPTZIRj46SFAxQ3RiSyMncmRTKFw8ZCR1RCxcM0A2PUI5NDQ4JCdWUFs/LG5lVkhcN146OTRLW2cuRXFETldLQmlqJVdmO1VNNllnQkc4U0BXazk/XGNdJnBlW1JWLWlqOjRQNFVWVUp0XFMhQWNkWGhzKkNVQzFBcyJpJWdGakRbSE8lRDQsJjJgLU51YGdNZSs2TGchdGt1YHU3RypxT3E+QU9VQ10rKCs8NmM6NV9xZV9BSHBfOT8mVEktJkYmNkxZOkpXQF44LFBdYkViamltZWRyN0Y5O1lTPylXT1Y3JisucWQrOTJJYjpsbklSMy5bYTBjSW0hZy1RaTVpZV9Ocm5YPEJCcDA8W1dvRV5IcTRzOGY9KzglNWtUb01VcGUxO2BpYF1NbkIyUU5wW2leYCpESDlHRldJP0AiblwpZSIrMFE0M1BAUCg5YEVQNHVCSENLLHFBLExoL1BiTG5EZzpxXChrTzpgQi1UPjNlY18vYz9kaHI9PVRfOCRJIUhyIz1VRkFNJjEyYWk5QWo+WkQ3NUg+bXJMXVVyMFxEUUwhOjw6YVlaUE0kNGopMWZiSEtQdHEjPHBlS0wxRWtmW2I1SyxpYSIwcT5Tbyc+OTA7K0c4TEBvPVFlPDFhYmxDaDVbYkY5STpnO24+L2dUXVZ0clRCTWY4JWNsKCpIW2VYPnFtKDM9MG84MEIzO1xDcSVmYjBoQ2lyYDY/SWpnQF1ZaihsTCpmXy0/RzRORzIhSmBfTlUzcEduKTojQFJYI10rVmkyQ083OkdaVig3cEA4QSdEXDRucSpFRFIsSCEtYFVsIV0/RyNrcCsiJy1gZStObHFXVm5fPVQkJ1VsK2wlLypvI3QjJ0B1UlssTDVdbyteT2RSW2tpdGY0KEgyOV1CZ2JrQixDcXVhJTRRZypzayRII1ZnTmokKVNUK21rYmpGOzZOU1UjVVZiczhTV1Q8I25zKnFrTCFTPnFzN3A5NDFpZExJZC5CNF8oYi1yVD5MKCs3W08pIl4jUTtAbTJiTXQvJ01pb3AuKWdRUURzclgrRWJIY2ZjOWpVcm1iX0pyal5QQC8oVSI/QDVMc3RpN1k1bztsW0BLSkVKVk02RXNYJCFeK2RBWD8iZ2FsK1dtYGchQjYiL0gtI0EmbFIqcj81LEBVOTshKkFAXDBdV0hFayU/YWFiST5eQTtdOzxtUlJqOkJicyQia0gsSWFxJlVLJkhEJCQnOyE1bmsySkQmPjRgT0lWTFVMWU41Xy80bDtvJGtja2A5KjxcQjkvQS1bVzghJkkqRVZSaSouQGxda0VYT3VPKjxvcVtiOVxYYDwrLzEnWXFePE5bUTBkN3E5Pm9oJSJZIV5xbjplXUFWXlouQzYmcWRIUnE7aklgJVtrbTxXRlArPSlxK3IpSl9kYjxLYj4iI01RMlNZWyRLP0VELyM9IU45IVMkXkwyc2UkIyVgOV5lXzdlbmw6RT5KaTs8PmhPV0ttUDo/MDlQSSUxLnQoZEopTWVIK3ImMF5jNi9yXGQ5QjouZzNhR1JSZFtRSztJIm5rKyQ1cVUoQzE+XipBYyhlQDovTFRUJitUTHRLJyxHVC5OR0NPJlhNbC9MMCFMTEk5aGNgL0V0JHJXOSVoYi9hKE5bPEs5QmY7OCgvazExZVM7QldpbSouTDxbcS8/PzsiUENPMz49IWFQY2pXX1owMDI/PTxJbVQ/TkY+OThZUyczXFUmUDBURyRkUCdXU1dcdT8nME86V0EoWCNcZy1gKkIibWwkQ0A6Yz9sUl5NIXU4cFBKZmgnNCkwTzw8ST1ObjFFJXJFUC5AKlksPkojOCc/a0xiO0pNZDA0dTVodUotKCIydVhPPW9+PmVuZHN0cmVhbQplbmRvYmoKMTkgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTMyMAo+PgpzdHJlYW0KR2F1YFI5NWlRRSZBST0vYmdBIlk3P2pgUDA4alxcPWVzXC44U19dZVxeOGRXO0pTaVYtLSd0U3I9MThTWkszRyshWC9xSy05Vz9vSS9OK20xMnVLcW9QW243XU5yPkclMFBiL0BLaF1QKiNBUmk/XTF0Jz0sbjZoYDpbTSNiNFNjMlt0aD0+OGs9SzpIQD1tQ0Ayc1MqV0M6XDlhNUYwXXBBRF8rN2pMdE9cNWQvbzkwcmpDblxpIVw+NCRocig1NEZgOF9ZNC07WV04bjUiVi8mQnUjO3FZVUVwOFFPXzZZO2oibzJAYWgmZlZELGNTX0w0Vj9fTT5VTSFeKGQ7IkheYCEuSUIyOy1gcCVSbmkySi5vKFwpOW5lbzg8P0dZVi8vNytBV0VeK05RKydHZkFAWjpwY11gUipGcTFzQy0oTiJfJyRiJytkXio7QF5aOTBvOjVRUytfNjZbWkgtc0EpSzs5WEkuSl85K0k5MTIwc2o5OilYSyhacWhSMWgiO01PSVhBPEgmWzNQP1orKmlwbShgPnI7c1M+NkAnR2MmVjtDJ280Pmw8aGE4I1s3NG1xK2A0NidMZz9NJVpNOUZ0UFpUUDA5OlwhcClGdWVVPE1YKCsvVy51LT5DNEIzWTAnOztlYydTVDQ/dE5qT1FIaFM9UV5UaEJZTT9tKkIiNy0iKEdGJT1zc21gXjhZIm5cQ3JmMjBGZnE5QCpxO3Fmcy1fNjs4XitdbzFZJGkmJkMiZGhVViYmLiQ1Jk5MWEJgblZzWlphOmxtMlpPPF1VJy4mbiQkYnFSYTdLZGVwPk85Wm91MG5RTWUkckZPS1dLPmFXV09GOmBQc3RjaztxITM/W28wIz1PV3IuVzVVcjRNN1RLYyFkYHVTUSYyYklVOWxcbyNdT2lOW1BwMW5oWlUyM20hWzZuLydVYlhhZSkrWEksb3NBRyZzZCI7NiUnQk5mdFtzOltLX0FRLjJDYkZqVi5INToobTpcRmZHKCRjX2ctUiglNjJMPlJpUklGcE0xKChiMiZkM2ZDXGM2ITVRXEBdbzZgRktJJV8nJGYiWl0vWmRNXiwyIkgwV28/bGoxZ2RNKyk3VC5aIlpoKC0yKCQqbEltcEBlZTFoa01CW28qUG5gKmI8T1QuLW4wPlsoZStYNWlBQkszVEllb087K1JDW1dWNUIrcyl1KzcnQUxETG8sanE+Ui9ZOzxVKHJdK1QpMC8vLk5abz44RVFATGQmVFFAMC9nKWYqbVFtSz5jIlxwbVlxPk5mWiokTCwpc1pOOWNUSzQ7MGBGTElBUG9rYjVYKChySCYoMkoqVWhWVFJ1P3VjNTspVFlfYzRnN25TInFYYTVAT1RpYT43KU1bSllSPVwsInMxXXVfOmpXalJPWGBLcFEtX1FUXlphLzNKZj5lKjhcUzomTTBjKUQ3U1xZK3M+U3VXSy9yXUYqMClHN0dKTUBzSGw8UihQaV00YiguQ0FDUSU5aUhWJCJpalBYIVFbLyU0Z3FuKU8/XGhmOGxuKSFpMUBdITg/R2pNJS5lISsuYUhUXVdCXUsvX3NiaU9hMkw0PzE9SkpIPEVdKllCJTZAZVMzTVBKaERqPEJDRiUzXFRuKXBdcmw8TVwlaD9rMVVYaloyIilcQFdJKGJ0RDApWSJGRSk2LjIwQ14nbCtocSI4YzhcWWU7YUdLWC9dOXFsdTJrbDo2OnBVUl9tbHFWOztuLjZxKi88M1BNXVRsOUZhXyNXRH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMjAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMTIgMDAwMDAgbiAKMDAwMDAwMDIxOSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCjAwMDAwMDA0MTQgMDAwMDAgbiAKMDAwMDAwMDYwOSAwMDAwMCBuIAowMDAwMDAwODA0IDAwMDAwIG4gCjAwMDAwMDA5OTkgMDAwMDAgbiAKMDAwMDAwMTE5NCAwMDAwMCBuIAowMDAwMDAxMzg5IDAwMDAwIG4gCjAwMDAwMDE1ODUgMDAwMDAgbiAKMDAwMDAwMTY1NSAwMDAwMCBuIAowMDAwMDAxOTg3IDAwMDAwIG4gCjAwMDAwMDIwNzggMDAwMDAgbiAKMDAwMDAwNDMwNiAwMDAwMCBuIAowMDAwMDA1ODg1IDAwMDAwIG4gCjAwMDAwMDgyNzQgMDAwMDAgbiAKMDAwMDAwOTk5MSAwMDAwMCBuIAowMDAwMDEyMzQyIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPGQ0MTNhN2E0MGY2YmZhM2EyMzc5ZjM2M2FlYTY0YzUxPjxkNDEzYTdhNDBmNmJmYTNhMjM3OWYzNjNhZWE2NGM1MT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gMTIgMCBSCi9Sb290IDExIDAgUgovU2l6ZSAyMAo+PgpzdGFydHhyZWYKMTM3NTQKJSVFT0YK';
+  var binary=atob(b64);
+  var bytes=new Uint8Array(binary.length);
+  for(var i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+  var blob=new Blob([bytes],{type:'application/pdf'});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.href=url;
+  a.download='Dr-David-Walters-New-Patient-Intake-Form.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+// Signal-based intake form handler
+var generatedSummary = '';
+function generateSignalSummary(e) {
+  e.preventDefault();
+  var form = document.getElementById('intakeForm');
+  var fd = new FormData(form);
+  var get = function(k){ return fd.get(k)||''; };
+  var getAll = function(k){ return fd.getAll(k).join(', ')||'None'; };
+  var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var summary = [
+    '═══════════════════════════════════',
+    '  NEW PATIENT INTAKE FORM',
+    '  Dr. David Walters, DO, PhD, MBA',
+    '  Submitted: ' + today,
+    '═══════════════════════════════════',
+    '',
+    '── PATIENT INFORMATION ──',
+    'Name: ' + get('full_name'),
+    'Date of Birth: ' + get('dob'),
+    'Phone: ' + get('phone'),
+    'Email: ' + get('email'),
+    'Preferred Contact: ' + get('preferred_contact'),
+    'Address: ' + get('address') + ', ' + get('city') + ', ' + get('state') + ' ' + get('zip'),
+    'Occupation: ' + get('occupation'),
+    'Referring Physician: ' + (get('referring_physician')||'None'),
+    '',
+    '── EMERGENCY CONTACT ──',
+    'Name: ' + get('emergency_name'),
+    'Relationship: ' + get('emergency_relationship'),
+    'Phone: ' + get('emergency_phone'),
+    '',
+    '── REASON FOR VISIT ──',
+    'Symptoms: ' + getAll('symptoms'),
+    'Primary Concern: ' + get('primary_concern'),
+    'Duration: ' + get('symptom_duration'),
+    'Severity (1-10): ' + get('severity'),
+    'Prior Physician Evaluation: ' + (get('prior_evaluation')||'None'),
+    '',
+    '── MEDICATIONS & SUPPLEMENTS ──',
+    get('medications')||'None reported',
+    '',
+    'Allergies: ' + (get('allergies')||'NKDA'),
+    '',
+    '── PRIOR HORMONE THERAPY ──',
+    'History: ' + getAll('hormone_history'),
+    'Details: ' + (get('hormone_details')||'N/A'),
+    'Most Recent Testosterone: ' + (get('testosterone_level')||'Unknown') + ' ng/dL',
+    'Test Date: ' + (get('testosterone_date')||'Unknown'),
+    'Lab/Provider: ' + (get('testosterone_lab')||'Unknown'),
+    '',
+    '── CHEMICAL & ENVIRONMENTAL EXPOSURE ──',
+    'Water Source: ' + get('water_source'),
+    'Cookware: ' + get('cookware'),
+    'Occupational Exposures: ' + getAll('chem_exposure'),
+    'Other Exposures: ' + (get('other_exposure')||'None reported'),
+    '',
+    '── FAMILY HISTORY ──',
+    getAll('family_history'),
+    'Notes: ' + (get('family_notes')||'None'),
+    '',
+    '── CONSENT & SIGNATURE ──',
+    'Signal Communication: ACKNOWLEDGED',
+    'HIPAA Notice: ACKNOWLEDGED',
+    'Consent to Treatment: ACKNOWLEDGED',
+    'Typed Signature: ' + get('signature'),
+    'Date Signed: ' + get('signature_date'),
+    '',
+    '═══════════════════════════════════',
+    '  drdavidwalters.com | (719) 544-0199',
+    '═══════════════════════════════════',
+  ].join('\n');
+  generatedSummary = summary;
+  document.getElementById('summary-display').textContent = summary;
+  form.style.display = 'none';
+  var box = document.getElementById('signal-instructions-box');
+  box.style.display = 'block';
+  box.scrollIntoView({behavior:'smooth'});
+}
+function copySummary() {
+  if(!generatedSummary) return;
+  navigator.clipboard.writeText(generatedSummary).then(function(){
+    document.getElementById('copy-confirm').style.display = 'block';
+    setTimeout(function(){ document.getElementById('copy-confirm').style.display='none'; }, 3000);
+  }).catch(function(){
+    // Fallback for older browsers
+    var ta = document.createElement('textarea');
+    ta.value = generatedSummary;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    document.getElementById('copy-confirm').style.display = 'block';
+    setTimeout(function(){ document.getElementById('copy-confirm').style.display='none'; }, 3000);
+  });
+}
+function resetForm() {
+  document.getElementById('intakeForm').reset();
+  document.getElementById('intakeForm').style.display = 'block';
+  document.getElementById('signal-instructions-box').style.display = 'none';
+  generatedSummary = '';
+  document.getElementById('page-forms').scrollIntoView({behavior:'smooth'});
 }
 function filterStories(filter,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
