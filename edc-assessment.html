@@ -8,6 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-qKwGNvd1vZfZgPik-MaQ0.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; }
@@ -120,6 +127,20 @@
     .disclaimer { font-size: 11px; color: rgba(255,255,255,.35); line-height: 1.7; }
     .footer-text { text-align: center; font-size: 10px; color: rgba(255,255,255,.2); letter-spacing: 1px; padding-bottom: 40px; }
     .green-section { background: rgba(107,143,113,.06); border: 1px solid rgba(107,143,113,.2); border-radius: 12px; padding: 28px; margin-bottom: 32px; }
+
+    .email-capture { background: rgba(194,59,59,.06); border: 1px solid rgba(194,59,59,.25); border-radius: 12px; padding: 28px; margin-bottom: 32px; text-align: center; }
+    .email-capture h3 { font-family: 'DM Serif Display', serif; font-size: 20px; color: #F4F1ED; margin-bottom: 8px; font-weight: 400; }
+    .email-capture p { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 20px; }
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .email-input { flex: 1; min-width: 220px; padding: 12px 16px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; color: #F4F1ED; font-family: 'DM Mono', monospace; font-size: 13px; outline: none; transition: border-color .2s; }
+    .email-input:focus { border-color: #C23B3B; }
+    .email-input::placeholder { color: rgba(255,255,255,.25); }
+    .email-submit { padding: 12px 24px; background: linear-gradient(135deg,#C23B3B,#9B2D2D); border: none; border-radius: 6px; color: #F4F1ED; font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 700; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .email-submit:hover { transform: scale(1.02); }
+    .email-submit:disabled { opacity: .5; cursor: default; transform: none; }
+    .email-success { color: #6B8F71; font-size: 13px; margin-top: 12px; }
+    .email-error { color: #C23B3B; font-size: 12px; margin-top: 8px; }
+    .email-privacy { font-size: 10px; color: rgba(255,255,255,.25); margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -389,7 +410,7 @@ function show(id) {
   }
 }
 
-function startQuiz() { currentQ = 0; answers = {}; renderQuestion(); show("screen-quiz"); }
+function startQuiz() { currentQ = 0; answers = {}; renderQuestion(); show("screen-quiz"); plausible('Assessment Started'); }
 
 function renderQuestion() {
   var q   = QUESTIONS[currentQ];
@@ -499,8 +520,78 @@ function renderResults() {
     '<div class="card" style="margin-bottom:32px"><h3 class="narrative-heading">Your Personalized Risk Analysis</h3>' + narrativeHTML + '</div>' +
     '<div class="green-section"><h3 class="steps-heading">Recommended Next Steps</h3>' + stepsHTML() + '</div>' +
     '<div class="card" style="margin-bottom:32px"><p class="disclaimer">This assessment is for educational purposes only and does not constitute medical diagnosis or treatment advice. The risk factors and mechanisms described are based on published peer-reviewed research and the clinical observations of Dr. David Walters, DO, PhD, MBA, a reproductive endocrinologist with over 25 years of clinical experience. If your results suggest elevated risk, we recommend consulting with a qualified healthcare provider and considering biomarker testing to establish your personal baseline.</p></div>' +
+    '<div class="email-capture">' +
+    '<h3>Want Dr. Walters to review your results?</h3>' +
+    '<p>Enter your email below and we\u2019ll send you a summary of your assessment along with information about scheduling a consultation. Completely optional \u2014 your assessment remains anonymous either way.</p>' +
+    '<div class="email-form" id="email-form">' +
+    '<input type="email" class="email-input" id="email-input" placeholder="your@email.com" />' +
+    '<button class="email-submit" id="email-submit">Send My Results</button>' +
+    '</div>' +
+    '<div id="email-msg"></div>' +
+    '<div class="email-privacy">We will never share your email. Used only to contact you about your results.</div>' +
+    '</div>' +
     '<div style="text-align:center;margin-bottom:24px"><button class="btn-ghost" id="btn-retake">Retake Assessment</button></div>' +
     '<div class="footer-text">MEDICAL ANARCHY \u2014 YOUR HEALTH. YOUR RULES.<br>\u00a9 ' + new Date().getFullYear() + ' Dr. David Walters / iCONMED</div>';
+
+  // Track assessment completion
+  plausible('Assessment Completed', {props: {risk_level: overall.level, score: total + '/' + tmax}});
+
+  // Wire up email form
+  document.getElementById("email-submit").addEventListener("click", function(){
+    var emailEl = document.getElementById("email-input");
+    var msgEl = document.getElementById("email-msg");
+    var submitBtn = document.getElementById("email-submit");
+    var email = emailEl.value.trim();
+    if(!email || email.indexOf("@") < 1 || email.indexOf(".") < 3){
+      msgEl.innerHTML = '<div class="email-error">Please enter a valid email address.</div>';
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    // Build summary of results
+    var summary = "EDC Assessment Results\\n" +
+      "Overall Risk: " + overall.level + " (" + total + "/" + tmax + ")\\n\\n" +
+      "Category Scores:\\n";
+    for(var k=0;k<ckeys.length;k++){
+      var c=cats[ckeys[k]];
+      var r=getRiskLevel(c.score,c.max);
+      summary += "  " + c.label + ": " + r.level + " (" + c.score + "/" + c.max + ")\\n";
+    }
+    summary += "\\nAnswers:\\n";
+    var qids=Object.keys(answers);
+    for(var k=0;k<qids.length;k++){
+      summary += "  " + qids[k] + ": " + answers[qids[k]] + "\\n";
+    }
+
+    // Send to Formspree — Replace YOUR_FORM_ID with your Formspree endpoint
+    fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      method: "POST",
+      headers: {"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({
+        email: email,
+        _subject: "EDC Assessment Result: " + overall.level + " (" + total + "/" + tmax + ")",
+        risk_level: overall.level,
+        score: total + "/" + tmax,
+        results_summary: summary
+      })
+    }).then(function(resp){
+      if(resp.ok){
+        msgEl.innerHTML = '<div class="email-success">\u2713 Sent! Dr. Walters will review your results and reach out.</div>';
+        emailEl.style.display = "none";
+        submitBtn.style.display = "none";
+        plausible('Email Captured', {props: {risk_level: overall.level}});
+      } else {
+        msgEl.innerHTML = '<div class="email-error">Something went wrong. You can reach us directly at 719-544-0199.</div>';
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send My Results";
+      }
+    }).catch(function(){
+      msgEl.innerHTML = '<div class="email-error">Connection error. You can reach us directly at 719-544-0199.</div>';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send My Results";
+    });
+  });
 
   document.getElementById("btn-retake").addEventListener("click", function(){ answers={}; currentQ=0; show("screen-intro"); window.scrollTo({top:0,behavior:"smooth"}); });
 }
