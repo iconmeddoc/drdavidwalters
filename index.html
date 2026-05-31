@@ -189,6 +189,7 @@ a{color:inherit}
       <a class="nav-link" href="#" onclick="showPage('telemedicine')">Telemedicine</a>
       <a class="nav-link" href="#" onclick="showPage('stories')">Patient Stories</a>
       <a class="nav-link" href="#" onclick="showPage('research')">Research</a>
+      <a class="nav-link" href="#" onclick="showPage('book')">The Book</a>
       <a class="nav-link" href="#" onclick="showPage('forms')">New Patient Forms</a>
       <a class="btn btn-primary" href="#" onclick="showPage('telemedicine')" style="padding:.6rem 1.2rem;font-size:.7rem">Book Appointment</a>
     </div>
@@ -206,6 +207,7 @@ a{color:inherit}
   <a class="mobile-link" href="#" onclick="showPage('telemedicine');toggleMenu()">Telemedicine</a>
   <a class="mobile-link" href="#" onclick="showPage('stories');toggleMenu()">Patient Stories</a>
   <a class="mobile-link" href="#" onclick="showPage('research');toggleMenu()">Research</a>
+  <a class="mobile-link" href="#" onclick="showPage('book');toggleMenu()">The Book</a>
   <a class="mobile-link" href="#" onclick="showPage('forms');toggleMenu()">New Patient Forms</a>
   <a class="mobile-link btn btn-primary" style="margin-top:1.5rem;display:inline-flex" href="#" onclick="showPage('telemedicine');toggleMenu()">Book Appointment</a>
 </div>
@@ -286,6 +288,19 @@ a{color:inherit}
         <div class="card"><div class="quote-mark">"</div><p style="color:#C8C3BC;line-height:1.7;font-size:.95rem;margin-bottom:1.5rem">I have never had a doctor care as much or invest as much in me. Doc Walters is constantly researching and finding new ways to live a healthier, stronger life.</p><div style="border-top:1px solid var(--border);padding-top:1rem"><div class="serif" style="font-size:1rem">Bob R.</div><div style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Retired US Navy SEAL Officer</div></div></div>
       </div>
       <div style="margin-top:2rem"><a class="btn btn-secondary" href="#" onclick="showPage('stories')">Read all patient stories</a></div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <div class="label" style="margin-bottom:.85rem">New · Forthcoming Book</div>
+          <h2 class="serif" style="font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.15;margin-bottom:.75rem">The Chemically Castrated Generation</h2>
+          <p style="color:var(--muted);font-size:.95rem;line-height:1.6;max-width:540px">Dr. Walters' new book — the case he has spent fifteen years assembling — in print September 15, 2026.</p>
+        </div>
+        <a class="btn btn-primary" href="#" onclick="showPage('book')" style="flex-shrink:0">Read more &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -738,7 +753,110 @@ a{color:inherit}
         <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act IV</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 13–16</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">The Clinical Response</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Why testosterone replacement is wrong for most young men, and why clomiphene citrate is the mechanistically correct intervention.</p></div>
         <div class="series-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><span class="chip">Act V</span><span style="font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em">Weeks 17–20</span></div><h3 class="serif" style="font-size:1.1rem;color:var(--off-white);margin-bottom:.5rem">What You Can Do</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.6">Practical guidance on reducing EDC exposure, navigating the healthcare system, and finding the right physician.</p></div>
       </div>
-      <a href="https://drdavidwalters.substack.com" target="_blank" class="btn btn-primary">Read the full series on Substack →</a>
+      <a href="https://drdavidwalters.substack.com" target="_blank" class="btn btn-primary">Read the full series on Substack &rarr;</a>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ THE BOOK ═══ -->
+<div id="page-book" class="page">
+  <style>
+    #book-signup input{background:var(--bg-elevated)!important;border:1px solid var(--border)!important;color:var(--off-white)!important;border-radius:2px!important;font-family:'DM Mono',monospace!important;padding:.85rem 1rem!important}
+    #book-signup input:focus{border-color:var(--coral)!important;outline:none!important}
+    #book-signup button,#book-signup input[type=submit],#book-signup [type=submit]{background:var(--coral)!important;color:#fff!important;border:none!important;border-radius:2px!important;font-family:'DM Mono',monospace!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-size:.8rem!important;padding:.85rem 1.5rem!important;cursor:pointer!important}
+    #book-signup button:hover,#book-signup input[type=submit]:hover{background:#a00e27!important}
+    #book-signup label{font-family:'DM Mono',monospace!important;font-size:.68rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--muted)!important}
+    #book-signup p{color:var(--muted)!important}
+  </style>
+  <section class="page-hero">
+    <div class="container">
+      <div class="label" style="margin-bottom:1.5rem">Forthcoming &mdash; September 15, 2026 &middot; Medical Anarchy Press</div>
+      <h1 class="serif" style="font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;max-width:16ch;margin-bottom:1.5rem">The Chemically Castrated Generation</h1>
+      <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:1.25rem;color:var(--off-white);max-width:34ch;line-height:1.4">How endocrine disruptors are suppressing young men's testosterone &mdash; and the $2 pill that restores it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <div class="accent-line"></div>
+      <div class="label" style="margin-bottom:1.5rem">From the Author</div>
+      <div class="prose" style="max-width:680px">
+        <p style="font-size:1.1rem;color:#D8D2CB">For fifteen years I have watched young men walk into my clinic exhausted, flat, and quietly certain that something was wrong with them. Most had already been told they were fine. Most had been handed an antidepressant. Almost none had ever had their testosterone checked.</p>
+        <p style="font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--off-white);line-height:1.35;margin:1.75rem 0">When I checked it, the number was often lower than their grandfather's.</p>
+        <p style="font-size:1.05rem;color:#C8C3BC;margin-bottom:0">This book is the case I have spent a career assembling &mdash; and it is a clinical case, start to finish. The decline is real. The cause is chemical. And the treatment costs about two dollars a dose.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container-narrow">
+      <div class="accent-line"></div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">What the book argues</h2>
+      <div class="prose">
+        <p>Testosterone in young American men has fallen by nearly half in four decades. Sperm counts have dropped by more than half. The chemicals driving the decline &mdash; the bisphenols, phthalates, and organochlorines that entered the food and water supply at industrial scale beginning in the 1970s &mdash; suppress the hormonal signal at the level of the <strong style="color:var(--off-white)">brain</strong>, not the testes.</p>
+        <p>The result is a clinical picture &mdash; fatigue, low drive, depression that does not lift with antidepressants &mdash; that is being read as primary mental illness, because the framework that would identify the hormonal cause is not taught in most medical schools.</p>
+        <p>The standard answer, testosterone replacement, makes the underlying problem worse: it suppresses an already-fragile system further. The better answer is a generic medication that has been on pharmacy shelves for half a century, costs about two dollars a dose, and restores a man's <strong style="color:var(--off-white)">own</strong> production rather than replacing it. It is called clomiphene citrate &mdash; and it may be the most important men's health medication most physicians have never prescribed for this purpose.</p>
+        <p style="margin-bottom:0">This book documents the crisis, names the mechanism, and lays out the treatment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow" style="text-align:center">
+      <div class="accent-line" style="margin:0 auto 1.5rem"></div>
+      <blockquote style="border:none;padding:0;font-size:clamp(1.5rem,3vw,2.1rem);max-width:22ch;margin:0 auto;line-height:1.3">These young men did not lose their testosterone. In most cases, they never had it in the first place.</blockquote>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div class="accent-line"></div>
+      <div class="label" style="margin-bottom:1rem">Who it's for</div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:2.5rem">Written for three readers</h2>
+      <div class="grid-3">
+        <div class="aud-card"><div class="aud-accent" style="background:var(--coral)"></div><span class="chip" style="margin-bottom:1.25rem;display:inline-block">The Young Man</span><h3 class="serif" style="font-size:1.2rem;margin-bottom:1rem;line-height:1.3">Whose labs were called &ldquo;normal&rdquo;</h3><p style="color:var(--muted);font-size:.9rem;line-height:1.7">Told for years that the way he feels is in his head &mdash; when a single blood test, read against the right baseline, would have told a different story.</p></div>
+        <div class="aud-card"><div class="aud-accent" style="background:var(--amber)"></div><span class="chip chip-amber" style="margin-bottom:1.25rem;display:inline-block">The Parent</span><h3 class="serif" style="font-size:1.2rem;margin-bottom:1rem;line-height:1.3">Watching a son disappear</h3><p style="color:var(--muted);font-size:.9rem;line-height:1.7">Into fatigue, lost motivation, and a stack of prescriptions that aren't working &mdash; and unable to get a straight answer about why.</p></div>
+        <div class="aud-card"><div class="aud-accent" style="background:var(--sage)"></div><span class="chip chip-sage" style="margin-bottom:1.25rem;display:inline-block">The Physician</span><h3 class="serif" style="font-size:1.2rem;margin-bottom:1rem;line-height:1.3">Who suspects something is missed</h3><p style="color:var(--muted);font-size:.9rem;line-height:1.7">And wants the evidence base intact and the clinical reasoning visible &mdash; the mechanism, the studies, and the protocol, not a polemic.</p></div>
+      </div>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.7;margin-top:2rem;max-width:70ch">Built on 140 peer-reviewed studies &mdash; including the work of Swan, Levine, Skakkeb&aelig;k, Travison, and Lokeshwar &mdash; and written so all three can follow it without being talked down to.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="accent-line"></div>
+      <h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:2.5rem">When you can read it</h2>
+      <div class="grid-2" style="gap:1.5rem">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid var(--border)"><span class="mono" style="font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase">Publication</span><span style="color:var(--off-white)">September 15, 2026</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid var(--border)"><span class="mono" style="font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase">Publisher</span><span style="color:var(--off-white)">Medical Anarchy Press</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid var(--border)"><span class="mono" style="font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase">Formats</span><span style="color:var(--off-white)">Paperback &amp; Kindle</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.85rem 0"><span class="mono" style="font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase">Available at</span><span style="color:var(--off-white)">Amazon</span></div>
+        </div>
+        <div class="card" style="background:var(--bg-elevated)">
+          <h3 class="serif" style="font-size:1.35rem;margin-bottom:.5rem">Be notified the day it launches</h3>
+          <p style="color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:1.5rem">Leave your email and I'll send one message when the book is available &mdash; nothing else.</p>
+          <div id="book-signup">
+            <script async src="https://eomail6.com/form/c145b490-5cff-11f1-88c3-2b702d9d9590.js" data-form="c145b490-5cff-11f1-88c3-2b702d9d9590"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container-narrow">
+      <div class="accent-line"></div>
+      <div class="label" style="margin-bottom:1.5rem">About the Author</div>
+      <div style="display:flex;gap:1.75rem;align-items:flex-start;flex-wrap:wrap">
+        <div class="team-avatar" style="width:84px;height:84px;font-size:1.9rem;flex-shrink:0">W</div>
+        <div style="flex:1;min-width:260px">
+          <div class="serif" style="font-size:1.2rem;margin-bottom:.25rem">David Walters, DO, PhD, MBA</div>
+          <p style="color:var(--muted);font-size:.95rem;line-height:1.75">David Walters has spent twenty-five years restoring hormonal function in men and women. He began his scientific career in reproductive endocrinology &mdash; his research demonstrated that the ovary produces oxytocin, a finding that contradicted the medical teaching of the time &mdash; and entered medical school at forty, after turning around a failing rural hospital as its administrator. He writes the Medical Anarchy Substack and practices in South Dakota and Colorado.</p>
+        </div>
+      </div>
+      <p style="color:#5a5a5a;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.04em;line-height:1.6;margin-top:2.5rem">This page describes a forthcoming book and is provided for informational purposes only. Nothing here constitutes medical advice or establishes a physician&ndash;patient relationship.</p>
     </div>
   </section>
 </div>
@@ -1037,6 +1155,7 @@ a{color:inherit}
         <a href="#" onclick="showPage('physicians')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">For Physicians</a>
         <a href="#" onclick="showPage('telemedicine')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">Telemedicine</a>
         <a href="#" onclick="showPage('research')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">From the Research</a>
+        <a href="#" onclick="showPage('book')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">The Book</a>
         <a href="#" onclick="showPage('faq')" style="display:block;color:var(--muted);font-size:.8rem;text-decoration:none;font-family:'DM Mono',monospace;padding:.2rem 0">FAQ</a>
       </div>
     </div>
