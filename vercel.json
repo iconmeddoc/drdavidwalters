@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/go/email",    "destination": "/book?utm_source=emailoctopus&utm_medium=email&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/text",     "destination": "/book?utm_source=spruce&utm_medium=sms&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/substack", "destination": "/book?utm_source=substack&utm_medium=newsletter&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/x",        "destination": "/book?utm_source=x&utm_medium=social&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/clinic",   "destination": "/book?utm_source=clinic&utm_medium=print&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/team",     "destination": "/book?utm_source=launchteam&utm_medium=email&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/manmedicine", "destination": "/book?utm_source=manmedicine&utm_medium=podcast&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/aom",      "destination": "/book?utm_source=artofmanliness&utm_medium=podcast&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/go/podcast",  "destination": "/book?utm_source=podcast&utm_medium=podcast&utm_campaign=ccg_launch", "permanent": false },
+    { "source": "/thebook",     "destination": "/book", "permanent": true }
+  ]
+}
