@@ -10,6 +10,7 @@
 <meta property="og:description" content="How endocrine disruptors are suppressing young men's testosterone — and the $2 pill that restores it. Kindle and paperback, November 2, 2026."/>
 <meta property="og:image" content="https://drdavidwalters.com/ccg-cover.jpg"/>
 <meta property="og:url" content="https://drdavidwalters.com/book"/>
+<link rel="canonical" href="https://drdavidwalters.com/book"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@DrDavidWalters1"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -157,7 +158,7 @@ footer{padding:2.5rem 0}
   <div class="wrap hero-grid">
     <div class="cover" id="cover">
       <!-- Upload the 1800×2700 cover JPG to the repo root as ccg-cover.jpg -->
-      <img src="ccg-cover.jpg" alt="Cover of The Chemically Castrated Generation by David Walters" onerror="this.parentNode.classList.add('noimg')"/>
+      <img src="/ccg-cover.jpg" alt="Cover of The Chemically Castrated Generation by David Walters" onerror="this.parentNode.classList.add('noimg')"/>
       <div class="cover-fallback" aria-hidden="true">
         <div><div class="cf-title">The<b>Chemically Castrated</b>Generation</div>
         <div class="cf-sub">How endocrine disruptors are suppressing young men's testosterone — and the $2 pill that restores it</div></div>
@@ -330,7 +331,10 @@ var FALLBACK = {
 
 // Carry the visitor's channel (utm_source) into events so every buy click is attributed
 var params = new URLSearchParams(location.search);
-var src = params.get("utm_source") || params.get("ref") || "direct";
+// Short links (/go/email, /go/text, …) show this page directly; the channel comes from the link itself
+var GO = {email:"emailoctopus", text:"spruce", substack:"substack", x:"x", clinic:"clinic", team:"launchteam", manmedicine:"manmedicine", aom:"artofmanliness", podcast:"podcast"};
+var goMatch = location.pathname.match(/^\/go\/([a-z]+)/);
+var src = params.get("utm_source") || (goMatch && GO[goMatch[1]]) || params.get("ref") || "direct";
 
 document.querySelectorAll("a.buy").forEach(function(a){
   var key = a.dataset.retailer === "amazon" ? "amazon_" + a.dataset.format : a.dataset.retailer;
