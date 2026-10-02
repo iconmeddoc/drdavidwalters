@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "drdavidwalters.vercel.app" }], "destination": "https://drdavidwalters.com/:path*", "permanent": true },
     { "source": "/go/email",    "destination": "/book?utm_source=emailoctopus&utm_medium=email&utm_campaign=ccg_launch", "permanent": false },
     { "source": "/go/text",     "destination": "/book?utm_source=spruce&utm_medium=sms&utm_campaign=ccg_launch", "permanent": false },
     { "source": "/go/substack", "destination": "/book?utm_source=substack&utm_medium=newsletter&utm_campaign=ccg_launch", "permanent": false },
