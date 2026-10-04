@@ -16,6 +16,11 @@
       "source": "/thebook",
       "destination": "/book",
       "permanent": true
+    },
+    {
+      "source": "/launchteam",
+      "destination": "https://drdavidwalters.eo.page/launchteam",
+      "permanent": false
     }
   ],
   "rewrites": [
