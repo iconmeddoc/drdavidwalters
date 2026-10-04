@@ -15,8 +15,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0c0b09;--bg-card:#14120f;--bg-elevated:#14120f;
-  --coral:#d8253c;--amber:#E0A34A;--sage:#8FA97B;
-  --coral-bright:#ff5062;
+  --coral:#eb1c24;--amber:#E0A34A;--sage:#8FA97B;
+  --coral-bright:#ff2a32;
   --off-white:#f2ede3;--body:#cfc9bd;--muted:#b8b2a4;--border:rgba(242,237,227,.14);
   --ink-deep:#080706;
 }
@@ -32,9 +32,9 @@ h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:400}
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:2rem;transition:border-color .2s,transform .2s}
 .card:hover{border-color:var(--border);transform:translateY(-2px)}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:var(--coral);color:#fff}.btn-primary:hover{background:#a81b2e;transform:translateY(-1px)}
+.btn-primary{background:var(--coral);color:#fff}.btn-primary:hover{background:#c0141b;transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--off-white);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--off-white);transform:translateY(-1px)}
-.chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px;background:rgba(255,80,98,.12);color:var(--coral);border:1px solid rgba(255,80,98,.25)}
+.chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px;background:rgba(255,42,50,.12);color:var(--coral);border:1px solid rgba(255,42,50,.25)}
 .chip-amber{background:rgba(224,163,74,.12);color:var(--amber);border-color:rgba(224,163,74,.25)}
 .chip-sage{background:rgba(143,169,123,.12);color:var(--sage);border-color:rgba(143,169,123,.25)}
 /* NAV */
@@ -59,7 +59,7 @@ section{padding:5rem 0}
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 0 4rem;position:relative;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(242,237,227,.3) 1px,transparent 1px),linear-gradient(90deg,rgba(242,237,227,.3) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 30%,transparent 100%)}
-.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(255,80,98,.06) 0%,transparent 70%);top:20%;left:60%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(255,42,50,.06) 0%,transparent 70%);top:20%;left:60%;transform:translate(-50%,-50%);pointer-events:none}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.08;letter-spacing:-.02em;color:var(--off-white);margin-bottom:1.5rem}
 .hero-sub{font-size:1.0625rem;color:var(--muted);max-width:560px;line-height:1.65;margin-bottom:2rem}
 /* CREDENTIAL BAR */
@@ -78,11 +78,11 @@ section{padding:5rem 0}
 .aud-accent{position:absolute;top:0;left:0;width:3px;height:100%}
 /* STEPS */
 .step-num{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--coral);letter-spacing:.15em;margin-bottom:.75rem}
-.step-ghost{position:absolute;top:1.5rem;right:2rem;font-family:'Playfair Display',serif;font-size:5rem;color:rgba(255,80,98,.04);line-height:1}
+.step-ghost{position:absolute;top:1.5rem;right:2rem;font-family:'Playfair Display',serif;font-size:5rem;color:rgba(255,42,50,.04);line-height:1}
 /* TESTIMONIALS */
 .quote-mark{color:var(--coral);font-size:2rem;font-family:'Playfair Display',serif;line-height:1;margin-bottom:1rem}
 /* LEAD MAGNET */
-.lead-section{background:var(--bg);border-top:1px solid rgba(255,80,98,.2);border-bottom:1px solid rgba(255,80,98,.2);padding:5rem 0}
+.lead-section{background:var(--bg);border-top:1px solid rgba(255,42,50,.2);border-bottom:1px solid rgba(255,42,50,.2);padding:5rem 0}
 .lead-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
 .lead-input{flex:1;min-width:200px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:2px;padding:.85rem 1rem;color:var(--off-white);font-family:'IBM Plex Mono',monospace;font-size:.85rem;outline:none}
 .lead-input:focus{border-color:var(--coral)}
@@ -215,7 +215,7 @@ a{color:inherit}
 .hp-lab .val{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;margin:6px 0 4px}
 .hp-lab .val em{color:var(--coral-bright);font-style:normal}
 .hp-lab .src{font-size:12.5px;color:var(--muted);line-height:1.55}
-.hp-lab .src a{color:var(--coral-bright);border-bottom:1px solid rgba(255,80,98,.35);text-decoration:none;cursor:pointer}
+.hp-lab .src a{color:var(--coral-bright);border-bottom:1px solid rgba(255,42,50,.35);text-decoration:none;cursor:pointer}
 .hp-sec{padding:88px 0;border-bottom:1px solid var(--border)}
 .hp-sec-head{max-width:760px;margin-bottom:52px}
 .hp-sec-head h2{font-family:'Playfair Display',serif;font-size:clamp(30px,3.4vw,44px);font-weight:700;line-height:1.15;margin:14px 0 16px}
@@ -263,7 +263,7 @@ a{color:inherit}
 .fm-card p.d{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:24px}
 .fm-btns{display:flex;flex-direction:column;gap:12px}
 .fm-alt{font-size:14px;color:var(--muted);margin-top:14px}
-.fm-alt a{color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)}
+.fm-alt a{color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)}
 .fm-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid var(--border);padding-top:40px}
 .fm-step .n{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:var(--coral);line-height:1}
 .fm-step h4{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 8px;font-weight:400;color:var(--off-white)}
@@ -476,14 +476,14 @@ a{color:inherit}
           <p>Request your consult online in about a minute. Our office will call you to confirm your appointment and complete payment.</p>
           <a class="btn btn-primary" href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener">See available times →</a>
           <p class="hp-fine">Cancel or reschedule with 72+ hours' notice for a full refund.<br>
-          Already a patient? <a href="https://cal.com/drdavidwalters/30-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">Schedule a follow-up →</a></p>
+          Already a patient? <a href="https://cal.com/drdavidwalters/30-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">Schedule a follow-up →</a></p>
         </div>
         <div class="hp-card">
           <p class="hp-eyebrow">Secure messaging &amp; video — Spruce</p>
           <h3>One number. Fully private.</h3>
-          <p>Call the office any time on the number below. Once your appointment is confirmed, we send you a private invitation to <strong>Spruce</strong> — the free, HIPAA-compliant app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">Android</a>) we use for your forms, secure messaging, and your video visit.</p>
+          <p>Call the office any time on the number below. Once your appointment is confirmed, we send you a private invitation to <strong>Spruce</strong> — the free, HIPAA-compliant app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">Android</a>) we use for your forms, secure messaging, and your video visit.</p>
           <a class="hp-tel" href="tel:+17195440199">(719) 544-0199</a>
-          <p class="hp-fine">After you book, complete your <a href="#" onclick="showPage('forms');return false" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">New Patient Forms</a> and return them via Spruce before your visit.</p>
+          <p class="hp-fine">After you book, complete your <a href="#" onclick="showPage('forms');return false" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">New Patient Forms</a> and return them via Spruce before your visit.</p>
         </div>
       </div>
     </div>
@@ -572,7 +572,7 @@ a{color:inherit}
     <div class="container-narrow">
       <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:1.5rem">Why is this happening?</h2>
       <p style="color:var(--body);line-height:1.75;margin-bottom:1.25rem">Multiple large studies document a decline of more than 1% per year in average testosterone levels since the 1980s. Sperm counts in Western men have fallen by more than 50% over the same period.</p>
-      <div style="background:var(--bg-card);border:1px solid rgba(255,80,98,.3);border-radius:4px;padding:2rem;margin:2rem 0"><p class="serif" style="font-size:1.3rem;color:var(--off-white);line-height:1.5;margin:0">This is not aging. This is not genetics. <span style="color:var(--coral)">This is chemistry.</span></p></div>
+      <div style="background:var(--bg-card);border:1px solid rgba(255,42,50,.3);border-radius:4px;padding:2rem;margin:2rem 0"><p class="serif" style="font-size:1.3rem;color:var(--off-white);line-height:1.5;margin:0">This is not aging. This is not genetics. <span style="color:var(--coral)">This is chemistry.</span></p></div>
       <p style="color:var(--body);line-height:1.75;margin-bottom:1rem">The scientific evidence points strongly to endocrine-disrupting chemicals (EDCs) — synthetic compounds found in plastics, food packaging, pesticides, tap water, and personal care products — that mimic estrogen and bind to receptors in the hypothalamus and pituitary. Your body is not broken. It is being chemically suppressed.</p>
       <div style="padding:1rem;background:var(--bg-elevated);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.05em">Key studies: Levine et al. 2017 · Travison et al. 2007 · Swan et al. 2021 · <a href="#" onclick="showPage('research')" style="color:var(--coral);text-decoration:none">See full literature →</a></div>
     </div>
@@ -581,7 +581,7 @@ a{color:inherit}
     <div class="container">
       <div class="label" style="margin-bottom:1rem">Treatment</div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.4rem);margin-bottom:3rem;max-width:600px;line-height:1.2">Why testosterone replacement is the wrong answer for most young men</h2>
       <div class="compare-grid">
-        <div class="compare-card" style="border:1px solid rgba(255,80,98,.2)">
+        <div class="compare-card" style="border:1px solid rgba(255,42,50,.2)">
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem"><span class="compare-dot" style="background:var(--coral)"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--coral);letter-spacing:.12em;text-transform:uppercase">Testosterone Replacement (TRT)</span></div>
           <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:var(--body);font-size:.9rem;line-height:1.5">Signals the pituitary to stop producing LH and FSH</span></div>
           <div class="compare-row"><span style="color:var(--coral);flex-shrink:0;margin-top:2px">✕</span><span style="color:var(--body);font-size:.9rem;line-height:1.5">Your testes shrink from disuse</span></div>
@@ -606,7 +606,7 @@ a{color:inherit}
       </div>
     </div>
   </section>
-  <section style="background:var(--bg);border-top:1px solid rgba(255,80,98,.15);padding:4rem 0">
+  <section style="background:var(--bg);border-top:1px solid rgba(255,42,50,.15);padding:4rem 0">
     <div class="container-narrow"><div class="label" style="margin-bottom:1.5rem">Patient Story</div><blockquote>"Dr. Walters found all the reasons why I felt the way I did — hypogonadism, low testosterone, low vitamin D. He prescribed the appropriate treatment, counseled me on nutrition, and I felt better than I had in years."</blockquote><div style="margin-top:1rem;padding-left:1.5rem"><div class="serif" style="font-size:1rem">Cole G.</div><div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px">Patient</div></div><div style="margin-top:2rem;padding-left:1.5rem"><a href="#" onclick="showPage('stories')" style="font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--coral);text-decoration:none">Read all patient stories →</a></div></div>
   </section>
 </div>
@@ -772,7 +772,7 @@ a{color:inherit}
   <section>
     <div class="container-narrow">
       <div class="accent-line"></div><h2 class="serif" style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:2rem">How a telemedicine visit works</h2>
-      <div class="process-row"><div class="process-num">01</div><div><div class="process-title">Book</div><div class="process-desc"><a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">Request your consultation online</a> in about a minute, or call (719) 544-0199. Our office will call you back to confirm your appointment and complete payment — your visit is finalized at that point.</div></div></div><div class="process-row"><div class="process-num">02</div><div><div class="process-title">Connect</div><div class="process-desc">Once your appointment is confirmed, we send you a private invitation to <strong>Spruce</strong> — the free, HIPAA-compliant app we use for everything clinical. Accept the invitation and install the app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">Android</a> · or your computer). The invitation is what links you to the practice.</div></div></div><div class="process-row"><div class="process-num">03</div><div><div class="process-title">Prepare</div><div class="process-desc">Complete your New Patient Forms and return them through Spruce before your visit. Never email them — Spruce keeps your health information secure.</div></div></div><div class="process-row"><div class="process-num">04</div><div><div class="process-title">Your visit</div><div class="process-desc">At your appointment time, be signed in to Spruce and ready. <strong>Dr. Walters places the video call to you</strong> — you don't need to dial anything.</div></div></div><div class="process-row"><div class="process-num">05</div><div><div class="process-title">Investigate</div><div class="process-desc">Dr. Walters conducts the consultation most physicians never learned to do: full health history, symptom review, chemical and environmental exposure history, and a comprehensive hormone panel that goes far beyond a single testosterone number. Lab orders are sent to a laboratory near you.</div></div></div><div class="process-row"><div class="process-num">06</div><div><div class="process-title">Review &amp; begin</div><div class="process-desc">You have blood drawn locally. Dr. Walters reviews the results and follows up to discuss findings and your treatment plan. Prescriptions are sent to one of our compounding pharmacies. Most patients notice improvement within 3–4 weeks.</div></div></div>
+      <div class="process-row"><div class="process-num">01</div><div><div class="process-title">Book</div><div class="process-desc"><a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">Request your consultation online</a> in about a minute, or call (719) 544-0199. Our office will call you back to confirm your appointment and complete payment — your visit is finalized at that point.</div></div></div><div class="process-row"><div class="process-num">02</div><div><div class="process-title">Connect</div><div class="process-desc">Once your appointment is confirmed, we send you a private invitation to <strong>Spruce</strong> — the free, HIPAA-compliant app we use for everything clinical. Accept the invitation and install the app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">Android</a> · or your computer). The invitation is what links you to the practice.</div></div></div><div class="process-row"><div class="process-num">03</div><div><div class="process-title">Prepare</div><div class="process-desc">Complete your New Patient Forms and return them through Spruce before your visit. Never email them — Spruce keeps your health information secure.</div></div></div><div class="process-row"><div class="process-num">04</div><div><div class="process-title">Your visit</div><div class="process-desc">At your appointment time, be signed in to Spruce and ready. <strong>Dr. Walters places the video call to you</strong> — you don't need to dial anything.</div></div></div><div class="process-row"><div class="process-num">05</div><div><div class="process-title">Investigate</div><div class="process-desc">Dr. Walters conducts the consultation most physicians never learned to do: full health history, symptom review, chemical and environmental exposure history, and a comprehensive hormone panel that goes far beyond a single testosterone number. Lab orders are sent to a laboratory near you.</div></div></div><div class="process-row"><div class="process-num">06</div><div><div class="process-title">Review &amp; begin</div><div class="process-desc">You have blood drawn locally. Dr. Walters reviews the results and follows up to discuss findings and your treatment plan. Prescriptions are sent to one of our compounding pharmacies. Most patients notice improvement within 3–4 weeks.</div></div></div>
     </div>
   </section>
   <section class="section-dark">
@@ -795,7 +795,7 @@ a{color:inherit}
   </section>
 
   <!-- TELEMEDICINE INTAKE SECTION -->
-  <section style="background:var(--bg);border-top:1px solid rgba(216,37,60,0.2);padding:4rem 0">
+  <section style="background:var(--bg);border-top:1px solid rgba(235,28,36,0.2);padding:4rem 0">
     <div class="container-narrow" style="text-align:center">
       <div class="label" style="margin-bottom:1rem">New Patients</div>
       <h2 class="serif" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:1rem">Complete your intake forms before your visit</h2>
@@ -850,7 +850,7 @@ a{color:inherit}
   <section>
     <div class="container-narrow">
       <div class="accordion-section"><div class="accordion-header"><div class="accordion-line" style="background:var(--coral)"></div><div class="label" style="color:var(--coral);margin-bottom:0">About Dr. Walters & the Practice</div></div>
-        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">How do I book an appointment?</span><span class="accordion-icon">+</span></button><div class="accordion-body">Request your consultation online — it takes about a minute. Our office will then call you to confirm the appointment and complete payment; your appointment is finalized at that point. Prefer to speak with someone first? Call <strong>(719) 544-0199</strong> through the free Spruce Health app. <a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">See available times →</a></div></div>
+        <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">How do I book an appointment?</span><span class="accordion-icon">+</span></button><div class="accordion-body">Request your consultation online — it takes about a minute. Our office will then call you to confirm the appointment and complete payment; your appointment is finalized at that point. Prefer to speak with someone first? Call <strong>(719) 544-0199</strong> through the free Spruce Health app. <a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">See available times →</a></div></div>
       <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">What makes Dr. Walters different from other hormone clinics?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Most hormone clinics measure a testosterone number and prescribe testosterone. Dr. Walters evaluates the entire HPG axis to understand why your hormones are dysregulated. He holds a PhD in reproductive endocrinology — a credential virtually no other hormone clinic physician holds — and has 25 years of clinical experience treating the root cause of hormonal decline. His central clinical insight — that EDC exposure drives HPG axis suppression via ERα agonism at the hypothalamus, and that clomiphene citrate is the mechanistically targeted response — is a synthesis no other practicing physician has published.</div></div>
         <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Does Dr. Walters treat both men and women?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Yes. Dr. Walters treats male and female patients of all ages. His practice includes hormone optimization for menopause, andropause, low testosterone in young men, and complex hormonal presentations across the lifespan.</div></div>
         <div class="accordion-item"><button class="accordion-btn" onclick="toggleAccordion(this)"><span class="accordion-q">Where is Dr. Walters located?</span><span class="accordion-icon" style="color:var(--coral)">+</span></button><div class="accordion-body">Dr. Walters is based in South Dakota and holds a monthly two-day clinic in Colorado Springs, Colorado. South Dakota patients are seen via telemedicine or in person in his Hot Springs, SD clinic. Colorado patients are seen in person for their first visit, then via telemedicine.</div></div>
@@ -920,7 +920,7 @@ a{color:inherit}
     #book-signup input{background:var(--bg-elevated)!important;border:1px solid var(--border)!important;color:var(--off-white)!important;border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important;padding:.85rem 1rem!important}
     #book-signup input:focus{border-color:var(--coral)!important;outline:none!important}
     #book-signup button,#book-signup input[type=submit],#book-signup [type=submit]{background:var(--coral)!important;color:#fff!important;border:none!important;border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-size:.8rem!important;padding:.85rem 1.5rem!important;cursor:pointer!important}
-    #book-signup button:hover,#book-signup input[type=submit]:hover{background:#a81b2e!important}
+    #book-signup button:hover,#book-signup input[type=submit]:hover{background:#c0141b!important}
     #book-signup label{font-family:'IBM Plex Mono',monospace!important;font-size:.68rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--muted)!important}
     #book-signup p{color:var(--muted)!important}
   </style>
@@ -1023,7 +1023,7 @@ a{color:inherit}
     <div class="hp-wrap">
       <p class="hp-eyebrow">Before your first visit</p>
       <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,3.8vw,48px);font-weight:700;margin:14px 0 18px;line-height:1.15">New Patient Forms</h1>
-      <p style="color:var(--muted);font-size:17.5px;max-width:70ch;line-height:1.65">Two documents before your first visit: the New Patient Intake form and the Patient Agreement for your clinic location. Complete them and send them back through <strong style="color:var(--off-white)">Spruce</strong> — the free, HIPAA-compliant app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,80,98,.35)">Android</a>) we invite you to once your appointment is confirmed. Never email your completed forms; Spruce keeps your health information secure.</p>
+      <p style="color:var(--muted);font-size:17.5px;max-width:70ch;line-height:1.65">Two documents before your first visit: the New Patient Intake form and the Patient Agreement for your clinic location. Complete them and send them back through <strong style="color:var(--off-white)">Spruce</strong> — the free, HIPAA-compliant app (<a href="https://apps.apple.com/us/app/spruce-medical-communication/id1080857171" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=com.spruce.messenger" target="_blank" rel="noopener" style="color:var(--coral-bright);text-decoration:none;border-bottom:1px solid rgba(255,42,50,.35)">Android</a>) we invite you to once your appointment is confirmed. Never email your completed forms; Spruce keeps your health information secure.</p>
     </div>
   </section>
 

@@ -25,8 +25,8 @@
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes pulseGlow {
-      0%,100% { box-shadow: 0 0 20px rgba(255,80,98,.15); }
-      50%      { box-shadow: 0 0 40px rgba(255,80,98,.3); }
+      0%,100% { box-shadow: 0 0 20px rgba(255,42,50,.15); }
+      50%      { box-shadow: 0 0 40px rgba(255,42,50,.3); }
     }
 
     a { color: inherit; }
@@ -49,14 +49,14 @@
       text-decoration: none;
       transition: color .2s;
     }
-    .site-nav a:hover { color: #ff5062; opacity: 1; }
+    .site-nav a:hover { color: #ff2a32; opacity: 1; }
     .site-nav-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,.5); }
 
     #app { max-width: 640px; margin: 0 auto; padding: 40px 16px; }
 
     .masthead { text-align: center; margin-bottom: 40px; }
     .masthead-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 4px; }
-    .masthead-rule { width: 40px; height: 1px; background: linear-gradient(90deg, transparent, #ff5062, transparent); margin: 0 auto; }
+    .masthead-rule { width: 40px; height: 1px; background: linear-gradient(90deg, transparent, #ff2a32, transparent); margin: 0 auto; }
 
     .screen { animation: fadeIn .5s ease-out; }
     .hidden { display: none !important; }
@@ -64,29 +64,29 @@
     .intro-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,6vw,42px); font-weight: 400; color: #f2ede3; line-height: 1.2; text-align: center; margin-bottom: 20px; }
     .intro-sub { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.8; text-align: center; max-width: 520px; margin: 0 auto 32px; }
     .card { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
-    .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #ff5062; margin-bottom: 16px; }
+    .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #ff2a32; margin-bottom: 16px; }
     .eval-item { margin-bottom: 16px; }
     .eval-item-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
     .eval-item-desc { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.6; }
 
     .author-card { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
-    .author-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg,#ff5062,#E0A34A); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; color: #0c0b09; flex-shrink: 0; }
+    .author-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg,#ff2a32,#E0A34A); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; color: #0c0b09; flex-shrink: 0; }
     .author-name { font-family: 'Playfair Display', serif; font-size: 16px; color: #f2ede3; margin-bottom: 4px; }
     .author-creds { font-size: 11px; color: rgba(255,255,255,.45); line-height: 1.5; }
 
-    .btn-primary { display: inline-block; padding: 16px 48px; background: linear-gradient(135deg,#ff5062,#d8253c); border: none; border-radius: 8px; color: #f2ede3; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 2px; text-transform: uppercase; animation: pulseGlow 3s ease-in-out infinite; transition: transform .2s; }
+    .btn-primary { display: inline-block; padding: 16px 48px; background: linear-gradient(135deg,#ff2a32,#eb1c24); border: none; border-radius: 8px; color: #f2ede3; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 2px; text-transform: uppercase; animation: pulseGlow 3s ease-in-out infinite; transition: transform .2s; }
     .btn-primary:hover { transform: scale(1.02); }
     .btn-sub { font-size: 11px; color: rgba(255,255,255,.25); margin-top: 12px; }
     .btn-ghost { padding: 12px 24px; background: transparent; border: 1px solid rgba(255,255,255,.12); border-radius: 6px; color: rgba(255,255,255,.6); font-family: 'IBM Plex Mono', monospace; font-size: 13px; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: all .2s; }
     .btn-ghost:disabled { color: rgba(255,255,255,.2); cursor: default; }
     .btn-next { padding: 12px 32px; border: none; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; transition: all .2s; }
-    .btn-next.active { background: linear-gradient(135deg,#ff5062,#d8253c); color: #f2ede3; }
+    .btn-next.active { background: linear-gradient(135deg,#ff2a32,#eb1c24); color: #f2ede3; }
     .btn-next.inactive { background: rgba(255,255,255,.05); color: rgba(255,255,255,.2); cursor: default; }
 
     .progress-wrap { margin-bottom: 32px; }
     .progress-meta { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,.5); letter-spacing: 1px; text-transform: uppercase; }
     .progress-track { height: 3px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg,#ff5062,#E0A34A); border-radius: 2px; transition: width .5s cubic-bezier(.4,0,.2,1); }
+    .progress-fill { height: 100%; background: linear-gradient(90deg,#ff2a32,#E0A34A); border-radius: 2px; transition: width .5s cubic-bezier(.4,0,.2,1); }
 
     .q-section { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
     .q-text { font-family: 'Playfair Display', serif; font-size: clamp(20px,4vw,26px); font-weight: 400; color: #f2ede3; line-height: 1.4; margin-bottom: 32px; }
@@ -94,7 +94,7 @@
     .option-btn { display: block; width: 100%; padding: 16px 20px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: left; cursor: pointer; transition: all .2s ease; line-height: 1.5; }
     .option-btn.unselected { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.7); }
     .option-btn.unselected:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.15); }
-    .option-btn.selected { background: rgba(224,122,95,.15); border: 1px solid #ff5062; color: #f2ede3; }
+    .option-btn.selected { background: rgba(224,122,95,.15); border: 1px solid #ff2a32; color: #f2ede3; }
     .context-box { margin-top: 20px; padding: 14px 18px; background: rgba(143,169,123,.08); border: 1px solid rgba(143,169,123,.2); border-radius: 8px; font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; animation: fadeIn .3s ease-out; }
     .context-label { color: #8FA97B; font-weight: 700; }
     .q-nav { display: flex; justify-content: space-between; margin-top: 32px; gap: 16px; }
@@ -110,7 +110,7 @@
     .narrative-heading { font-family: 'Playfair Display', serif; font-size: 22px; color: #f2ede3; margin-bottom: 20px; font-weight: 400; }
     .narrative-para { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.8; margin-bottom: 18px; }
     .narrative-para.highlight { color: rgba(255,255,255,.75); }
-    .narrative-key { color: #ff5062; font-weight: 700; display: block; margin-bottom: 4px; }
+    .narrative-key { color: #ff2a32; font-weight: 700; display: block; margin-bottom: 4px; }
 
     .steps-heading { font-family: 'Playfair Display', serif; font-size: 22px; color: #8FA97B; margin-bottom: 20px; font-weight: 400; }
     .step-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #E0A34A; margin-bottom: 8px; }
@@ -128,18 +128,18 @@
     .footer-text { text-align: center; font-size: 10px; color: rgba(255,255,255,.2); letter-spacing: 1px; padding-bottom: 40px; }
     .green-section { background: rgba(143,169,123,.06); border: 1px solid rgba(143,169,123,.2); border-radius: 12px; padding: 28px; margin-bottom: 32px; }
 
-    .email-capture { background: rgba(255,80,98,.06); border: 1px solid rgba(255,80,98,.25); border-radius: 12px; padding: 28px; margin-bottom: 32px; text-align: center; }
+    .email-capture { background: rgba(255,42,50,.06); border: 1px solid rgba(255,42,50,.25); border-radius: 12px; padding: 28px; margin-bottom: 32px; text-align: center; }
     .email-capture h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #f2ede3; margin-bottom: 8px; font-weight: 400; }
     .email-capture p { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 20px; }
     .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
     .email-input { flex: 1; min-width: 220px; padding: 12px 16px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; color: #f2ede3; font-family: 'IBM Plex Mono', monospace; font-size: 13px; outline: none; transition: border-color .2s; }
-    .email-input:focus { border-color: #ff5062; }
+    .email-input:focus { border-color: #ff2a32; }
     .email-input::placeholder { color: rgba(255,255,255,.25); }
-    .email-submit { padding: 12px 24px; background: linear-gradient(135deg,#ff5062,#d8253c); border: none; border-radius: 6px; color: #f2ede3; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 700; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .email-submit { padding: 12px 24px; background: linear-gradient(135deg,#ff2a32,#eb1c24); border: none; border-radius: 6px; color: #f2ede3; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 700; cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
     .email-submit:hover { transform: scale(1.02); }
     .email-submit:disabled { opacity: .5; cursor: default; transform: none; }
     .email-success { color: #8FA97B; font-size: 13px; margin-top: 12px; }
-    .email-error { color: #ff5062; font-size: 12px; margin-top: 8px; }
+    .email-error { color: #ff2a32; font-size: 12px; margin-top: 8px; }
     .email-privacy { font-size: 10px; color: rgba(255,255,255,.25); margin-top: 12px; }
   </style>
 </head>
@@ -172,7 +172,7 @@
         <div class="eval-item-desc">Indicators of in-utero and early-life exposure that may have affected HPG axis development</div>
       </div>
       <div class="eval-item" style="margin-bottom:0">
-        <div class="eval-item-title" style="color:#ff5062">Symptom Pattern</div>
+        <div class="eval-item-title" style="color:#ff2a32">Symptom Pattern</div>
         <div class="eval-item-desc">Whether your symptoms are consistent with HPG axis suppression from EDC exposure</div>
       </div>
     </div>
@@ -368,7 +368,7 @@ var EXPOSURE_IDS    = ["plastic_water_lifetime","military","food_storage","perso
 var DEVELOPMENT_IDS = ["age","puberty","childhood_environment"];
 var SYMPTOM_IDS     = ["symptoms_energy","symptoms_libido","symptoms_body","symptoms_cognitive","prior_testing"];
 var SECTION_COLORS  = {
-  "Symptom Profile":"#ff5062","Current Exposure":"#E0A34A",
+  "Symptom Profile":"#ff2a32","Current Exposure":"#E0A34A",
   "Environmental History":"#8FA97B","Developmental History":"#B07ACC",
   "Medical History":"#5B9BD5","Demographics":"rgba(255,255,255,.4)"
 };
@@ -380,9 +380,9 @@ function getRiskLevel(score, max) {
   var p = score / max;
   if (p < 0.2) return {level:"Low",      color:"#8FA97B"};
   if (p < 0.4) return {level:"Moderate", color:"#E0A34A"};
-  if (p < 0.6) return {level:"Elevated", color:"#ff5062"};
-  if (p < 0.8) return {level:"High",     color:"#d8253c"};
-  return              {level:"Very High",color:"#ff5062"};
+  if (p < 0.6) return {level:"Elevated", color:"#ff2a32"};
+  if (p < 0.8) return {level:"High",     color:"#eb1c24"};
+  return              {level:"Very High",color:"#ff2a32"};
 }
 
 function getCategoryScores() {
@@ -534,7 +534,7 @@ function renderResults() {
     '<button type="submit" class="email-submit" id="email-submit" data-fs-submit-btn>Send My Results</button>' +
     '</form>' +
     '<div data-fs-success style="color:#8FA97B;font-size:13px;margin-top:12px">\u2713 Sent! Dr. Walters will review your results and reach out.</div>' +
-    '<div data-fs-error style="color:#ff5062;font-size:12px;margin-top:8px"></div>' +
+    '<div data-fs-error style="color:#ff2a32;font-size:12px;margin-top:8px"></div>' +
     '<div class="email-privacy">We will never share your email. Used only to contact you about your results.</div>' +
     '</div>' +
     '<div style="text-align:center;margin-bottom:24px"><button class="btn-ghost" id="btn-retake">Retake Assessment</button></div>' +
@@ -616,7 +616,7 @@ function stepsHTML() {
     '<div style="margin-bottom:24px">' +
     '<div class="step-label">Step 1 \u2014 Measure Your Actual Exposure</div>' +
     '<p class="step-intro">This assessment estimates your risk based on lifestyle and history. To know your actual burden, test your biomarkers. We recommend starting with PFAS testing as the most accessible entry point.</p>' +
-    tcard("empowerDX \u2014 PFAS \u201cForever Chemicals\u201d Blood Test","~$249","#ff5062","rgba(255,80,98,.06)","rgba(255,80,98,.25)","Tests 16 legacy PFAS compounds in blood via finger prick. PFAS are persistent \u201cforever chemicals\u201d that bioaccumulate and never break down in your body. Backed by Eurofins, one of the world's largest lab networks. HSA/FSA eligible.","https://empowerdxlab.com","Get the empowerDX PFAS Test \u2192","","&#9733; RECOMMENDED STARTING POINT") +
+    tcard("empowerDX \u2014 PFAS \u201cForever Chemicals\u201d Blood Test","~$249","#ff2a32","rgba(255,42,50,.06)","rgba(255,42,50,.25)","Tests 16 legacy PFAS compounds in blood via finger prick. PFAS are persistent \u201cforever chemicals\u201d that bioaccumulate and never break down in your body. Backed by Eurofins, one of the world's largest lab networks. HSA/FSA eligible.","https://empowerdxlab.com","Get the empowerDX PFAS Test \u2192","","&#9733; RECOMMENDED STARTING POINT") +
     tcard("Keyspan \u2014 Microplastics Blood Test","~$150","#E0A34A","rgba(224,163,74,.04)","rgba(224,163,74,.2)","Measures the number, size, and concentration of microplastic particles in your blood plasma using contamination-free fluorescent microscopy. A different dimension than chemical metabolite testing. Results in 2\u20133 weeks.","https://getkeyspan.com","Get the Keyspan Microplastics Test \u2192","","") +
     tcard("Million Marker \u2014 EDC Metabolite Urine Test","$399","#8FA97B","rgba(143,169,123,.04)","rgba(143,169,123,.2)","The only mail-in urine test for BPA, BPS, BPF, phthalates, parabens, and oxybenzone \u2014 the specific EDC metabolites most directly implicated in ER\u03b1 agonism and HPG axis suppression.","https://millionmarker.com","Get the Million Marker Test \u2192","","") +
     '</div>' +
@@ -635,7 +635,7 @@ function stepsHTML() {
     '<div class="step-label">Step 4 \u2014 Consult a Specialist</div>' +
     '<p class="step-intro">An assessment is a starting point, not a diagnosis. The only way to know what your HPG axis is actually doing is to measure it. Dr. Walters holds a PhD in reproductive endocrinology and evaluates the full axis \u2014 not just a testosterone number.</p>' +
     '<p class="step-intro" style="color:#b8b2a4;font-size:13px;margin-top:-4px">Telemedicine across South Dakota and Colorado. New patient consult, 60 minutes, $295. Request a time online \u2014 our office will call you to confirm.</p>' +
-    '<a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener noreferrer" class="btn-link" style="background:#d8253c;border:1px solid #d8253c;color:#fff;padding:14px 30px;font-size:14px;letter-spacing:.08em;display:inline-block">Book Your Evaluation \u2192</a>' +
+    '<a href="https://cal.com/drdavidwalters/60-min" target="_blank" rel="noopener noreferrer" class="btn-link" style="background:#eb1c24;border:1px solid #eb1c24;color:#fff;padding:14px 30px;font-size:14px;letter-spacing:.08em;display:inline-block">Book Your Evaluation \u2192</a>' +
     '<div style="margin-top:14px"><a href="https://drdavidwalters.com" target="_blank" rel="noopener noreferrer" style="color:#b8b2a4;font-size:12px;text-decoration:none;border-bottom:1px solid rgba(242,237,227,.2)">Or read more at drdavidwalters.com \u2192</a></div>' +
     '</div>'
   );
@@ -655,20 +655,20 @@ function tcard(name, price, color, bg, border, desc, href, btn, evidence, tag) {
 function hpgSVG() {
   return '<svg viewBox="0 0 700 420" style="width:100%;max-width:700px;margin:24px auto;display:block" xmlns="http://www.w3.org/2000/svg">' +
     '<defs><marker id="aN" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#8FA97B"/></marker>' +
-    '<marker id="aD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#ff5062"/></marker>' +
+    '<marker id="aD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#ff2a32"/></marker>' +
     '<filter id="gR"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>' +
     '<text x="350" y="28" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" fill="#f2ede3">HPG Axis \u2014 EDC Suppression Mechanism</text>' +
-    '<rect x="220" y="50" width="260" height="56" rx="8" fill="rgba(255,80,98,.12)" stroke="#ff5062" stroke-width="1.5"/>' +
+    '<rect x="220" y="50" width="260" height="56" rx="8" fill="rgba(255,42,50,.12)" stroke="#ff2a32" stroke-width="1.5"/>' +
     '<text x="350" y="75" text-anchor="middle" font-family="Playfair Display,serif" font-size="16" fill="#f2ede3">Hypothalamus</text>' +
     '<text x="350" y="95" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="rgba(255,255,255,.5)">GnRH-producing neurons (ER\u03b1 receptors)</text>' +
-    '<rect x="10" y="52" width="190" height="52" rx="6" fill="rgba(255,80,98,.08)" stroke="#ff5062" stroke-width="1" stroke-dasharray="4,3" filter="url(#gR)"/>' +
-    '<text x="105" y="72" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#ff5062" font-weight="700">EDCs (BPA, Phthalates)</text>' +
-    '<text x="105" y="88" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,80,98,.7)">bind ER\u03b1 \u2192 false estrogen signal</text>' +
-    '<line x1="200" y1="78" x2="218" y2="78" stroke="#ff5062" stroke-width="1.5" marker-end="url(#aD)"/>' +
+    '<rect x="10" y="52" width="190" height="52" rx="6" fill="rgba(255,42,50,.08)" stroke="#ff2a32" stroke-width="1" stroke-dasharray="4,3" filter="url(#gR)"/>' +
+    '<text x="105" y="72" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#ff2a32" font-weight="700">EDCs (BPA, Phthalates)</text>' +
+    '<text x="105" y="88" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,42,50,.7)">bind ER\u03b1 \u2192 false estrogen signal</text>' +
+    '<line x1="200" y1="78" x2="218" y2="78" stroke="#ff2a32" stroke-width="1.5" marker-end="url(#aD)"/>' +
     '<line x1="350" y1="108" x2="350" y2="155" stroke="#8FA97B" stroke-width="1.5" marker-end="url(#aN)"/>' +
     '<text x="375" y="135" font-family="IBM Plex Mono,monospace" font-size="10" fill="#8FA97B">GnRH \u2193</text>' +
-    '<text x="330" y="140" font-family="IBM Plex Mono,monospace" font-size="16" fill="#ff5062" font-weight="700">\u2715</text>' +
-    '<text x="405" y="140" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,80,98,.7)">suppressed</text>' +
+    '<text x="330" y="140" font-family="IBM Plex Mono,monospace" font-size="16" fill="#ff2a32" font-weight="700">\u2715</text>' +
+    '<text x="405" y="140" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,42,50,.7)">suppressed</text>' +
     '<rect x="250" y="160" width="200" height="50" rx="8" fill="rgba(224,163,74,.1)" stroke="#E0A34A" stroke-width="1.5"/>' +
     '<text x="350" y="183" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" fill="#f2ede3">Anterior Pituitary</text>' +
     '<text x="350" y="200" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="rgba(255,255,255,.5)">LH / FSH production</text>' +
@@ -677,9 +677,9 @@ function hpgSVG() {
     '<rect x="260" y="265" width="180" height="50" rx="8" fill="rgba(143,169,123,.1)" stroke="#8FA97B" stroke-width="1.5"/>' +
     '<text x="350" y="288" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" fill="#f2ede3">Testes</text>' +
     '<text x="350" y="305" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="rgba(255,255,255,.5)">Testosterone production</text>' +
-    '<line x1="350" y1="317" x2="350" y2="360" stroke="#ff5062" stroke-width="1.5" marker-end="url(#aD)"/>' +
-    '<rect x="240" y="363" width="220" height="40" rx="6" fill="rgba(255,80,98,.1)" stroke="#ff5062" stroke-width="1"/>' +
-    '<text x="350" y="387" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#ff5062" font-weight="700">TESTOSTERONE \u2193\u2193</text>' +
+    '<line x1="350" y1="317" x2="350" y2="360" stroke="#ff2a32" stroke-width="1.5" marker-end="url(#aD)"/>' +
+    '<rect x="240" y="363" width="220" height="40" rx="6" fill="rgba(255,42,50,.1)" stroke="#ff2a32" stroke-width="1"/>' +
+    '<text x="350" y="387" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#ff2a32" font-weight="700">TESTOSTERONE \u2193\u2193</text>' +
     '<rect x="500" y="52" width="190" height="65" rx="6" fill="rgba(143,169,123,.08)" stroke="#8FA97B" stroke-width="1"/>' +
     '<text x="595" y="71" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#8FA97B" font-weight="700">CLOMIPHENE CITRATE</text>' +
     '<text x="595" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(143,169,123,.8)">Blocks ER\u03b1 at hypothalamus</text>' +
