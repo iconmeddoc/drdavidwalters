@@ -166,12 +166,13 @@ footer{padding:2.5rem 0}
       </div>
     </div>
     <div>
-      <div class="label" id="status-label">Available November 2, 2026 · Medical Anarchy Press</div>
+      <div class="label" id="status-label">Out now · Medical Anarchy Press</div>
       <h1>The <em>Chemically Castrated</em> Generation</h1>
       <p class="lede">How endocrine disruptors are suppressing young men's testosterone — and the $2 pill that restores it.</p>
       <div class="btns">
-        <a class="btn btn-primary buy" data-retailer="amazon" data-format="kindle" href="#" id="btn-kindle"><span id="kindle-verb">Pre-order on Kindle</span> <small>$9.99</small></a>
-        <a class="btn btn-secondary buy" data-retailer="amazon" data-format="paperback" href="#" id="btn-paper">Paperback <small>$24.95</small></a>
+        <a class="btn btn-primary buy" data-retailer="amazon" data-format="kindle" href="#" id="btn-kindle"><span id="kindle-verb">Buy on Kindle</span> <small>$9.99</small></a>
+        <a class="btn btn-secondary buy" data-retailer="amazon" data-format="paperback" href="#" id="btn-paper">Paperback · Amazon <small>$24.95</small></a>
+        <a class="btn btn-secondary buy" data-retailer="ingramspark" data-format="paperback" href="#" id="btn-paper-ingram">Paperback · IngramSpark <small>$24.95</small></a>
       </div>
       <p class="fine">Free to read with Kindle+. Also from Barnes &amp; Noble, Bookshop.org and your local bookstore — <a href="#buy">all retailers</a>.</p>
       <div class="facts">
@@ -254,6 +255,7 @@ footer{padding:2.5rem 0}
         <div class="retail">
           <a class="btn btn-primary buy" data-retailer="amazon" data-format="kindle" href="#">Amazon · Kindle <span>→</span></a>
           <a class="btn btn-secondary buy" data-retailer="amazon" data-format="paperback" href="#">Amazon · Paperback <span>→</span></a>
+          <a class="btn btn-secondary buy" data-retailer="ingramspark" data-format="paperback" href="#">IngramSpark · Paperback <span>→</span></a>
           <a class="btn btn-secondary buy" data-retailer="barnesandnoble" data-format="paperback" href="#">Barnes &amp; Noble <span>→</span></a>
           <a class="btn btn-secondary buy" data-retailer="bookshop" data-format="paperback" href="#">Bookshop.org <span>→</span></a>
         </div>
@@ -316,9 +318,9 @@ var LINKS = {
   amazon_kindle:     "",   // e.g. https://www.amazon.com/dp/B0XXXXXXXX
   amazon_paperback:  "",   // e.g. https://www.amazon.com/dp/979899625110X…
   barnesandnoble:    "",
-  bookshop:          ""
+  bookshop:          "",
+  ingramspark:       "https://shop.ingramspark.com/b/084?params=4FuXJgzWF3WyZZLLgzeZXnZ4YqD2zVxLa6fnJVCyW9y"
 };
-var RELEASE = new Date("2026-11-02T00:00:00-07:00");
 /* ─────────────────────────────────────────────────────────── */
 
 var ISBN = "9798996251100";
@@ -326,7 +328,8 @@ var FALLBACK = {
   amazon_kindle:    "https://www.amazon.com/s?k=The+Chemically+Castrated+Generation+David+Walters&i=digital-text",
   amazon_paperback: "https://www.amazon.com/s?k=" + ISBN,
   barnesandnoble:   "https://www.barnesandnoble.com/s/" + ISBN,
-  bookshop:         "https://bookshop.org/search?keywords=" + ISBN
+  bookshop:         "https://bookshop.org/search?keywords=" + ISBN,
+  ingramspark:      "https://shop.ingramspark.com/b/084?params=4FuXJgzWF3WyZZLLgzeZXnZ4YqD2zVxLa6fnJVCyW9y"
 };
 
 // Carry the visitor's channel (utm_source) into events so every buy click is attributed
@@ -344,12 +347,6 @@ document.querySelectorAll("a.buy").forEach(function(a){
     try { plausible("Buy Click", {props:{retailer:a.dataset.retailer, format:a.dataset.format, channel:src}}); } catch(e){}
   });
 });
-
-// After release day, swap "Pre-order" wording automatically
-if (new Date() >= RELEASE) {
-  document.getElementById("kindle-verb").textContent = "Buy on Kindle";
-  document.getElementById("status-label").textContent = "Out now · Medical Anarchy Press";
-}
 
 // Show the praise section only when it has content
 var pl = document.getElementById("praise-list");
