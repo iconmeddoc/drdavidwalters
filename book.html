@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://drdavidwalters.com/book"/>
 <link rel="canonical" href="https://drdavidwalters.com/book"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@DrDavidWalters1"/>
+<meta name="twitter:site" content="@DavidWaltersDO"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -45,6 +45,9 @@ section{padding:5rem 0;border-bottom:1px solid var(--border)}
 h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.2;margin-bottom:1.5rem}
 p{color:var(--body);margin-bottom:1.1rem}
 strong{color:var(--off-white);font-weight:600}
+
+.video{position:relative;aspect-ratio:16/9;width:100%;margin-top:1.5rem;border-radius:4px;overflow:hidden;box-shadow:0 0 0 1px var(--border);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* top bar */
 .top{position:sticky;top:0;z-index:50;background:rgba(12,11,9,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
@@ -215,6 +218,20 @@ footer{padding:2.5rem 0}
   </div>
 </section>
 
+<!-- PODCAST -->
+<section id="listen" class="dark">
+  <div class="narrow">
+    <div class="accent"></div>
+    <div class="label" style="margin-bottom:1rem">As heard on Man Medicine</div>
+    <h2>&ldquo;The Case for Clomid&rdquo;</h2>
+    <p>Dr. Walters joined Andrew Winge, MD, on the Man Medicine podcast to make the case for clomiphene before testosterone replacement: the soldiers who first revealed the pattern, what eleven years and more than 2,000 patients have shown, and the honest limits of the evidence.</p>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/l1bXVoRpKk0" title="The Case for Clomid: Dr. David Walters on Man Medicine" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="fine" style="margin:1rem 0 0"><a href="https://youtu.be/l1bXVoRpKk0" target="_blank" rel="noopener">Watch on YouTube</a> &middot; Man Medicine with Andrew Winge, MD</p>
+  </div>
+</section>
+
 <!-- PRAISE: hidden until at least one blurb is added below. Add a block like:
      <div class="praise-q">"Quote text."</div><div class="praise-who">Name, credentials · affiliation</div>
      inside #praise-list and the section appears automatically. Only use blurbs you have written permission to publish. -->
@@ -304,7 +321,7 @@ footer{padding:2.5rem 0}
 <footer>
   <div class="wrap foot">
     <a class="brand" href="/">Medical <span>Anarchy</span></a>
-    <div class="r"><a href="https://drdavidwalters.substack.com">drdavidwalters.substack.com</a> · <a href="https://x.com/DrDavidWalters1">@DrDavidWalters1</a><br/>Your health. Your rules.</div>
+    <div class="r"><a href="https://drdavidwalters.substack.com">drdavidwalters.substack.com</a> · <a href="https://x.com/DavidWaltersDO">@DavidWaltersDO</a><br/>Your health. Your rules.</div>
   </div>
 </footer>
 
