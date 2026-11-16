@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Audiobook Companion PDF — The Chemically Castrated Generation</title>
+<meta name="description" content="Free companion PDF for the audiobook of The Chemically Castrated Generation: all 49 charts, tables and diagrams from the book, numbered by chapter."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Audiobook Companion PDF — The Chemically Castrated Generation"/>
+<meta property="og:description" content="All 49 charts, tables and diagrams from the book, numbered by chapter. Free download for audiobook listeners."/>
+<meta property="og:image" content="https://drdavidwalters.com/ccg-companion-cover.jpg"/>
+<meta property="og:url" content="https://drdavidwalters.com/companion"/>
+<link rel="canonical" href="https://drdavidwalters.com/companion"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@DavidWaltersDO"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<!-- Privacy-friendly analytics by Plausible (same site script as book.html) -->
+<script async src="https://plausible.io/js/pa-qKwGNvd1vZfZgPik-MaQ0.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0b09;--bg-card:#14120f;--ink-deep:#080706;
+  --coral:#eb1c24;--coral-bright:#ff2a32;--amber:#E0A34A;--sage:#8FA97B;
+  --off-white:#f2ede3;--body:#cfc9bd;--muted:#b8b2a4;--border:rgba(242,237,227,.14);
+}
+body{background:var(--bg);color:var(--off-white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 2rem}
+.label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--coral-bright)}
+p{color:var(--body);margin-bottom:1.1rem}
+strong{color:var(--off-white);font-weight:600}
+
+.top{position:sticky;top:0;z-index:50;background:rgba(12,11,9,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.top-in{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{text-decoration:none;font-family:'Playfair Display',serif;font-size:1.05rem}
+.brand span{color:var(--coral-bright)}
+.top a.home{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.top a.home:hover{color:var(--off-white)}
+
+.hero{padding:4.5rem 0 4rem;border-bottom:1px solid var(--border)}
+.grid{display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:3.5rem;align-items:center}
+.preview{display:block;aspect-ratio:2/3;width:100%;border-radius:3px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px var(--border)}
+.preview img{display:block;width:100%;height:100%;object-fit:cover}
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;letter-spacing:-.02em;margin:1.1rem 0 1.1rem}
+h1 em{font-style:italic;color:var(--coral-bright)}
+.lede{font-size:1.05rem;max-width:46ch}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.75rem 0 1rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.95rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--coral);color:#fff}.btn-primary:hover{background:#c0141b;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--off-white);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--off-white);transform:translateY(-1px)}
+.fine{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.04em;color:var(--muted);line-height:1.7}
+
+section.block{padding:3.5rem 0;border-bottom:1px solid var(--border)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.2;margin-bottom:1.25rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.step{background:var(--bg-card);border:1px solid var(--border);border-radius:3px;padding:1.25rem 1.25rem .5rem}
+.step .n{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--coral-bright);letter-spacing:.12em}
+.step h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.15rem;margin:.4rem 0 .5rem}
+.step p{font-size:.92rem}
+
+.signup{background:var(--bg-card);border:1px solid var(--border);border-radius:3px;padding:2rem;max-width:620px}
+.signup form{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.signup input[type=email]{flex:1 1 240px;background:var(--ink-deep);border:1px solid var(--border);color:var(--off-white);padding:.9rem 1rem;font-size:.95rem;border-radius:2px;font-family:'Inter',sans-serif}
+.signup input[type=email]:focus{outline:none;border-color:var(--coral)}
+.msg{font-size:.85rem;margin-top:.8rem;display:none}
+.msg.ok{color:var(--sage);display:block}.msg.err{color:var(--coral-bright);display:block}
+
+footer{padding:2.5rem 0}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.foot .brand{font-size:1.1rem}
+.foot .r{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);text-align:right;line-height:1.8}
+.foot .r a{text-decoration:none}
+
+@media (max-width:760px){
+  .grid{grid-template-columns:1fr;gap:2.25rem}
+  .preview{max-width:220px}
+  .steps{grid-template-columns:1fr}
+  .foot .r{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap top-in">
+  <a class="brand" href="/">Medical <span>Anarchy</span></a>
+  <a class="home" href="/book">About the book →</a>
+</div></div>
+
+<section class="hero">
+  <div class="wrap grid">
+    <a class="preview" href="/CCG-Audiobook-Companion.pdf" data-dl aria-label="Download the companion PDF">
+      <img src="/ccg-companion-cover.jpg" alt="Cover of the Audiobook Companion PDF for The Chemically Castrated Generation" width="660" height="990"/>
+    </a>
+    <div>
+      <div class="label">Audiobook companion · free download</div>
+      <h1>The charts that go with <em>what you’re hearing.</em></h1>
+      <p class="lede">Every chart, table and diagram from <strong>The Chemically Castrated Generation</strong> — 49 figures, numbered by chapter, in the order you hear them in the audiobook.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="/CCG-Audiobook-Companion.pdf" download data-dl>Download the PDF ↓</a>
+        <a class="btn btn-secondary" href="/CCG-Audiobook-Companion.pdf" target="_blank" rel="noopener" data-view>Open in browser</a>
+      </div>
+      <div class="fine">PDF · 61 pages · 2 MB · No sign-up required</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="label">How to use it</div>
+    <h2>Follow along, chapter by chapter</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Save it to your phone</h3><p>Download once and keep it in your Files or Books app so it’s there when you listen.</p></div>
+      <div class="step"><div class="n">02</div><h3>Match the figure number</h3><p>Figure 4.2 is the second figure in Chapter 4. The index on page 3 jumps straight to any figure.</p></div>
+      <div class="step"><div class="n">03</div><h3>Zoom in on the details</h3><p>The figures are full-resolution. Pinch to zoom or turn your phone sideways for the smaller labels.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="signup">
+      <div class="label">Optional</div>
+      <h2 style="margin:.6rem 0 .4rem">Get new research as it’s published</h2>
+      <p style="margin-bottom:0">Updates on testosterone, endocrine disruptors and men’s health from Dr. David Walters. No spam; unsubscribe anytime.</p>
+      <form id="signup" action="https://formspree.io/f/maqawqvn" method="POST">
+        <input type="hidden" name="_subject" value="Audiobook companion — new subscriber"/>
+        <input type="hidden" name="source" value="audiobook-companion"/>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address"/>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+      <div class="msg" id="signup-msg" role="status"></div>
+    </div>
+    <p class="fine" style="margin-top:2rem;max-width:620px">This companion and the book are informational resources only and are not a substitute for personalized medical advice. Do not start, stop or change any medication without consulting your physician. © 2026 David Walters · Medical Anarchy Press.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="/">Medical <span>Anarchy</span></a>
+    <div class="r"><a href="https://drdavidwalters.substack.com">drdavidwalters.substack.com</a> · <a href="https://x.com/DavidWaltersDO">@DavidWaltersDO</a><br/>Your health. Your rules.</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-dl]').forEach(function(a){
+  a.addEventListener('click',function(){ try{ plausible('Companion PDF Download'); }catch(e){} });
+});
+document.querySelectorAll('[data-view]').forEach(function(a){
+  a.addEventListener('click',function(){ try{ plausible('Companion PDF View'); }catch(e){} });
+});
+document.getElementById('signup').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target, msg=document.getElementById('signup-msg'), b=f.querySelector('button');
+  b.disabled=true; msg.className='msg';
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){ msg.textContent='✓ You’re subscribed. Thank you.'; msg.className='msg ok'; f.reset();
+        try{ plausible('Companion Signup'); }catch(e){} }
+      else { throw new Error(); }
+    })
+    .catch(function(){ msg.textContent='Something went wrong. Please try again.'; msg.className='msg err'; })
+    .finally(function(){ b.disabled=false; });
+});
+</script>
+</body>
+</html>

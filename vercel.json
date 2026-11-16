@@ -21,6 +21,11 @@
       "source": "/launchteam",
       "destination": "https://drdavidwalters.eo.page/launchteam",
       "permanent": false
+    },
+    {
+      "source": "/figures",
+      "destination": "/companion",
+      "permanent": false
     }
   ],
   "rewrites": [
