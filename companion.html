@@ -106,8 +106,9 @@ footer{padding:2.5rem 0}
       <div class="btns">
         <a class="btn btn-primary" href="/CCG-Audiobook-Companion.pdf" download data-dl>Download the PDF ↓</a>
         <a class="btn btn-secondary" href="/CCG-Audiobook-Companion.pdf" target="_blank" rel="noopener" data-view>Open in browser</a>
+        <a class="btn btn-secondary" href="https://open.spotify.com/show/0zNXnATfjXoVvVpZ1l9nOc" target="_blank" rel="noopener" data-spotify>Listen on Spotify →</a>
       </div>
-      <div class="fine">PDF · 61 pages · 2 MB · No sign-up required</div>
+      <div class="fine">PDF · 61 pages · 2 MB · No sign-up required · Don't have the audiobook yet? <a href="https://open.spotify.com/show/0zNXnATfjXoVvVpZ1l9nOc" target="_blank" rel="noopener" data-spotify>Get it on Spotify</a></div>
     </div>
   </div>
 </section>
@@ -155,6 +156,9 @@ document.querySelectorAll('[data-dl]').forEach(function(a){
 });
 document.querySelectorAll('[data-view]').forEach(function(a){
   a.addEventListener('click',function(){ try{ plausible('Companion PDF View'); }catch(e){} });
+});
+document.querySelectorAll('[data-spotify]').forEach(function(a){
+  a.addEventListener('click',function(){ try{ plausible('Spotify Click',{props:{page:'companion'}}); }catch(e){} });
 });
 document.getElementById('signup').addEventListener('submit',function(e){
   e.preventDefault();
