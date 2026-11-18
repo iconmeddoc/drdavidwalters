@@ -50,6 +50,9 @@ strong{color:var(--off-white);font-weight:600}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* top bar */
+.announce{background:var(--coral);color:#fff;text-align:center;font-size:.9rem;line-height:1.45;padding:.6rem 1rem}
+.announce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.announce b{font-weight:600}
 .top{position:sticky;top:0;z-index:50;background:rgba(12,11,9,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .top-in{display:flex;justify-content:space-between;align-items:center;height:64px}
 .brand{text-decoration:none;font-family:'Playfair Display',serif;font-size:1.05rem}
@@ -150,6 +153,8 @@ footer{padding:2.5rem 0}
 </style>
 </head>
 <body>
+
+<div class="announce" role="region" aria-label="Announcement"><b>New: the audiobook is on Spotify.</b> Launch price $11.99 through December 31, with a free <a href="/companion">companion PDF</a> of every chart. <a class="buy" data-retailer="spotify" data-format="audiobook-banner" href="https://open.spotify.com/show/0zNXnATfjXoVvVpZ1l9nOc">Listen now →</a></div>
 
 <div class="top"><div class="wrap top-in">
   <a class="brand" href="/">Medical <span>Anarchy</span></a>
